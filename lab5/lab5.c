@@ -226,11 +226,15 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
             }
             if (xi==xf){
               yi+=speed;
-              yi=yf;
+              if (yi > yf){
+                yi=yf;
+              }
             }
             else{
               xi+=speed;
-              xi=xf;
+              if (xi > xf){
+                xi=xf;
+              }
             }
             if (draw_xpm(xpm,xi,yi)!=0){
               return 1;

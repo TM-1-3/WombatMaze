@@ -6,19 +6,31 @@ int (read_KBC_data)(uint8_t port, uint8_t *output, uint8_t mouse){
     uint8_t attempts=10;
 
     while (attempts){
+
+        // Read status
         if (util_sys_inb(KBC_ST_REG, &stat)!=0){
             return 1;
         }
+
+        // OBF is full
         if ((stat & KBC_OBF)!=0){
+
+            // Read output buffer
             if (util_sys_inb(port, &data)!=0){
                 return 1;
             }
+
+            // Waiting mouse output
             if (mouse && !(stat & BIT(5))) {
                 return 1;
             }
+
+            // Waiting keyboard output
             if (!mouse && (stat & BIT(5))) {
                 return 1;
             }
+
+
             if ((stat & (KBC_PAR_ERR | KBC_TO_ERR))==0){
                 *output=data;
                 return 0;
