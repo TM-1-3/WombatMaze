@@ -11,6 +11,7 @@ int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
 
   // Check for null pointer
   if (lsb == NULL) { 
+    printf("Error: Null pointer passed to util_get_LSB.\n");
     return 1; 
   }
 
@@ -29,6 +30,7 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
 
   // Check for null pointer
   if (msb == NULL) { 
+    printf("Error: Null pointer passed to util_get_MSB.\n");
     return 1; 
   }
 
@@ -47,6 +49,7 @@ int (util_sys_inb)(int port, uint8_t *value) {
 
   // Check for null pointer
   if (value == NULL) {
+    printf("Error: Null pointer passed to util_sys_inb.\n");
     return 1;
   }
 

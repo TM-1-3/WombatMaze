@@ -1,4 +1,5 @@
 #include "mouse.h"
+#include <stdio.h>  // Include for printf
 
 // Setup
 int mouse_hook_id = 3;
@@ -12,6 +13,7 @@ int (mouse_subscribe_int)(uint8_t *bit_no){
 
     // Check if possible
     if (bit_no == NULL){
+        printf("Error: Invalid pointer to bit_no.\n");
         return 1;
     }
 
@@ -20,6 +22,7 @@ int (mouse_subscribe_int)(uint8_t *bit_no){
 
     // Subscribe to IRQ12
     if (sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id) != 0){
+        printf("Error: Failed to subscribe to mouse IRQ12.\n");
         return 1;
     }
     return 0;
@@ -30,6 +33,7 @@ int (mouse_unsubscribe_int)(){
 
     // Unsubscribe to IRQ12
     if (sys_irqrmpolicy(&mouse_hook_id) != 0){
+        printf("Error: Failed to unsubscribe from mouse IRQ12.\n");
         return 1;
     }
     return 0;
@@ -40,7 +44,7 @@ void (mouse_ih)(){
 
     // Reads byte from mouse
     if (read_KBC_data(KBC_OB, &mouseByte, 1) != 0){
-        printf("Error reading KBC data\n");
+        printf("Error: Failed to read data from KBC.\n");
     }
 }
 
@@ -49,23 +53,35 @@ int (mouse_write_data)(uint8_t command){
     uint8_t attempts = MAX_ATTEMPTS;
     uint8_t responseMouse;
 
+    // The loop
     while (attempts--) {
 
         // Tell KBC we want to write to mouse
-        if (write_KBC_data(KBC_CR, MOUSE_WRITE_CMD) != 0) return 1;
+        if (write_KBC_data(KBC_CR, MOUSE_WRITE_CMD) != 0) {
+            printf("Error: Failed to send write command to KBC.\n");
+            return 1;
+        }
 
         // Write command to mouse
-        if (write_KBC_data(KBC_IB, command) != 0) return 1;
+        if (write_KBC_data(KBC_IB, command) != 0) {
+            printf("Error: Failed to write command 0x%X to KBC.\n", command);
+            return 1;
+        }
 
         // Wait before checking response
         tickdelay(micros_to_ticks(WAIT_KBC));
 
         // Read mouse response
-        if (util_sys_inb(KBC_OB, &responseMouse) != 0) return 1;
+        if (util_sys_inb(KBC_OB, &responseMouse) != 0) {
+            printf("Error: Failed to read mouse response from KBC.\n");
+            return 1;
+        }
 
         // If ACK received, success
         if (responseMouse == MOUSE_ACK) return 0;
+        printf("Error: Mouse did not acknowledge command 0x%X. Response: 0x%X.\n", command, responseMouse);
     }
+    printf("Error: Mouse failed to acknowledge command 0x%X after %d attempts.\n", command, MAX_ATTEMPTS);
     return 1;
 }
 

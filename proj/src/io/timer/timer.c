@@ -12,17 +12,19 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
   // Check if possible
   if (freq < 19 || freq > TIMER_FREQ) {
+    printf("Error: Invalid frequency %u. Must be between 19 and %u.\n", freq, TIMER_FREQ);
     return 1;
   }
 
   // Get current configuration of the timer
   uint8_t st = 0;
   if (timer_get_conf(timer, &st) != 0) {
+    printf("Error: Failed to get timer configuration.\n");
     return 1;
   }
 
-  // Build the control word
-  uint8_t control = TIMER_BOTH | (st & 0x0F); // preserve last 4 bits
+  // Preserve last 4 bits
+  uint8_t control = TIMER_BOTH | (st & 0x0F);
 
   // Select the timer
   uint8_t timerPort;
@@ -40,6 +42,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
       control |= TIMER_SEL2;
       break;
     default:
+      printf("Error: Invalid timer number %u. Must be 0, 1, or 2.\n", timer);
       return 1;
   }
 
@@ -49,14 +52,24 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   // Get LSB and MSB
   uint8_t lsb, msb;
   if (util_get_LSB(div, &lsb) != 0 || util_get_MSB(div, &msb) != 0) {
+    printf("Error: Failed to get LSB/MSB of divisor.\n");
     return 1;
   }
 
   // Write control word and divisor
-  if (sys_outb(TIMER_CTRL, control) != 0) return 1;
-  if (sys_outb(timerPort, lsb) != 0) return 1;
-  if (sys_outb(timerPort, msb) != 0) return 1;
-
+  // Write control word and divisor
+  if (sys_outb(TIMER_CTRL, control) != 0) {
+    printf("Error: Failed to write control word to TIMER_CTRL.\n");
+    return 1;
+  }
+  if (sys_outb(timerPort, lsb) != 0) {
+    printf("Error: Failed to write LSB to timer port %u.\n", timerPort);
+    return 1;
+  }
+  if (sys_outb(timerPort, msb) != 0) {
+    printf("Error: Failed to write MSB to timer port %u.\n", timerPort);
+    return 1;
+  }
   return 0;
 }
 
@@ -65,6 +78,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
   // Check if possible
   if (bit_no == NULL) {
+    printf("Error: NULL pointer passed for bit_no.\n");
     return 1;
   }
 
@@ -73,6 +87,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
   // Subscribe
   if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) != 0) {
+    printf("Error: Failed to subscribe to timer interrupts.\n");
     return 1;
   }
 
@@ -84,6 +99,7 @@ int (timer_unsubscribe_int)() {
 
   // Unsubscribe
   if (sys_irqrmpolicy(&timer_hook_id) != 0) {
+    printf("Error: Failed to unsubscribe from timer interrupts.\n");
     return 1;
   }
 
@@ -102,6 +118,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   // Check if possible
   if (st == NULL || timer > 2) {
+    printf("Error: Invalid arguments. st is NULL or timer is out of range.\n");
     return 1;
   }
 
@@ -110,11 +127,13 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   // Write read back command
   if (sys_outb(TIMER_CTRL, readBackCommand) != 0) {
+    printf("Error: Failed to write read back command to TIMER_CTRL.\n");
     return 1;
   }
 
   // Store status byte
   if (util_sys_inb(TIMER_0 + timer, st) != 0) {
+    printf("Error: Failed to read status byte from timer port %u.\n", timer);
     return 1;
   }
 
@@ -150,6 +169,7 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
           break;
         default:
           timerConfig.in_mode = INVAL_val;
+          printf("Error: Invalid initialization mode value.\n");
       }
       break;
 
@@ -169,13 +189,14 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
       break;
 
     default:
+      printf("Error: Invalid field in timer configuration.\n");
       return 1;
   }
 
   // Print the configuration
   if (timer_print_config(timer, field, timerConfig) != 0) {
+    printf("Error: Failed to print timer configuration.\n");
     return 1;
   }
-
   return 0;
 }

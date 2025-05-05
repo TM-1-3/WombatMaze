@@ -15,6 +15,7 @@ int (set_mode_graphic)(uint16_t mode){
 
     // Call the interrupt
     if (sys_int86(&reg86) != 0){
+        printf("Error: Failed to set video mode 0x%X.\n", mode);
         return 1;
     }
     return 0;
@@ -26,6 +27,7 @@ int (build_frame_buffer)(uint16_t mode){
 
     // Get information about the mode
     if (vbe_get_mode_info(mode, &modeInfo)){
+        printf("Error: Failed to get mode info for mode 0x%X.\n", mode);
         return 1;
     }
 
@@ -40,12 +42,14 @@ int (build_frame_buffer)(uint16_t mode){
 
     // Add memory mapping
     if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)){
+        printf("Error: Failed to add memory mapping.\n");
         return 1;
     }
 
     // Map the memory
     frameBuffer = vm_map_phys(SELF, (void*)mr.mr_base, frameSize);
     if (frameBuffer == NULL){
+        printf("Error: Failed to map memory for framebuffer.\n");
         return 1;
     }
     //memset(frameBuffer, 0xFF, frameSize); // Optional clearing of the framebuffer
@@ -72,6 +76,7 @@ int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
     
     // Check if out of bounds
     if (x > modeInfo.XResolution || y > modeInfo.YResolution){
+        printf("Error: Coordinates (x: %d, y: %d) out of bounds.\n", x, y);
         return 1;
     }
 
@@ -81,6 +86,7 @@ int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
 
     // Copy the color value
     if (memcpy(&frameBuffer[pixelIndex], &color, BytesPerPixel) == NULL){
+        printf("Error: Failed to copy color value to framebuffer.\n");
         return 1;
     }
     return 0;
@@ -92,6 +98,7 @@ int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
     // Draws each pixel
     for (unsigned i = 0; i < len; i++){
         if (draw_pixel(x + i, y, color) != 0){
+            printf("Error: Failed to draw pixel at (x: %d, y: %d).\n", x + i, y);
             return 1;
         }
     }
@@ -104,11 +111,16 @@ int (draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
 
     // Load the XPM into memory
     uint8_t *colors = xpm_load(xpm, XPM_INDEXED, &img);
+    if (colors == NULL) {
+        printf("Error: Failed to load XPM image.\n");
+        return 1;
+    }
 
     // Draw each pixel
     for (int i = 0; i < img.height; i++){
         for (int j = 0; j < img.width; j++){
             if (draw_pixel(x + j, y + i, *colors) != 0){
+                printf("Error: Failed to draw pixel at (x: %d, y: %d) while rendering XPM.\n", x + j, y + i);
                 return 1;
             }
             colors++;
@@ -120,6 +132,9 @@ int (draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
 // Swaps the two buffers
 int (swap_buffers)(){
     uint32_t size = modeInfo.XResolution * modeInfo.YResolution * (modeInfo.BitsPerPixel / 8);
-    memcpy(frameBuffer, doubleBuffer, size);
+    if (memcpy(frameBuffer, doubleBuffer, size) == NULL) {
+        printf("Error: Failed to swap buffers.\n");
+        return 1;
+    }
     return 0;
 }
