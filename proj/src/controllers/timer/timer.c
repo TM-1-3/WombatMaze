@@ -24,10 +24,14 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   // Build the control word
   timerControlWord = TIMER_BOTH | (0X0F & timerControlWord);
   uint32_t counterInitialValue = TIMER_FREQ / freq;
+
+  // Get LSB and MSB
   uint8_t LSB;
   util_get_LSB(counterInitialValue, &LSB);
   uint8_t MSB;
   util_get_MSB(counterInitialValue, &MSB);
+
+  // Select the timer
   uint8_t timerSelected;
   switch (timer){
     case 0:
@@ -71,7 +75,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   *bit_no = BIT(timer_hook_id);
 
   // Subscribe
-  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id)!=0){
+  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) != 0){
     return 1;
   }
   return 0;
@@ -81,7 +85,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 int (timer_unsubscribe_int)() {
 
   // Unsubscribe
-  if (sys_irqrmpolicy(&timer_hook_id)!=0){
+  if (sys_irqrmpolicy(&timer_hook_id) != 0){
     return 1;
   }
   return 0;
@@ -108,7 +112,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   uint8_t readBackCommand = (TIMER_RB| RB_COUNT | RB_SEL(timer));
 
   // Write read back command
-  if (sys_outb(TIMER_CTRL, readBackCommand)!=0){
+  if (sys_outb(TIMER_CTRL, readBackCommand) != 0){
     return 1;
   }
 
@@ -133,14 +137,14 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
     case tsf_initial:
 
       // Store the initialization mode
-      st = 0x03 & (st>>4);
-      if (st==1){
+      st = 0x03 & (st >> 4);
+      if (st == 1){
         timerConfig.in_mode = LSB_only;
       }
-      else if(st==2){
+      else if(st == 2){
         timerConfig.in_mode = MSB_only;
       }
-      else if(st==3){
+      else if(st == 3){
         timerConfig.in_mode = MSB_after_LSB;
       }
       else{
@@ -150,11 +154,11 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
     case tsf_mode:
 
       // Store the counting mode
-      st = 0x07 & (st>>1);
-      if (st==6){
+      st = 0x07 & (st >> 1);
+      if (st == 6){
         timerConfig.count_mode = 2;
       }
-      else if(st==7){
+      else if(st == 7){
         timerConfig.count_mode = 3;
       }
       else{
@@ -171,7 +175,7 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
   }
 
   // Print the configuration
-  if (timer_print_config(timer, field, timerConfig)!=0){
+  if (timer_print_config(timer, field, timerConfig) != 0){
     return 1;
   }
   return 0;

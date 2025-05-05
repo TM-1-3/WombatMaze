@@ -2,21 +2,21 @@
 
 // Setup
 int keyboard_hook_id = 1;
-uint8_t scanCode=0;
+uint8_t scanCode = 0;
 
 // Subscribes to keyboard interrupts
 int (keyboard_subscribe_int)(uint8_t *bit_no){
 
     // Check null pointer
-    if (bit_no==NULL){
+    if (bit_no == NULL){
         return 1;
     }
 
     // Set bitmask for the IRQ
-    *bit_no=BIT(keyboard_hook_id);
+    *bit_no = BIT(keyboard_hook_id);
 
     // Request access 
-    if (sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &keyboard_hook_id)!=0){
+    if (sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &keyboard_hook_id) != 0){
         return 1;
     }
     return 0;
@@ -26,7 +26,7 @@ int (keyboard_subscribe_int)(uint8_t *bit_no){
 int (keyboard_unsubscribe_int)(){
 
     // Remove the interrupt policy 
-    if (sys_irqrmpolicy(&keyboard_hook_id)!=0){
+    if (sys_irqrmpolicy(&keyboard_hook_id) != 0){
         return 1;
     }
     return 0;
@@ -36,7 +36,7 @@ int (keyboard_unsubscribe_int)(){
 void (kbc_ih)(){
 
     // Read data
-    if (read_KBC_data(KBC_OUT_CMD,&scanCode,0)!=0){
+    if (read_KBC_data(KBC_OB, &scanCode, 0) != 0){
         printf("Error reading KBC data");
     }
 }
@@ -46,23 +46,23 @@ int (keyboard_restore_int)(){
     uint8_t commandByte;
     
     // Request to read
-    if (write_KBC_data(KBC_CMD_REG, KBC_READ_CMD)!=0){
+    if (write_KBC_data(KBC_CR, KBC_READ) != 0){
         return 1;
     }
 
     // Read the byte
-    if (read_KBC_data(KBC_OUT_CMD, &commandByte, 0)!=0){
+    if (read_KBC_data(KBC_OB, &commandByte, 0) != 0){
         return 1;
     }
     commandByte |= ENABLE_INT;
 
     // Send the command
-    if (write_KBC_data(KBC_CMD_REG, KBC_IN_CMD)!=0){
+    if (write_KBC_data(KBC_CR, KBC_WRITE) != 0){
         return 1;
     }
 
     // Write the command
-    if (write_KBC_data(KBC_IN_CMD, commandByte)!=0){
+    if (write_KBC_data(KBC_IB, commandByte) != 0){
         return 1;
     }
     return 0;

@@ -1,71 +1,105 @@
 #include "mouse.h"
 
+// Setup
 int mouse_hook_id=3;
 uint8_t mouseByte;
 uint8_t byteIndex;
 uint8_t mouseBytes[3];
 struct packet mousePacket;
 
+// Subscribes mouse interrupts
 int (mouse_subscribe_int)(uint8_t *bit_no){
-    if (bit_no==NULL){
+
+    // Check if possible
+    if (bit_no == NULL){
         return 1;
     }
-    *bit_no=BIT(mouse_hook_id);
-    if (sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id)!=0){
+
+    // Set bit mask
+    *bit_no = BIT(mouse_hook_id);
+
+    // Subscribe to IRQ12
+    if (sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id) != 0){
         return 1;
     }
     return 0;
 }
 
+// Unsubscribes mouse interrupts
 int (mouse_unsubscribe_int)(){
-    if (sys_irqrmpolicy(&mouse_hook_id)!=0){
+
+    // Unsubscribe to IRQ12
+    if (sys_irqrmpolicy(&mouse_hook_id) != 0){
         return 1;
     }
     return 0;
 }
 
+// Mouse interrupt handler
 void (mouse_ih)(){
-    if (read_KBC_data(KBC_OUT_CMD,&mouseByte,1)!=0){
+
+    // Reads byte from mouse
+    if (read_KBC_data(KBC_OB, &mouseByte, 1) != 0){
         printf("Error reading KBC data");
     }
 }
 
+// Writes a command to the mouse
 int (mouse_write_data)(uint8_t command){
-
-    uint8_t attempts=10;
+    uint8_t attempts = MAX_ATTEMPTS;
     uint8_t responseMouse;
+    while (attempts--) {
 
-    do {
-        attempts--;
-        if (write_KBC_data(KBC_IN_CMD, MOUSE_WRITE_BYTE)) return 1;
-        if (write_KBC_data(KBC_OUT_CMD, command)) return 1;
-        tickdelay(micros_to_ticks(DELAY_US));
-        if (util_sys_inb(KBC_OUT_CMD, &responseMouse)) return 1;
-        if (responseMouse == ACK) return 0;
-      } while (responseMouse != ACK && attempts);
+        // Tell KBC we want to write to mouse
+        if (write_KBC_data(KBC_CR, MOUSE_WRITE_BYTE)) return 1;
+
+        Write command to mosue
+        if (write_KBC_data(KBC_IB, command)) return 1;
+
+        // Wait before checking reponse
+        tickdelay(micros_to_ticks(WAIT_KBC));
+
+        // Read mouse response
+        if (util_sys_inb(KBC_OB, &responseMouse)) return 1;
+
+        // If ACK receive, success
+        if (responseMouse == MOUSE_ACK) return 0;
+      }
     return 1;
 }
 
+// Synchronizes the bytes into 3-byte
 void (mouse_sync_bytes)(){
-    if ((mouseByte & FIRST_BYTE) && byteIndex==0){
-        mouseBytes[byteIndex]=mouseByte;
-        byteIndex++;
+    if ((mouseByte & MOUSE_SYNC) && byteIndex == 0){
+
+        // First byte must have bit 3 set
+        mouseBytes[byteIndex++] = mouseByte;
     }
-    else if (byteIndex>0){
-        mouseBytes[byteIndex]=mouseByte;
-        byteIndex++;
+    else if (byteIndex > 0){
+
+        // Add 2nd and 3rd byte
+        mouseBytes[byteIndex++] = mouseByte;
     }
 }
 
+// Parses the 3-byte into a struct
 void (mouse_build_packet)(){
-    for (int i=0; i<3; i++){
-        mousePacket.bytes[i]=mouseBytes[i];
+
+    // Copy bytes
+    for (int i = 0; i < 3; i++){
+        mousePacket.bytes[i] = mouseBytes[i];
     }
-    mousePacket.delta_x=(MOUSE_SIGNAL_X & mouseBytes[0]) ? (0xFF00 | mouseBytes[1]) : mouseBytes[1];
-    mousePacket.delta_y=(MOUSE_SIGNAL_Y & mouseBytes[0]) ? (0xFF00 | mouseBytes[2]) : mouseBytes[2];
-    mousePacket.x_ov=MOUSE_OVERFLOW_X & mouseBytes[0];
-    mousePacket.y_ov=MOUSE_OVERFLOW_Y & mouseBytes[0];
-    mousePacket.lb=MOUSE_LB & mouseBytes[0];
-    mousePacket.rb=MOUSE_RB & mouseBytes[0];
-    mousePacket.mb=MOUSE_MB & mouseBytes[0];
+
+    // Button states
+    mousePacket.lb = mouseBytes[0] & MOUSE_LB;
+    mousePacket.rb = mouseBytes[0] & MOUSE_RB;
+    mousePacket.mb = mouseBytes[0] & MOUSE_MB;
+
+    // Overflow flags
+    mousePacket.x_ov = mouseBytes[0] & MOUSE_XOVER;
+    mousePacket.y_ov = mouseBytes[0] & MOUSE_YOVER;
+
+    // Convert movement
+    mousePacket.delta_x = (mouseBytes[0] & MOUSE_XSIGNAL) ? (0xFF00 | mouseBytes[1]) : mouseBytes[1];
+    mousePacket.delta_y = (mouseBytes[0] & MOUSE_YSIGNAL) ? (0xFF00 | mouseBytes[2]) : mouseBytes[2];
 }
