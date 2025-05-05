@@ -5,14 +5,9 @@
 
 // Setup
 int timer_hook_id = 0;
-uint32_t timerCounter=0;
+uint32_t timerCounter = 0;
 
-/**
- * @brief Sets the frequency of the timer
- * @param timer Timer number
- * @param freq Desired frequency 
- * @return 0 on success, non-zero otherwise
- */
+// Sets the frequency of the timer
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
   // Check if possible
@@ -27,7 +22,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   }
 
   // Build the control word
-  timerControlWord = TIMER_LSB_MSB | (0X0F & timerControlWord);
+  timerControlWord = TIMER_BOTH | (0X0F & timerControlWord);
   uint32_t counterInitialValue = TIMER_FREQ / freq;
   uint8_t LSB;
   util_get_LSB(counterInitialValue, &LSB);
@@ -36,7 +31,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t timerSelected;
   switch (timer){
     case 0:
-      timerSelected=TIMER_0;
+      timerSelected = TIMER_0;
       timerControlWord |= TIMER_SEL0;
       break;
     case 1:
@@ -55,20 +50,16 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if (sys_outb(TIMER_CTRL, timerControlWord) != 0){
     return 1;
   }
-  if (sys_outb(timerSelected,LSB) != 0){
+  if (sys_outb(timerSelected, LSB) != 0){
     return 1;
   }
-  if (sys_outb(timerSelected,MSB) != 0){
+  if (sys_outb(timerSelected, MSB) != 0){
     return 1;
   }
   return 0;
 }
 
-/**
- * @brief Subscribes to timer interrupts
- * @param bit_no Address to store bit mask
- * @return 0 on success, non-zero otherwise
- */
+// Subscribes to timer interrupts
 int (timer_subscribe_int)(uint8_t *bit_no) {
 
   // Check if possible
@@ -86,10 +77,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   return 0;
 }
 
-/**
- * @brief Unsubscribes from timer interrupts
- * @return 0 on success, non-zero otherwise
- */
+// Unsubscribes from timer interrupts
 int (timer_unsubscribe_int)() {
 
   // Unsubscribe
@@ -108,12 +96,7 @@ void (timer_int_handler)() {
   timerCounter++;
 }
 
-/**
- * @brief Gets the configuration of the timer
- * @param timer Timer number
- * @param st Pointer to where status byte will be stored
- * @return 0 on success, non-zero otherwise
- */
+// Gets the configuration of the timer
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   // Check if possible
@@ -122,7 +105,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   }
 
   // Get read back command
-  uint8_t readBackCommand = (TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer));
+  uint8_t readBackCommand = (TIMER_RB| RB_COUNT | RB_SEL(timer));
 
   // Write read back command
   if (sys_outb(TIMER_CTRL, readBackCommand)!=0){
@@ -136,13 +119,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   return 0;
 }
 
-/**
- * @brief Displays timer configuration
- * @param timer Timer number
- * @param st Status byte
- * @param field Field of the configuration to display
- * @return 0 on success, non-zero otherwise
- */
+// Displays timer configuration
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
 
   // Store timer configuration field
@@ -151,23 +128,23 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
     case tsf_all:
 
       // Store the full status byte
-      timerConfig.byte=st;
+      timerConfig.byte = st;
       break;
     case tsf_initial:
 
       // Store the initialization mode
       st = 0x03 & (st>>4);
       if (st==1){
-        timerConfig.in_mode=LSB_only;
+        timerConfig.in_mode = LSB_only;
       }
       else if(st==2){
-        timerConfig.in_mode=MSB_only;
+        timerConfig.in_mode = MSB_only;
       }
       else if(st==3){
-        timerConfig.in_mode=MSB_after_LSB;
+        timerConfig.in_mode = MSB_after_LSB;
       }
       else{
-        timerConfig.in_mode=INVAL_val;
+        timerConfig.in_mode = INVAL_val;
       }
       break;
     case tsf_mode:
@@ -175,19 +152,19 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
       // Store the counting mode
       st = 0x07 & (st>>1);
       if (st==6){
-        timerConfig.count_mode=2;
+        timerConfig.count_mode = 2;
       }
       else if(st==7){
-        timerConfig.count_mode=3;
+        timerConfig.count_mode = 3;
       }
       else{
-        timerConfig.count_mode=st;
+        timerConfig.count_mode = st;
       }
       break;
     case tsf_base:
 
       // Store binary mode
-      timerConfig.bcd=TIMER_BCD & st;
+      timerConfig.bcd = TIMER_BCD & st;
       break;
     default:
       return 1;
