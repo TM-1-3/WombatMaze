@@ -1,9 +1,9 @@
 #include "mouse.h"
 
 // Setup
-int mouse_hook_id=3;
+int mouse_hook_id = 3;
 uint8_t mouseByte;
-uint8_t byteIndex;
+uint8_t byteIndex = 0;
 uint8_t mouseBytes[3];
 struct packet mousePacket;
 
@@ -40,7 +40,7 @@ void (mouse_ih)(){
 
     // Reads byte from mouse
     if (read_KBC_data(KBC_OB, &mouseByte, 1) != 0){
-        printf("Error reading KBC data");
+        printf("Error reading KBC data\n");
     }
 }
 
@@ -48,23 +48,24 @@ void (mouse_ih)(){
 int (mouse_write_data)(uint8_t command){
     uint8_t attempts = MAX_ATTEMPTS;
     uint8_t responseMouse;
+
     while (attempts--) {
 
         // Tell KBC we want to write to mouse
-        if (write_KBC_data(KBC_CR, MOUSE_WRITE_BYTE)) return 1;
+        if (write_KBC_data(KBC_CR, MOUSE_WRITE_CMD) != 0) return 1;
 
-        Write command to mosue
-        if (write_KBC_data(KBC_IB, command)) return 1;
+        // Write command to mouse
+        if (write_KBC_data(KBC_IB, command) != 0) return 1;
 
-        // Wait before checking reponse
+        // Wait before checking response
         tickdelay(micros_to_ticks(WAIT_KBC));
 
         // Read mouse response
-        if (util_sys_inb(KBC_OB, &responseMouse)) return 1;
+        if (util_sys_inb(KBC_OB, &responseMouse) != 0) return 1;
 
-        // If ACK receive, success
+        // If ACK received, success
         if (responseMouse == MOUSE_ACK) return 0;
-      }
+    }
     return 1;
 }
 
@@ -79,6 +80,11 @@ void (mouse_sync_bytes)(){
 
         // Add 2nd and 3rd byte
         mouseBytes[byteIndex++] = mouseByte;
+    }
+
+    // Reset index after full packet
+    if (byteIndex == 3) {
+        byteIndex = 0;
     }
 }
 

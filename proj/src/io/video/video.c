@@ -48,7 +48,7 @@ int (build_frame_buffer)(uint16_t mode){
     if (frameBuffer == NULL){
         return 1;
     }
-    //memset(frameBuffer, 0xFF, frameSize);
+    //memset(frameBuffer, 0xFF, frameSize); // Optional clearing of the framebuffer
     return 0;
 }
 
