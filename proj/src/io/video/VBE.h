@@ -4,6 +4,10 @@
 #include <lcom/lcf.h>    /* for BIT macro */
 #include <stdint.h>
 
+/* Screen size */
+#define SCREEN_WIDTH  700    
+#define SCREEN_HEIGHT 500
+
 /* VBE indices */
 #define INDEXED_768       0x105  /* 1024x768 indexed color */
 #define DIRECT_480        0x110  /* 640x480 direct color */

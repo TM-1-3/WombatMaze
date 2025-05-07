@@ -43,7 +43,7 @@ int drawSprite(Sprite *sprite, int x, int y) {
             uint32_t color = sprite->colors[j + i * sprite->width]; 
 
             // If drawing a pixel fails, return error and print a message
-            if (draw_pixel(x + j, y + i, color) != 0) {
+            if ((draw_pixel)(x + j, y + i, color) != 0) {
                 printf("Error: Failed to draw pixel at (%d, %d)\n", x + j, y + i);
                 return 1;
             }

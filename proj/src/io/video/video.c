@@ -73,7 +73,7 @@ int (normalize_color)(uint32_t color, uint32_t *newColor){
 
 // Draws a single pixel
 int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
-    
+
     // Check if out of bounds
     if (x > modeInfo.XResolution || y > modeInfo.YResolution){
         printf("Error: Coordinates (x: %d, y: %d) out of bounds.\n", x, y);
@@ -94,8 +94,8 @@ int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
 
 // Draws a filled rectangle on the screen
 int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color){
-    for (unsigned i=0;i<height;i++){
-      if (draw_horizontal_line(x,y+i,width,color)!=0){
+    for (unsigned i = 0; i < height; i++){
+      if (draw_horizontal_line(x, y + i, width, color) != 0){
         vg_exit();
         return 1;
       }

@@ -20,7 +20,7 @@ volatile extern uint8_t scanCode;
  * @return 0 on success, non-zero otherwise
  */
 int (main)(int argc, char *argv[]) {
-
+    
     // Set the language for LCF messages (EN-US or PT-PT)
     lcf_set_language("EN-US");
 

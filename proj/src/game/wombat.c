@@ -82,20 +82,28 @@ void moveWombat(Wombat* wombat, int moveDirection) {
 
     // Move wombat based on direction
     switch (moveDirection) {
-        case 1: 
-            setY(wombat, wombat->y - 1);
+        case 1:
+            if (wombat->y > 0) {
+                setY(wombat, wombat->y - 1);
+            }
             break;
-        case 2: 
-            setY(wombat, wombat->y + 1);
+        case 2:
+            if (wombat->y < SCREEN_HEIGHT) {
+                setY(wombat, wombat->y + 1);
+            }
             break;
-        case 3:  
-            setX(wombat, wombat->x - 1);
+        case 3:
+            if (wombat->x > 0) {
+                setX(wombat, wombat->x - 1);
+            }
             break;
-        case 4:  
-            setX(wombat, wombat->x + 1);
+        case 4:
+            if (wombat->x < SCREEN_WIDTH) {
+                setX(wombat, wombat->x + 1);
+            }
             break;
         default:
             printf("Error: Invalid move direction.\n");
-    }
+    }    
 }
 
