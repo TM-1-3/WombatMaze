@@ -159,7 +159,11 @@ int (swap_buffers)(){
 }
 
 // Clear the screen
-void (clear_screen)(){
+int (clear_screen)() {
+    if (!doubleBuffer) {
+        printf("Error: doubleBuffer is NULL in clear_screen().\n");
+        return 1;
+    }
     memset(doubleBuffer, 0, modeInfo.XResolution * modeInfo.YResolution * (modeInfo.BitsPerPixel / 8));
+    return 0;
 }
-

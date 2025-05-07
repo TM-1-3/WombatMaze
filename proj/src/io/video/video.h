@@ -79,6 +79,6 @@ int (swap_buffers)();
 /**
  * @brief Clears the screen
  */
-void (clear_screen)();
+int (clear_screen)();
 
 #endif
