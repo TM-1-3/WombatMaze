@@ -21,6 +21,12 @@
 #define KBC_READ    0x20    /* Read command byte */
 #define KBC_WRITE   0x60    /* Write command byte */
 
+/* KBC Flags */
+#define ENABLE_KB   BIT(0)  /* Enable keyboard interrupts */
+#define ENABLE_MOUSE BIT(1) /* Enable mouse interrupts */
+#define DISABLE_KB       BIT(4) /* Disable keyboard */
+#define DISABLE_MOUSE    BIT(5) /* Disable mouse */
+
 /* Keyboard Masks */
 #define STAT_OBF        BIT(0)  /* Output buffer full */
 #define STAT_IBF        BIT(1)  /* Input buffer full */

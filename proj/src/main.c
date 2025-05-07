@@ -1,91 +1,111 @@
 #include <lcom/lcf.h>
-
 #include <stdint.h>
 #include <stdio.h>
-
+#include "io/video/video.h"
+#include "io/timer/timer.h"
+#include "io/KBC/KBC.h"
+#include "io/KBC/keyboard/keyboard.h"
+#include "io/KBC/mouse/mouse.h"
+#include "display/sprite.h"
 #include "game/wombat.h"
-#include "video.h"
-#include "keyboard.h"
-#include "timer.h"
-#include "video.h"
-#include "assets/wombat/vomabte_moving_4.xpm"
+#include "assets/wombat/wombat_moving_4.xpm"
 
+// Global variable for scanCode handling
 volatile extern uint8_t scanCode;
 
-int (main)(int argc, char *argv[]){
-    // sets the language of LCF messages (can be either EN-US or PT-PT)
-  lcf_set_language("EN-US");
+/**
+ * @brief Starts the program
+ * @param argc Argument count
+ * @param argv Argument vector
+ * @return 0 on success, non-zero otherwise
+ */
+int (main)(int argc, char *argv[]) {
 
-  // enables to log function invocations that are being "wrapped" by LCF
-  // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/proj/trace.txt");
+    // Set the language for LCF messages (EN-US or PT-PT)
+    lcf_set_language("EN-US");
 
-  // enables to save the output of printf function calls on a file
-  // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/proj/output.txt");
+    // Enable logging function invocations
+    lcf_trace_calls("/home/lcom/labs/proj/trace.txt");
 
-  // handles control over to LCF
-  // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv))
-    return 1;
+    // Enable saving printf output to a file
+    lcf_log_output("/home/lcom/labs/proj/output.txt");
 
-  // LCF clean up tasks
-  // [must be the last statement before return]
-  lcf_cleanup();
-  return 0;
+    // Hand over control to LCF to handle the program logic
+    if (lcf_start(argc, argv)) {
+        return 1;
+    }
+
+    // LCF cleanup after the program ends
+    lcf_cleanup();
+    return 0;
 }
 
-int (proj_main_loop)(int argc, char *argv[]){
-
-    uint8_t timer_irq_set;  
-    uint8_t keyboard_irq_set;
+/**
+ * @brief Main game loop
+ * @param argc Argument count 
+ * @param argv Argument vector 
+ * @return 0 on success, non-zero otherwise
+ */
+int (proj_main_loop)(int argc, char *argv[]) {
+    uint8_t timer_irq_set, keyboard_irq_set;
     int ipc_status;
     message msg;
 
-    if (timer_subscribe_int(&timer_irq_set)!=0){
+    // Subscribe to IRQs
+    if (timer_subscribe_int(&timer_irq_set) != 0 || keyboard_subscribe_int(&keyboard_irq_set) != 0) {
         return 1;
     }
-    if (keyboard_subscribe_int(&keyboard_irq_set)!=0){
+
+    // Initialize video mode and framebuffer
+    if (build_frame_buffer(DIRECT_600) != 0 || set_mode_graphic(DIRECT_600) != 0) {
         return 1;
     }
-    if (build_frame_buffer(VBE_600p_DC)!=0){
+
+    // Load Wombat sprite
+    Wombat* wombat = loadWombat(10, 10, (xpm_map_t)wombat_moving_4);
+    if (drawWombat(wombat) != 0) {
         return 1;
     }
-    if (set_mode_graphic(VBE_600p_DC)!=0){
-        return 1;
-    }
-    Wombat* wombat = loadWombat(10,10,(xpm_map_t)vomabte_moving_4);
-    if (drawWombat(wombat)!=0){
-        return 1;
-    }
-    int moveDirection=0;
-    while (scanCode!=BREAK_CODE_ESC){
-      if (driver_receive(ANY, &msg, &ipc_status)!=0){
-        continue;
-      }
-      if (is_ipc_notify(ipc_status)){
-        switch(_ENDPOINT_P(msg.m_source)){
-          case HARDWARE:
-            if (msg.m_notify.interrupts & keyboard_irq_set){
-              kbc_ih();
-              moveDirection=moveHandler(scanCode);
-            }
-            if (msg.m_notify.interrupts & timer_irq_set){
-              if (draw_rectangle(0,0,100,100,0x00)!=0){
-                return 1;
-              }
-              if (moveDirection!=0){
-                moveWombat(wombat, moveDirection);
-              }
-              if (drawWombat(wombat)!=0){
-                return 1;
-              }
-            }
-            break;
+    int moveDirection = 0;
+
+    // Main loop to process events until ESC is pressed
+    while (scanCode != BREAK_ESC) {
+        if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+            continue;  
         }
-      }
+        if (is_ipc_notify(ipc_status)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+                case HARDWARE:
+
+                    // Check if it's a keyboard interrupt
+                    if (msg.m_notify.interrupts & keyboard_irq_set) {
+                        kbc_ih();
+                        moveDirection = moveHandler(scanCode);
+                    }
+
+                    // Check if it's a timer interrupt
+                    if (msg.m_notify.interrupts & timer_irq_set) {
+
+                        // Draw a background or other element
+                        if (draw_rectangle(0, 0, 100, 100, 0x00) != 0) {
+                            return 1;
+                        }
+
+                        // If there's a move direction, move Wombat and draw it
+                        if (moveDirection != 0) {
+                            moveWombat(wombat, moveDirection);
+                        }
+                        if (drawWombat(wombat) != 0) {
+                            return 1;
+                        }
+                    }
+                    break;
+            }
+        }
     }
-    if (vg_exit()!=0){
+
+    // Exit graphical mode
+    if (vg_exit() != 0) {
         return 1;
     }
     return 0;

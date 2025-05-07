@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 /**
- * @brief Extracts the LSB from a 16-bit value
+ * @brief Extracts the LSB from a 16-bit value.
  * @param val 16-bit value from which to extract the LSB
  * @param lsb Pointer to store the resulting LSB
  * @return 0 on success, non-zero otherwise

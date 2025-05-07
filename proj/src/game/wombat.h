@@ -1,10 +1,9 @@
 #ifndef WOMBAT_H
 #define WOMBAT_H
-
 #include <lcom/lcf.h>
-#include "video.h"
-#include "sprite.h"
-#include "i8042.h"
+#include "../io/video/video.h"
+#include "../display/sprite.h"
+#include "../io/KBC/i8042.h"
 
 typedef struct {
     uint16_t x;

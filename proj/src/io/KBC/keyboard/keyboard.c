@@ -75,7 +75,7 @@ int (keyboard_restore_int)() {
     }
 
     // Enable interrupts
-    commandByte |= ENABLE_INT;
+    commandByte |= ENABLE_KB;
 
     // Send the write command
     if (write_KBC_data(KBC_CR, KBC_WRITE) != 0) {

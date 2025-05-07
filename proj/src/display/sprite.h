@@ -1,7 +1,7 @@
 #ifndef _SPRITE_H
 #define _SPRITE_H
+#include "../io/video/video.h"
 
-#include "video.h"
 
 typedef struct Sprite{
     uint16_t height;

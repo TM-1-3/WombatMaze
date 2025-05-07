@@ -1,5 +1,4 @@
 #include "wombat.h"
-
 extern uint8_t scanCode;
 
 Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm) {
@@ -34,28 +33,19 @@ int drawWombat(Wombat* wombat){
     return 0;
 }
 
-int moveHandler(uint8_t scanCode){
-    switch (scanCode){
-        case UP_MAKE_CODE:
-           return 1;
-        case UP_BREAK_CODE:
-           return 0;
-        case DOWN_MAKE_CODE:
-           return 2;
-        case DOWN_BREAK_CODE:
-           return 0;
-        case LEFT_MAKE_CODE:
-           return 3;
-        case LEFT_BREAK_CODE:
-           return 0;
-        case RIGHT_MAKE_CODE:
-           return 4;
-        case RIGHT_BREAK_CODE:
-           return 0;
-        default:
-           return -1;
-    }
+int moveHandler(uint8_t scan_code) {
+   bool is_break = (scan_code & MAKE_CODE);
+   uint8_t base_code = scan_code & ~MAKE_CODE;
+
+   switch (base_code) {
+       case MAKE_W: return is_break ? 0 : 1;
+       case MAKE_S: return is_break ? 0 : 2;
+       case MAKE_A: return is_break ? 0 : 3;
+       case MAKE_D: return is_break ? 0 : 4;
+       default: return -1;
+   }
 }
+
 
 void moveWombat(Wombat* wombat, int moveDirection){
     switch (moveDirection){
