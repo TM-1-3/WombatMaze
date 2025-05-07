@@ -25,7 +25,7 @@ Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm);
  * @param wombat A pointer to the wombat object
  * @return The x-coordinate of the wombat
  */
-uint16_t getX(Wombat* wombat);
+uint16_t getWombatX(Wombat* wombat);
 
 
 /**
@@ -40,14 +40,14 @@ void setX(Wombat* wombat, uint16_t x);
  * @param wombat A pointer to the wombat object
  * @return The y-coordinate of the wombat
  */
-uint16_t getY(Wombat* wombat);
+uint16_t getWombatY(Wombat* wombat);
 
 /**
  * @brief Sets the y-coordinate of the wombat
  * @param wombat A pointer to the wombat object
  * @param y The new y-coordinate of the wombat
  */
-void setY(Wombat* wombat, uint16_t y);
+void setWombatY(Wombat* wombat, uint16_t y);
 
 /**
  * @brief Draws the wombat on the screen

@@ -11,7 +11,7 @@ PROG=proj
 .PATH: ${.CURDIR}/display
 
 # source code files to be compiled  serial_pPOrt.Port.c
-SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c
+SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c
 
 # ./controllers/keyboardMouse/KBC.c
 

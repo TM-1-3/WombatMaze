@@ -8,7 +8,9 @@
 #include "io/KBC/mouse/mouse.h"
 #include "display/sprite.h"
 #include "game/wombat.h"
-#include "assets/wombat/wombat_moving_4.xpm"
+#include "game/maze.h"
+#include "../assets/wombat/wombat_moving_4.xpm"
+#include "../assets/maze/maze_1.xpm"
 
 // Global variable for scanCode handling
 volatile extern uint8_t scanCode;
@@ -71,6 +73,17 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
 
+    // Load Maze sprite
+    Maze* maze = loadMaze(0, 0, (xpm_map_t)maze_1);
+    if (maze == NULL) {
+        printf("Error: Failed to load maze sprite.\n");
+        return 1;
+    }
+    if (drawMaze(maze) != 0) {
+        printf("Error: Failed to draw maze.\n");
+        return 1;
+    }
+
     // Load Wombat sprite
     Wombat* wombat = loadWombat(10, 10, (xpm_map_t)wombat_moving_4);
     if (wombat == NULL) {
@@ -111,6 +124,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         // Draw background
                         if (draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLACK) != 0) {
                             printf("Error: Failed to draw background.\n");
+                            return 1;
+                        }
+
+                        // Draw the maze
+                        if (drawMaze(maze) != 0) {
+                            printf("Error: Failed to draw maze.\n");
                             return 1;
                         }
 

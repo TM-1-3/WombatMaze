@@ -24,24 +24,24 @@ Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm) {
 }
 
 // Gets the x-coordinate of the wombat
-uint16_t getX(Wombat* wombat) {
+uint16_t getWombatX(Wombat* wombat) {
     return wombat ? wombat->x : 0;  
 }
 
 // Sets the x-coordinate of the wombat
-void setX(Wombat* wombat, uint16_t x) {
+void setWombatX(Wombat* wombat, uint16_t x) {
     if (wombat) {
         wombat->x = x;
     }
 }
 
 // Gets the y-coordinate of the wombat
-uint16_t getY(Wombat* wombat) {
+uint16_t getWombatY(Wombat* wombat) {
     return wombat ? wombat->y : 0; 
 }
 
 // Sets the y-coordinate of the wombat
-void setY(Wombat* wombat, uint16_t y) {
+void setWombatY(Wombat* wombat, uint16_t y) {
     if (wombat) {
         wombat->y = y;
     }
@@ -84,22 +84,22 @@ void moveWombat(Wombat* wombat, int moveDirection) {
     switch (moveDirection) {
         case 1:
             if (wombat->y > 0) {
-                setY(wombat, wombat->y - 1);
+                setWombatY(wombat, wombat->y - 1);
             }
             break;
         case 2:
             if (wombat->y < SCREEN_HEIGHT) {
-                setY(wombat, wombat->y + 1);
+                setWombatY(wombat, wombat->y + 1);
             }
             break;
         case 3:
             if (wombat->x > 0) {
-                setX(wombat, wombat->x - 1);
+                setWombatX(wombat, wombat->x - 1);
             }
             break;
         case 4:
             if (wombat->x < SCREEN_WIDTH) {
-                setX(wombat, wombat->x + 1);
+                setWombatX(wombat, wombat->x + 1);
             }
             break;
         default:
