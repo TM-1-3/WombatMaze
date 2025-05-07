@@ -52,18 +52,33 @@ int (proj_main_loop)(int argc, char *argv[]) {
     message msg;
 
     // Subscribe to IRQs
-    if (timer_subscribe_int(&timer_irq_set) != 0 || keyboard_subscribe_int(&keyboard_irq_set) != 0) {
+    if (timer_subscribe_int(&timer_irq_set) != 0) {
+        printf("Error: Failed to subscribe timer interrupts.\n");
+        return 1;
+    }
+    if (keyboard_subscribe_int(&keyboard_irq_set) != 0) {
+        printf("Error: Failed to subscribe keyboard interrupts.\n");
         return 1;
     }
 
     // Initialize video mode and framebuffer
-    if (build_frame_buffer(DIRECT_600) != 0 || set_mode_graphic(DIRECT_600) != 0) {
+    if (build_frame_buffer(DIRECT_600) != 0) {
+        printf("Error: Failed to build framebuffer.\n");
+        return 1;
+    }
+    if (set_mode_graphic(DIRECT_600) != 0) {
+        printf("Error: Failed to set graphics mode.\n");
         return 1;
     }
 
     // Load Wombat sprite
     Wombat* wombat = loadWombat(10, 10, (xpm_map_t)wombat_moving_4);
+    if (wombat == NULL) {
+        printf("Error: Failed to load wombat sprite.\n");
+        return 1;
+    }
     if (drawWombat(wombat) != 0) {
+        printf("Error: Failed to draw wombat.\n");
         return 1;
     }
     int moveDirection = 0;
@@ -71,6 +86,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     // Main loop to process events until ESC is pressed
     while (scanCode != BREAK_ESC) {
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+            printf("Warning: driver_receive() failed.\n");
             continue;  
         }
         if (is_ipc_notify(ipc_status)) {
@@ -87,23 +103,29 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     if (msg.m_notify.interrupts & timer_irq_set) {
 
                         // Clear the screen
-                        clear_screen();
-
-                        // Draw a background or other element
-                        if (draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLACK) != 0) {
+                        if (clear_screen() != 0) {
+                            printf("Error: Failed to clear screen.\n");
                             return 1;
                         }
 
-                        // If there's a move direction, move Wombat and draw it
+                        // Draw background
+                        if (draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLACK) != 0) {
+                            printf("Error: Failed to draw background.\n");
+                            return 1;
+                        }
+
+                        // Draw wombat
                         if (moveDirection != 0) {
-                            moveWombat(wombat, moveDirection);
+                            moveWombat(wombat, moveDirection);  // assume safe
                         }
                         if (drawWombat(wombat) != 0) {
+                            printf("Error: Failed to draw wombat after move.\n");
                             return 1;
                         }
 
-                        // Double buffering
+                        // Swap buffers
                         if (swap_buffers() != 0) {
+                            printf("Error: Failed to swap buffers.\n");
                             return 1;
                         }
                     }
@@ -115,10 +137,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
     // Free double buffer
     if (doubleBuffer != NULL) {
         free(doubleBuffer);
+        doubleBuffer = NULL;
     }
 
     // Exit graphical mode
     if (vg_exit() != 0) {
+        printf("Error: Failed to exit graphics mode.\n");
         return 1;
     }
     return 0;
