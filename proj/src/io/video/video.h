@@ -76,4 +76,9 @@ int (draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
  */
 int (swap_buffers)();
 
+/**
+ * @brief Clears the screen
+ */
+void (clear_screen)();
+
 #endif

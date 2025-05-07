@@ -86,8 +86,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     // Check if it's a timer interrupt
                     if (msg.m_notify.interrupts & timer_irq_set) {
 
+                        // Clear the screen
+                        clear_screen();
+
                         // Draw a background or other element
-                        if (draw_rectangle(0, 0, 100, 100, 0x00) != 0) {
+                        if (draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLACK) != 0) {
                             return 1;
                         }
 
@@ -98,10 +101,20 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         if (drawWombat(wombat) != 0) {
                             return 1;
                         }
+
+                        // Double buffering
+                        if (swap_buffers() != 0) {
+                            return 1;
+                        }
                     }
                     break;
             }
         }
+    }
+
+    // Free double buffer
+    if (doubleBuffer != NULL) {
+        free(doubleBuffer);
     }
 
     // Exit graphical mode

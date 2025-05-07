@@ -52,6 +52,14 @@ int (build_frame_buffer)(uint16_t mode){
         printf("Error: Failed to map memory for framebuffer.\n");
         return 1;
     }
+
+    // Double buffering
+    doubleBuffer = malloc(frameSize);
+    if (doubleBuffer == NULL) {
+        printf("Error: Failed to allocate double buffer.\n");
+        return 1;
+    }
+
     //memset(frameBuffer, 0xFF, frameSize); // Optional clearing of the framebuffer
     return 0;
 }
@@ -81,12 +89,12 @@ int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
     }
 
     // Calculate the pixel's index
-    unsigned BytesPerPixel = (modeInfo.BitsPerPixel + 7) / 8;
-    unsigned int pixelIndex = BytesPerPixel * (modeInfo.XResolution * y + x);
+    unsigned bpp = (modeInfo.BitsPerPixel + 7) / 8;
+    unsigned int pixelIndex = bpp * (modeInfo.XResolution * y + x);
 
     // Copy the color value
-    if (memcpy(&frameBuffer[pixelIndex], &color, BytesPerPixel) == NULL){
-        printf("Error: Failed to copy color value to framebuffer.\n");
+    if (memcpy(&doubleBuffer[pixelIndex], &color, bpp) == NULL){
+        printf("Error: Failed to copy color value to doubleBuffer.\n");
         return 1;
     }
     return 0;
@@ -149,3 +157,9 @@ int (swap_buffers)(){
     }
     return 0;
 }
+
+// Clear the screen
+void (clear_screen)(){
+    memset(doubleBuffer, 0, modeInfo.XResolution * modeInfo.YResolution * (modeInfo.BitsPerPixel / 8));
+}
+
