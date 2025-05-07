@@ -1,67 +1,101 @@
 #include "wombat.h"
 extern uint8_t scanCode;
 
+// Loads a wombat object with a sprite
 Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm) {
 
+    // Allocate memory for the wombat
     Wombat* wombat = (Wombat*) malloc(sizeof(Wombat));
+    if (wombat == NULL) {
+        printf("Error: Memory allocation for wombat failed.\n");
+        return NULL;  
+    }
+
+    // Initialize wombat's position and load its sprite
     wombat->x = x;
     wombat->y = y;
     wombat->wombatSprite = loadSprite(xpm);
+    if (wombat->wombatSprite == NULL) {
+        printf("Error: Failed to load wombat sprite.\n");
+        free(wombat);
+        return NULL;
+    }
     return wombat;
 }
 
-uint16_t getX(Wombat* wombat){
-    return wombat->x;
+// Gets the x-coordinate of the wombat
+uint16_t getX(Wombat* wombat) {
+    return wombat ? wombat->x : 0;  
 }
 
-void setX(Wombat* wombat, uint16_t x){
-    wombat->x=x;
-}
-
-uint16_t getY(Wombat* wombat){
-    return wombat->y;
-}
-
-void setY(Wombat* wombat, uint16_t y){
-    wombat->y=y;
-}
-
-int drawWombat(Wombat* wombat){
-    if (drawSprite(wombat->wombatSprite, wombat->x, wombat->y)!=0){
-        return 1;
+// Sets the x-coordinate of the wombat
+void setX(Wombat* wombat, uint16_t x) {
+    if (wombat) {
+        wombat->x = x;
     }
-    return 0;
 }
 
+// Gets the y-coordinate of the wombat
+uint16_t getY(Wombat* wombat) {
+    return wombat ? wombat->y : 0; 
+}
+
+// Sets the y-coordinate of the wombat
+void setY(Wombat* wombat, uint16_t y) {
+    if (wombat) {
+        wombat->y = y;
+    }
+}
+
+// Draws the wombat on the screen
+int drawWombat(Wombat* wombat) {
+    if (wombat == NULL || wombat->wombatSprite == NULL) {
+        printf("Error: Invalid wombat or wombat sprite.\n");
+        return 1; 
+    }
+
+    // Draw the wombat using its sprite at its current position
+    return drawSprite(wombat->wombatSprite, wombat->x, wombat->y);
+}
+
+// Handles movement input for the wombat
 int moveHandler(uint8_t scan_code) {
-   bool is_break = (scan_code & MAKE_CODE);
-   uint8_t base_code = scan_code & ~MAKE_CODE;
+    bool isBreak = (scan_code & MAKE_CODE);  
+    uint8_t baseCode = scan_code & ~MAKE_CODE;  
 
-   switch (base_code) {
-       case MAKE_W: return is_break ? 0 : 1;
-       case MAKE_S: return is_break ? 0 : 2;
-       case MAKE_A: return is_break ? 0 : 3;
-       case MAKE_D: return is_break ? 0 : 4;
-       default: return -1;
-   }
-}
-
-
-void moveWombat(Wombat* wombat, int moveDirection){
-    switch (moveDirection){
-        case 1:
-           setY(wombat, wombat->y-1);
-           break;
-        case 2:
-           setY(wombat, wombat->y+1);
-           break;
-        case 3:
-           setX(wombat, wombat->x-1);
-           break;
-        case 4:
-           setX(wombat, wombat->x+1);
-           break;
+    // Handle movement based on the pressed key
+    switch (baseCode) {
+        case MAKE_W: return isBreak ? 0 : 1; 
+        case MAKE_S: return isBreak ? 0 : 2;  
+        case MAKE_A: return isBreak ? 0 : 3;  
+        case MAKE_D: return isBreak ? 0 : 4;  
+        default: return -1;
     }
 }
 
+// Moves the wombat in a specified direction
+void moveWombat(Wombat* wombat, int moveDirection) {
+    if (wombat == NULL) {
+        printf("Error: Wombat is NULL.\n");
+        return; 
+    }
+
+    // Move wombat based on direction
+    switch (moveDirection) {
+        case 1: 
+            setY(wombat, wombat->y - 1);
+            break;
+        case 2: 
+            setY(wombat, wombat->y + 1);
+            break;
+        case 3:  
+            setX(wombat, wombat->x - 1);
+            break;
+        case 4:  
+            setX(wombat, wombat->x + 1);
+            break;
+        default:
+            printf("Error: Invalid move direction.\n");
+    }
+}
 

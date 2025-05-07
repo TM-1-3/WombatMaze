@@ -50,17 +50,6 @@ int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (draw_horizontal_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 
 /**
- * @brief Draws a filled rectangle on the screen
- * @param x The x-coordinate of the top-left
- * @param y The y-coordinate of the top-left
- * @param width The width of the rectangle
- * @param height The height of the rectangle
- * @param color The color to fill the rectangle
- * @return 0 on success, non-zero otherwise
- */
-int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color);
-
-/**
  * @brief Draws an XPM image
  * @param xpm XPM image to draw
  * @param x X coordinate of the top-left corner
