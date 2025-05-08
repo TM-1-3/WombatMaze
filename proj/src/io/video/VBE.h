@@ -5,8 +5,8 @@
 #include <stdint.h>
 
 /* Screen size */
-#define SCREEN_WIDTH  700    
-#define SCREEN_HEIGHT 500
+#define SCREEN_WIDTH  800    
+#define SCREEN_HEIGHT 600
 
 /* VBE indices */
 #define INDEXED_768       0x105  /* 1024x768 indexed color */

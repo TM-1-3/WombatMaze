@@ -1,6 +1,12 @@
 {
     "files.associations": {
         "atomic": "c",
-        "lcf.h": "c"
+        "lcf.h": "c",
+        "sprite.h": "c",
+        "video.h": "c",
+        "i8042.h": "c",
+        "algorithm": "c",
+        "*.xpm": "c",
+        "stdint.h": "c"
     }
 }

@@ -74,36 +74,45 @@ int moveHandler(uint8_t scan_code) {
 }
 
 // Moves the wombat in a specified direction
-void moveWombat(Wombat* wombat, int moveDirection) {
+void moveWombat(Wombat* wombat, int moveDirection, Maze* maze) {
     if (wombat == NULL) {
         printf("Error: Wombat is NULL.\n");
-        return; 
+        return;
     }
 
-    // Move wombat based on direction
+    // Determine the new position based on the move direction
     switch (moveDirection) {
         case 1:
-            if (wombat->y > 0) {
-                setWombatY(wombat, wombat->y - 1);
+            if (wombat->y > 0 &&
+                isPath(maze, wombat->x, wombat->y - 1) &&
+                isPath(maze, wombat->x + 99, wombat->y - 1)) {
+                wombat->y -= 1;
             }
             break;
         case 2:
-            if (wombat->y < SCREEN_HEIGHT) {
-                setWombatY(wombat, wombat->y + 1);
+            if (wombat->y + 100 < SCREEN_HEIGHT &&
+                isPath(maze, wombat->x, wombat->y + 100) &&
+                isPath(maze, wombat->x + 99, wombat->y + 100)) {
+                wombat->y += 1;
             }
             break;
         case 3:
-            if (wombat->x > 0) {
-                setWombatX(wombat, wombat->x - 1);
+            if (wombat->x > 0 &&
+                isPath(maze, wombat->x - 1, wombat->y) &&
+                isPath(maze, wombat->x - 1, wombat->y + 99)) {
+                wombat->x -= 1;
             }
             break;
         case 4:
-            if (wombat->x < SCREEN_WIDTH) {
-                setWombatX(wombat, wombat->x + 1);
+            if (wombat->x + 100 < SCREEN_WIDTH &&
+                isPath(maze, wombat->x + 100, wombat->y) &&
+                isPath(maze, wombat->x + 100, wombat->y + 99)) {
+                wombat->x += 1;
             }
             break;
         default:
             printf("Error: Invalid move direction.\n");
     }    
 }
+
 

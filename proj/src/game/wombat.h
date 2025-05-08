@@ -3,6 +3,7 @@
 #include <lcom/lcf.h>
 #include "../io/video/video.h"
 #include "../display/sprite.h"
+#include "maze.h"
 #include "../io/KBC/i8042.h"
 
 typedef struct {
@@ -68,6 +69,6 @@ int moveHandler(uint8_t scanCode);
  * @param wombat A pointer to the wombat object
  * @param moveDirection The direction to move the wombat 
  */
-void moveWombat(Wombat* wombat, int moveDirection);
+void moveWombat(Wombat* wombat, int moveDirection, Maze* maze);
 
 #endif

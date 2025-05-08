@@ -85,7 +85,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
 
     // Load Wombat sprite
-    Wombat* wombat = loadWombat(10, 10, (xpm_map_t)wombat_moving_4);
+    Wombat* wombat = loadWombat(0, 0, (xpm_map_t)wombat_moving_4);
     if (wombat == NULL) {
         printf("Error: Failed to load wombat sprite.\n");
         return 1;
@@ -135,7 +135,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         // Draw wombat
                         if (moveDirection != 0) {
-                            moveWombat(wombat, moveDirection);  // assume safe
+                            moveWombat(wombat, moveDirection, maze);  // assume safe
                         }
                         if (drawWombat(wombat) != 0) {
                             printf("Error: Failed to draw wombat after move.\n");

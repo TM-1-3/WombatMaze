@@ -57,3 +57,22 @@ int drawMaze(Maze* maze) {
     // Draw the maze using its sprite at its current position
     return drawSprite(maze->mazeSprite, maze->x, maze->y);
 }
+
+// Function to check if is path
+int isPath(Maze* maze, uint16_t x, uint16_t y) {
+    if (maze == NULL) {
+        printf("Error: Maze sprite is NULL.\n");
+        return 0; 
+    }
+
+    // Get the color of the pixel
+    uint32_t pixelColor = getPixelColor(maze->mazeSprite, x, y); 
+
+    // Check the color of the pixel and return 1 for path, 0 for wall
+    if (pixelColor == 0xFFFFFF) {
+        return 1; 
+    } else if (pixelColor == 0x000000) {
+        return 0;
+    }
+    return 0;
+}

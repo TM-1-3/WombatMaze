@@ -56,4 +56,13 @@ void setMazeY(Maze* maze, uint16_t y);
  */
 int drawMaze(Maze* maze);
 
+/**
+ * @brief Checks if is a path
+ * @param mazeSprite A pointer to the mazew
+ * @param x The x-coordinate 
+ * @param y The y-coordinate
+ * @return 1 if a path, 0 if a wall (#)
+ */
+int isPath(Maze* maze, uint16_t x, uint16_t y);
+
 #endif

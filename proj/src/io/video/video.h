@@ -1,6 +1,7 @@
 #ifndef __VIDEO_H
 #define __VIDEO_H
 #include <lcom/lcf.h>
+#include "../../display/sprite.h"
 #include "VBE.h"
 #include "COLORS.h"
 #include <math.h>
@@ -39,6 +40,15 @@ int (normalize_color)(uint32_t color, uint32_t *newColor);
  * @return 0 on success, non-zero otherwise
  */
 int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
+
+/**
+ * @brief Gets the color of the pixel 
+ * @param sprite Pointer to the Sprite struct
+ * @param x The x-coordinate within the sprite
+ * @param y The y-coordinate within the sprite
+ * @return uint32_t Color of the pixel 
+ */
+uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y);
 
 /**
  * @brief Draws a filled rectangle on the screen.
