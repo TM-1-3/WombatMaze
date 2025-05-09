@@ -84,30 +84,30 @@ void moveWombat(Wombat* wombat, int moveDirection, Maze* maze) {
     switch (moveDirection) {
         case 1:
             if (wombat->y > 0 &&
-                isPath(maze, wombat->x + 25, wombat->y + 25 - 1) &&
-                isPath(maze, wombat->x + 99 - 25, wombat->y + 25 - 1)) {
-                wombat->y -= 1;
+                isPath(maze, wombat->x + 25, wombat->y + 25 - 3) &&
+                isPath(maze, wombat->x + 100 - 25, wombat->y + 25 - 3)) {
+                wombat->y -= 3;
             }
             break;
         case 2:
             if (wombat->y + 100 < SCREEN_HEIGHT &&
-                isPath(maze, wombat->x + 25, wombat->y + 99 - 25 + 1) &&
-                isPath(maze, wombat->x + 99 - 25, wombat->y + 99 - 25 + 1)) {
-                wombat->y += 1;
+                isPath(maze, wombat->x + 25, wombat->y + 100 - 25 + 3) &&
+                isPath(maze, wombat->x + 100 - 25, wombat->y + 100 - 25 + 3)) {
+                wombat->y += 3;
             }
             break;
         case 3:
             if (wombat->x > 0 &&
-                isPath(maze, wombat->x + 25 - 1, wombat->y + 25) &&
-                isPath(maze, wombat->x + 25 - 1, wombat->y + 99 - 25)) {
-                wombat->x -= 1;
+                isPath(maze, wombat->x + 25 - 3, wombat->y + 25) &&
+                isPath(maze, wombat->x + 25 - 3, wombat->y + 100 - 25)) {
+                wombat->x -= 3;
             }
             break;
         case 4:
             if (wombat->x + 100 < SCREEN_WIDTH &&
-                isPath(maze, wombat->x + 99 - 25 + 1, wombat->y + 25) &&
-                isPath(maze, wombat->x + 99 - 25 + 1, wombat->y + 99 - 25)) {
-                wombat->x += 1;
+                isPath(maze, wombat->x + 100 - 25 + 3, wombat->y + 25) &&
+                isPath(maze, wombat->x + 100 - 25 + 3, wombat->y + 100 - 25)) {
+                wombat->x += 3;
             }
             break;
         default:

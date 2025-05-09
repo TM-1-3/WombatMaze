@@ -135,12 +135,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             return 1;
                         }
 
-                        // Draw background
-                        if (draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLACK) != 0) {
-                            printf("Error: Failed to draw background.\n");
-                            return 1;
-                        }
-
                         // Draw the maze
                         if (drawMaze(maze) != 0) {
                             printf("Error: Failed to draw maze.\n");
@@ -165,9 +159,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         // Draw dingoe
                         if (seeDirection != 0) {
                             moveDingoe(dingoe, seeDirection, maze);
-                        }
-                        if (seeDirection != 0) {
-                            moveDingoe(dingoe, seeDirection, maze); 
                         }
                         if (drawDingoe(dingoe) != 0) {
                             printf("Error: Failed to draw dingoe after move.\n");

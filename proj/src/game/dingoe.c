@@ -59,40 +59,40 @@ int drawDingoe(Dingoe* dingoe) {
     return drawSprite(dingoe->dingoeSprite, dingoe->x, dingoe->y);
 }
 
-// Moves the dingoe in a specified direction
+// Moves the wombat in a specified direction
 void moveDingoe(Dingoe* dingoe, int seeDirection, Maze* maze) {
     if (dingoe == NULL) {
         printf("Error: Dingoe is NULL.\n");
         return;
     }
 
-    // Determine the new position based on the move direction
+    // Determine the new position based on the see direction
     switch (seeDirection) {
         case 1:
             if (dingoe->y > 0 &&
-                isPath(maze, dingoe->x, dingoe->y - 1) &&
-                isPath(maze, dingoe->x + 99, dingoe->y - 1)) {
+                isPath(maze, dingoe->x + 25, dingoe->y + 25 - 1) &&
+                isPath(maze, dingoe->x + 100 - 25, dingoe->y + 25 - 1)) {
                 dingoe->y -= 1;
             }
             break;
         case 2:
             if (dingoe->y + 100 < SCREEN_HEIGHT &&
-                isPath(maze, dingoe->x, dingoe->y + 100) &&
-                isPath(maze, dingoe->x + 99, dingoe->y + 100)) {
+                isPath(maze, dingoe->x + 25, dingoe->y + 100 - 25 + 1) &&
+                isPath(maze, dingoe->x + 100 - 25, dingoe->y + 100 - 25 + 1)) {
                 dingoe->y += 1;
             }
             break;
         case 3:
             if (dingoe->x > 0 &&
-                isPath(maze, dingoe->x - 1, dingoe->y) &&
-                isPath(maze, dingoe->x - 1, dingoe->y + 99)) {
+                isPath(maze, dingoe->x + 25 - 1, dingoe->y + 25) &&
+                isPath(maze, dingoe->x + 25 - 1, dingoe->y + 100 - 25)) {
                 dingoe->x -= 1;
             }
             break;
         case 4:
             if (dingoe->x + 100 < SCREEN_WIDTH &&
-                isPath(maze, dingoe->x + 100, dingoe->y) &&
-                isPath(maze, dingoe->x + 100, dingoe->y + 99)) {
+                isPath(maze, dingoe->x + 100 - 25 + 1, dingoe->y + 25) &&
+                isPath(maze, dingoe->x + 100 - 25 + 1, dingoe->y + 100 - 25)) {
                 dingoe->x += 1;
             }
             break;
@@ -106,14 +106,14 @@ int seeWombat(Dingoe* dingoe, Wombat* wombat, Maze* maze) {
     if (!dingoe || !wombat || !maze) return 0; 
 
     // Get the coordinates
-    int tdx = getDingoeX(dingoe); 
-    int tdy = getDingoeY(dingoe);
-    int bdx = getDingoeX(dingoe) + 100; 
-    int bdy = getDingoeY(dingoe) + 100;
-    int twx = getWombatX(wombat);
-    int twy = getWombatY(wombat);
-    int bwx = getWombatX(wombat) + 100;
-    int bwy = getWombatY(wombat) + 100;
+    int tdx = getDingoeX(dingoe) + 25; 
+    int tdy = getDingoeY(dingoe) + 25;
+    int bdx = getDingoeX(dingoe) + 100 - 25; 
+    int bdy = getDingoeY(dingoe) + 100 - 25;
+    int twx = getWombatX(wombat) + 25;
+    int twy = getWombatY(wombat) + 25;
+    int bwx = getWombatX(wombat) + 100 - 25;
+    int bwy = getWombatY(wombat) + 100 - 25;
 
     // Check all horizontally
     for (int i = tdy; i <= bdy; i++) {
@@ -121,16 +121,20 @@ int seeWombat(Dingoe* dingoe, Wombat* wombat, Maze* maze) {
             if (i == j) {
 
                 // Dingoe will move right
-                if (tdx < bwx) {
-                    for (int c = tdx + 100; c <= bwx - 100; c += 25) {
+                if (tdx < bwx &&
+                    isPath(maze, bdx + 50, tdy) &&
+                    isPath(maze, bdx + 50, bdy)) {
+                    for (int c = bdx; c <= twx; c += 25) {
                         if (!isPath(maze, c, i)) return 0; 
                     }
                     return 4; 
                 } 
 
                 // Dingoe will move left
-                if (bdx > twx) {
-                    for (int c = bdx - 100; c >= twx + 100; c -= 25) {
+                if (bdx > twx &&
+                    isPath(maze, tdx - 50, tdy) &&
+                    isPath(maze, tdx - 50, bdy)) {
+                    for (int c = tdx; c >= bwx; c -= 25) {
                         if (!isPath(maze, c, i)) return 0; 
                     }
                     return 3; 
@@ -145,16 +149,20 @@ int seeWombat(Dingoe* dingoe, Wombat* wombat, Maze* maze) {
             if (i == j) {
 
                 // Dingoe will move down
-                if (tdy < bwy) {
-                    for (int c = tdy + 100; c <= bwy - 100; c += 25) {
+                if (tdy < bwy &&
+                    isPath(maze, tdx, bdy + 50) &&
+                    isPath(maze, bdx, bdy + 50)) {
+                    for (int c = bdy; c <= twy; c += 25) {
                         if (!isPath(maze, i, c)) return 0; 
                     }
                     return 2;  
                 } 
 
                 // Dingoe will move up
-                if (bdy > twy) {
-                    for (int c = bdy - 100; c >= twy + 100; c -= 25) {
+                if (bdy > twy &&
+                isPath(maze, tdx, tdy - 50) &&
+                isPath(maze, bdx, tdy - 50)) {
+                    for (int c = tdy; c >= bwy; c -= 25) {
                         if (!isPath(maze, i, c)) return 0; 
                     }
                     return 1;  
@@ -169,13 +177,14 @@ int seeWombat(Dingoe* dingoe, Wombat* wombat, Maze* maze) {
 bool check_collision(Dingoe* dingoe, Wombat* wombat) {
     if (!wombat || !dingoe) return false;
 
-    int wx = getWombatX(wombat);
-    int wy = getWombatY(wombat);
-    int dx = getDingoeX(dingoe);
-    int dy = getDingoeY(dingoe);
+    // Get coordinates
+    int wx = getWombatX(wombat) + 25;
+    int wy = getWombatY(wombat) + 25;
+    int dx = getDingoeX(dingoe) + 25;
+    int dy = getDingoeY(dingoe) + 25; 
 
-    int size = 100; // assuming both are 100x100
-
+    // Check collision
+    int size = 50; 
     return (wx < dx + size &&
             wx + size > dx &&
             wy < dy + size &&

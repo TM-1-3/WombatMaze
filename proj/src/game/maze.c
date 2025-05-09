@@ -68,11 +68,9 @@ int isPath(Maze* maze, uint16_t x, uint16_t y) {
     // Get the color of the pixel
     uint32_t pixelColor = getPixelColor(maze->mazeSprite, x, y); 
 
-    // Check the color of the pixel and return 1 for path, 0 for wall
-    if (pixelColor == 0xFFFFFF) {
+    // Check the color of the pixel 
+    if (pixelColor == 0x000000) {
         return 1; 
-    } else if (pixelColor == 0x000000) {
-        return 0;
-    }
+    } 
     return 0;
 }
