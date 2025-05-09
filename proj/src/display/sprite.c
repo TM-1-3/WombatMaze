@@ -51,3 +51,21 @@ int drawSprite(Sprite *sprite, int x, int y) {
     }
     return 0;  
 }
+
+// Get pixel color
+uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y) {
+
+    // Check if null
+    if (sprite == NULL || sprite->colors == NULL) {
+        printf("Error: Invalid sprite or sprite colors.\n");
+        return 0;
+    }
+
+    // Check dimensions
+    if (x >= sprite->width || y >= sprite->height) {
+        printf("Error: Coordinates out of bounds (x: %d, y: %d)\n", x, y);
+        return 0; 
+    }
+    return sprite->colors[y * sprite->width + x];
+}
+

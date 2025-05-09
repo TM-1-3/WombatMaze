@@ -34,7 +34,7 @@ uint16_t getWombatX(Wombat* wombat);
  * @param wombat A pointer to the wombat object
  * @param x The new x-coordinate of the wombat
  */
-void setX(Wombat* wombat, uint16_t x);
+void setWombatX(Wombat* wombat, uint16_t x);
 
 /**
  * @brief Gets the y-coordinate of the wombat

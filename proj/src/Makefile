@@ -1,6 +1,7 @@
-# name of the program (Minix service)
+# Name of the program (Minix service)
 PROG=proj
 
+# Search paths
 .PATH: ${.CURDIR}/io/
 .PATH: ${.CURDIR}/io/KBC
 .PATH: ${.CURDIR}/io/KBC/keyboard
@@ -10,18 +11,21 @@ PROG=proj
 .PATH: ${.CURDIR}/game
 .PATH: ${.CURDIR}/display
 
-# source code files to be compiled  serial_pPOrt.Port.c
-SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c
+# Source files to be compiled
+SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c dingoe.c
 
-# ./controllers/keyboardMouse/KBC.c
+# Object file output dir
+OBJDIR = obj
 
-# additional compilation flags
-# "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
+# Tell make to output object files into obj/
+MAKEOBJDIRPREFIX = ${.CURDIR}/${OBJDIR}
+
+# Compilation flags
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_
 
-# list of library dependencies
+# Library dependencies
 DPADD += ${LIBLCF}
 LDADD += -llcf -lxpm -llm
 
-# include LCOM's makefile that does all the "heavy lifting"
+# Include LCOM's Makefile
 .include <minix.lcom.mk>

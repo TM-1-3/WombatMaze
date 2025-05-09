@@ -1,5 +1,5 @@
-#ifndef _SPRITE_H
-#define _SPRITE_H
+#ifndef SPRITE_H
+#define SPRITE_H
 #include "../io/video/video.h"
 
 // Sprite
@@ -24,6 +24,15 @@ Sprite *loadSprite(xpm_map_t xpm);
  * @return 0 on success, non-zero otherwise
  */
 int drawSprite(Sprite *sprite, int x, int y);
+
+/**
+ * @brief Gets the color of the pixel 
+ * @param sprite Pointer to the Sprite struct
+ * @param x The x-coordinate within the sprite
+ * @param y The y-coordinate within the sprite
+ * @return uint32_t Color of the pixel 
+ */
+uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y);
 
 #endif
 

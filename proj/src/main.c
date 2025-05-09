@@ -8,11 +8,13 @@
 #include "io/KBC/mouse/mouse.h"
 #include "display/sprite.h"
 #include "game/wombat.h"
+#include "game/dingoe.h"
 #include "game/maze.h"
 #include "../assets/wombat/wombat_moving_4.xpm"
+#include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
 
-// Global variable for scanCode handling
+// Global variable
 volatile extern uint8_t scanCode;
 
 /**
@@ -96,6 +98,18 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
     int moveDirection = 0;
 
+    // Load Dingoe sprite
+    Dingoe* dingoe = loadDingoe(200, 400, (xpm_map_t)dingoe_moving_4);
+    if (dingoe == NULL) {
+        printf("Error: Failed to load dingoe sprite.\n");
+        return 1;
+    }
+    if (drawDingoe(dingoe) != 0) {
+        printf("Error: Failed to draw dingoe.\n");
+        return 1;
+    }
+    int seeDirection = 0;
+
     // Main loop to process events until ESC is pressed
     while (scanCode != BREAK_ESC) {
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
@@ -135,13 +149,37 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         // Draw wombat
                         if (moveDirection != 0) {
-                            moveWombat(wombat, moveDirection, maze);  // assume safe
+                            moveWombat(wombat, moveDirection, maze); 
                         }
                         if (drawWombat(wombat) != 0) {
                             printf("Error: Failed to draw wombat after move.\n");
                             return 1;
                         }
 
+                        // Check if it sees wombat
+                        int newDirection = seeWombat(dingoe, wombat, maze);
+                        if (newDirection != 0) {
+                            seeDirection = newDirection;
+                        }
+
+                        // Draw dingoe
+                        if (seeDirection != 0) {
+                            moveDingoe(dingoe, seeDirection, maze);
+                        }
+                        if (seeDirection != 0) {
+                            moveDingoe(dingoe, seeDirection, maze); 
+                        }
+                        if (drawDingoe(dingoe) != 0) {
+                            printf("Error: Failed to draw dingoe after move.\n");
+                            return 1;
+                        }
+
+                        // Check collision
+                        if (check_collision(dingoe, wombat)) {
+                            printf("💥 Game Over! Wombat got caught!\n");
+                            break;
+                        }
+                        
                         // Swap buffers
                         if (swap_buffers() != 0) {
                             printf("Error: Failed to swap buffers.\n");
