@@ -14,8 +14,11 @@
 #include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
 
+
+
 // Global variable
 volatile extern uint8_t scanCode;
+extern uint32_t timerCounter;
 
 /**
  * @brief Starts the program
@@ -75,6 +78,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
 
+    // Load digit sprites
+    Sprite **digits = loadDigitSprites();
+    if (digits == NULL) {
+        printf("Error: Failed to load digit sprites.\n");
+        return 1;
+    }
     // Load Maze sprite
     Maze* maze = loadMaze(0, 0, (xpm_map_t)maze_1);
     if (maze == NULL) {
@@ -128,10 +137,31 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                     // Check if it's a timer interrupt
                     if (msg.m_notify.interrupts & timer_irq_set) {
+                        
+
 
                         // Clear the screen
                         if (clear_screen() != 0) {
                             printf("Error: Failed to clear screen.\n");
+                            return 1;
+                        }
+
+                        timer_int_handler();
+
+                        int elapsed_seconds = timerCounter / 60;
+                        int time_left = 20 - elapsed_seconds;
+                        
+                        // Draw time left
+                        if (drawNumber(digits, time_left, 790, 10) != 0) {
+                            printf("Error: Failed to draw time.\n");
+                            return 1;
+                        }           
+                                                
+                        // Time's up game over
+                        if (time_left <= 0) {
+                            time_left = 0;
+                            printf("Time's up! Game Over\n");
+
                             return 1;
                         }
 
@@ -140,6 +170,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("Error: Failed to draw maze.\n");
                             return 1;
                         }
+                        
 
                         // Draw wombat
                         if (moveDirection != 0) {
@@ -187,6 +218,15 @@ int (proj_main_loop)(int argc, char *argv[]) {
         free(doubleBuffer);
         doubleBuffer = NULL;
     }
+
+    // Libera os sprites dos dígitos
+    for (int i = 0; i < 10; i++) {
+        if (digits[i] != NULL) {
+            free(digits[i]->colors);
+            free(digits[i]);
+        }
+    }
+    free(digits);
 
     // Exit graphical mode
     if (vg_exit() != 0) {

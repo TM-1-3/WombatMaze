@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 #include <lcom/timer.h>
 #include <stdint.h>
+#include "timer.h"
 #include "i8254.h"
 
 // Setup

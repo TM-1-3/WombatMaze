@@ -2,6 +2,16 @@
 #include <stdlib.h>  // for malloc
 #include <stdint.h>  // for uint32_t
 #include <stdio.h>   // for printf
+#include "../../assets/numbers/zero.xpm"
+#include "../../assets/numbers/one.xpm"
+#include "../../assets/numbers/two.xpm"
+#include "../../assets/numbers/three.xpm"
+#include "../../assets/numbers/four.xpm"
+#include "../../assets/numbers/five.xpm"
+#include "../../assets/numbers/six.xpm"
+#include "../../assets/numbers/seven.xpm"
+#include "../../assets/numbers/eight.xpm"
+#include "../../assets/numbers/nine.xpm"
 
 // Loads a sprite from an XPM map
 Sprite *loadSprite(xpm_map_t xpm) {
@@ -69,3 +79,50 @@ uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y) {
     return sprite->colors[y * sprite->width + x];
 }
 
+Sprite **loadDigitSprites() {
+    Sprite **digits = malloc(10 * sizeof(Sprite*));
+    if (!digits) return NULL;
+
+    xpm_map_t xpms[] = {zero_xpm, one_xpm, two_xpm, three_xpm, four_xpm,
+                       five_xpm, six_xpm, seven_xpm, eight_xpm, nine_xpm};
+
+    for (int i = 0; i < 10; i++) {
+        digits[i] = loadSprite(xpms[i]);
+        if (!digits[i]) {
+            printf("Failed to load digit %d sprite\n", i);
+
+            for (int j = 0; j < i; j++) {
+                free(digits[j]->colors);
+                free(digits[j]);
+            }
+            free(digits);
+            return NULL;
+        }
+    }
+    return digits;
+}
+
+int drawNumber(Sprite **digits, int number, int x, int y) {
+    if (number < 0) return 1;
+    
+    char buffer[10];
+    snprintf(buffer, sizeof(buffer), "%d", number);
+
+    int num_digits = strlen(buffer);
+    int digit_width = digits[0]->width;
+    int spacing = 2;
+
+    int total_width = num_digits * digit_width + (num_digits - 1) * spacing;
+    int x_start = x - total_width;
+    
+    for (int i = 0; buffer[i] != '\0'; i++) {
+        int digit = buffer[i] - '0';
+        if (digit < 0 || digit > 9) continue;
+        
+        int x_pos = x_start + i * (digit_width + spacing);
+        if (drawSprite(digits[digit], x_pos, y) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}

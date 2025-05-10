@@ -34,5 +34,21 @@ int drawSprite(Sprite *sprite, int x, int y);
  */
 uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y);
 
+/**
+ * @brief Loads all digit sprites (0-9)
+ * @return Array of Sprite pointers for digits 0-9
+ */
+Sprite **loadDigitSprites();
+
+/**
+ * @brief Draws a number on the screen
+ * @param digits Array of digit sprites (0-9)
+ * @param number The number to draw
+ * @param x The x-coordinate for the leftmost digit
+ * @param y The y-coordinate for the digits
+ * @return 0 on success, non-zero otherwise
+ */
+int drawNumber(Sprite **digits, int number, int x, int y);
+
 #endif
 
