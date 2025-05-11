@@ -79,7 +79,6 @@ int (mouse_write_data)(uint8_t command){
 
         // If ACK received, success
         if (responseMouse == MOUSE_ACK) return 0;
-        printf("Error: Mouse did not acknowledge command 0x%X. Response: 0x%X.\n", command, responseMouse);
     }
     printf("Error: Mouse failed to acknowledge command 0x%X after %d attempts.\n", command, MAX_ATTEMPTS);
     return 1;

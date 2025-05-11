@@ -49,6 +49,10 @@
 
 /* Mouse Commands */
 #define MOUSE_WRITE_CMD 0xD4    /* Write next byte to mouse */
+#define ENABLE_STREAM_MODE 0xEA  /* Enables stream mode */
+#define ENABLE_DATA_REPORT 0xF4  /* Enables data report */
+#define DISABLE_DATA_REPORT 0xF5  /* Disables daa report */
+
 
 /* Mouse Responses */
 #define MOUSE_ACK       0xFA  /* Acknowledge */
