@@ -149,7 +149,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         timer_int_handler();
 
                         int elapsed_seconds = timerCounter / 60;
-                        int time_left = 20 - elapsed_seconds;
+                        int time_left = 200 - elapsed_seconds;
                         
                         // Draw time left
                         if (drawNumber(digits, time_left, 790, 10) != 0) {
