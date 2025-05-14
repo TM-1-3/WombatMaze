@@ -12,7 +12,7 @@ PROG=proj
 .PATH: ${.CURDIR}/display
 
 # Source files to be compiled
-SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c dingoe.c
+SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c dingoe.c cursor.c
 
 # Object file output dir
 OBJDIR = obj

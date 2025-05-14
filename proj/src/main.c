@@ -10,15 +10,19 @@
 #include "game/wombat.h"
 #include "game/dingoe.h"
 #include "game/maze.h"
+#include "game/cursor.h"
 #include "../assets/wombat/wombat_moving_4.xpm"
 #include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
+#include "../assets/cursor/cursor.xpm"
 
 
 
 // Global variable
 volatile extern uint8_t scanCode;
 extern uint32_t timerCounter;
+extern struct packet mousePacket;
+extern uint8_t byteIndex;
 
 /**
  * @brief Starts the program
@@ -54,10 +58,20 @@ int (main)(int argc, char *argv[]) {
  * @return 0 on success, non-zero otherwise
  */
 int (proj_main_loop)(int argc, char *argv[]) {
-    uint8_t timer_irq_set, keyboard_irq_set;
+    uint8_t timer_irq_set, keyboard_irq_set, mouse_irq_set;
     int ipc_status;
     message msg;
 
+    // Enable stream mode and data report in the mouse
+    if (mouse_write_data(ENABLE_STREAM_MODE)!=0){
+        return 1;
+    }
+    if (mouse_write_data(ENABLE_DATA_REPORT)!=0){
+        return 1;
+    }
+    if (timer_set_frequency(0,30)!=0){
+        return 1;
+    }
     // Subscribe to IRQs
     if (timer_subscribe_int(&timer_irq_set) != 0) {
         printf("Error: Failed to subscribe timer interrupts.\n");
@@ -67,6 +81,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to subscribe keyboard interrupts.\n");
         return 1;
     }
+    if (mouse_subscribe_int(&mouse_irq_set)!=0) {
+        printf("Error: Failed to subscribe mouse interrupts.\n");
+        return 1;
+    }
+
 
     // Initialize video mode and framebuffer
     if (build_frame_buffer(DIRECT_600) != 0) {
@@ -119,8 +138,16 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
     int seeDirection = 0;
 
+    Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
+    if (cursor == NULL){
+        printf("Error: Failed to load cursor sprite.\n");
+        return 1;
+    }
+    bool gameOver=false;
+
+
     // Main loop to process events until ESC is pressed
-    while (scanCode != BREAK_ESC) {
+    while (scanCode != BREAK_ESC && !gameOver) {
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
             printf("Warning: driver_receive() failed.\n");
             continue;  
@@ -133,6 +160,38 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
                         moveDirection = moveHandler(scanCode);
+                    }
+
+                    // Check if it´s a mouse interrupt
+                    if (msg.m_notify.interrupts & mouse_irq_set){
+                        mouse_ih();
+                        mouse_sync_bytes();
+                        if (byteIndex==0){
+                            mouse_build_packet();
+                            if (mousePacket.x_ov || mousePacket.y_ov){
+                                break;
+                            }
+                            if (mousePacket.lb){
+                                gameOver=true;
+                            }
+                            int mouseX = getCursorX(cursor) + mousePacket.delta_x;
+                            int mouseY = getCursorY(cursor) - mousePacket.delta_y;
+
+                            if (mouseX < 0 && !mousePacket.x_ov){
+                                mouseX = 0;
+                            }
+                            else if (mouseX > SCREEN_WIDTH-cursor->cursorSprite->width && !mousePacket.x_ov) {
+                                mouseX = SCREEN_WIDTH - cursor->cursorSprite->width;
+                            }
+                            if (mouseY < 0 && !mousePacket.y_ov) {
+                                mouseY = 0;
+                            }
+                            else if (mouseY > SCREEN_HEIGHT-cursor->cursorSprite->height && !mousePacket.y_ov) {
+                                mouseY = SCREEN_HEIGHT - cursor->cursorSprite->height;
+                            }
+                            setCursorX(cursor, mouseX);
+                            setCursorY(cursor, mouseY);
+                        }   
                     }
 
                     // Check if it's a timer interrupt
@@ -162,7 +221,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             time_left = 0;
                             printf("Time's up! Game Over\n");
 
-                            return 1;
+                            gameOver=true;
                         }
 
                         // Draw the maze
@@ -178,6 +237,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
                         if (drawWombat(wombat) != 0) {
                             printf("Error: Failed to draw wombat after move.\n");
+                            return 1;
+                        }
+                        if (drawCursor(cursor)!=0){
+                            printf("Error: Failed to draw cursor.\n");
                             return 1;
                         }
 
@@ -199,7 +262,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         // Check collision
                         if (check_collision(dingoe, wombat)) {
                             printf("💥 Game Over! Wombat got caught!\n");
-                            break;
+                            gameOver=true;
                         }
                         
                         // Swap buffers
@@ -233,5 +296,19 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to exit graphics mode.\n");
         return 1;
     }
+
+    if (timer_unsubscribe_int()!=0){
+        return 1;
+    }
+    if (keyboard_unsubscribe_int()!=0){
+        return 1;
+    }
+    if (mouse_unsubscribe_int()!=0){
+        return 1;
+    }
+    if (mouse_write_data(DISABLE_DATA_REPORT)!=0){
+        return 1;
+    }
+
     return 0;
 }

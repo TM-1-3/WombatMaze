@@ -79,6 +79,7 @@ uint32_t getPixelColor(Sprite* sprite, uint16_t x, uint16_t y) {
     return sprite->colors[y * sprite->width + x];
 }
 
+// Loads digits sprites from an XPM map
 Sprite **loadDigitSprites() {
     Sprite **digits = malloc(10 * sizeof(Sprite*));
     if (!digits) return NULL;
@@ -102,6 +103,7 @@ Sprite **loadDigitSprites() {
     return digits;
 }
 
+//draw the numbers for the timer
 int drawNumber(Sprite **digits, int number, int x, int y) {
     if (number < 0) return 1;
     
