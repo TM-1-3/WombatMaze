@@ -4,6 +4,7 @@
 #include "../io/video/video.h"
 #include "../display/sprite.h"
 #include "maze.h"
+#include "obstacle.h"
 #include "../io/KBC/i8042.h"
 
 typedef struct {
@@ -68,7 +69,9 @@ int moveHandler(uint8_t scanCode);
  * @brief Moves the wombat in a specified direction
  * @param wombat A pointer to the wombat object
  * @param moveDirection The direction to move the wombat 
+ * @param obstacles An array of pointers to obstacle objects
+ * @param num_obstacles The number of obstacles in the array
  */
-void moveWombat(Wombat* wombat, int moveDirection, Maze* maze);
+void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacles[], int num_obstacles);
 
 #endif

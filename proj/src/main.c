@@ -10,11 +10,13 @@
 #include "game/wombat.h"
 #include "game/dingoe.h"
 #include "game/maze.h"
+#include "game/obstacle.h"
 #include "game/cursor.h"
 #include "../assets/wombat/wombat_moving_4.xpm"
 #include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
+#include "../assets/obstacle/obstacle1.xpm"
 
 
 
@@ -58,6 +60,8 @@ int (main)(int argc, char *argv[]) {
  * @return 0 on success, non-zero otherwise
  */
 int (proj_main_loop)(int argc, char *argv[]) {
+    #define MAX_OBSTACLES 2
+    Obstacle* obstacles[MAX_OBSTACLES];
     uint8_t timer_irq_set, keyboard_irq_set, mouse_irq_set;
     int ipc_status;
     message msg;
@@ -103,6 +107,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load digit sprites.\n");
         return 1;
     }
+
     // Load Maze sprite
     Maze* maze = loadMaze(0, 0, (xpm_map_t)maze_1);
     if (maze == NULL) {
@@ -112,6 +117,17 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (drawMaze(maze) != 0) {
         printf("Error: Failed to draw maze.\n");
         return 1;
+    }
+
+    // Load Obstacle sprites
+    for (int i = 0; i < MAX_OBSTACLES; i++) {
+        uint16_t x = 100 + i * 50; // Podes ajustar posições
+        uint16_t y = 250;
+        obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
+        if (obstacles[i] == NULL) {
+            printf("Error: Failed to load obstacle %d\n", i);
+            return 1;
+        }
     }
 
     // Load Wombat sprite
@@ -191,6 +207,9 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             }
                             setCursorX(cursor, mouseX);
                             setCursorY(cursor, mouseY);
+                            for (int i = 0; i < MAX_OBSTACLES; i++) {
+                                update_obstacle_with_cursor(obstacles[i], cursor, &mousePacket);
+                            }
                         }   
                     }
 
@@ -208,7 +227,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         timer_int_handler();
 
                         int elapsed_seconds = timerCounter / 60;
-                        int time_left = 200 - elapsed_seconds;
+                        int time_left = 10 - elapsed_seconds;
                         
                         // Draw time left
                         if (drawNumber(digits, time_left, 790, 10) != 0) {
@@ -229,11 +248,20 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("Error: Failed to draw maze.\n");
                             return 1;
                         }
-                        
 
+                        // Draw obtacles
+                        for (int i = 0; i < MAX_OBSTACLES; i++) {
+                            if (obstacles[i]->active) {
+                                if (draw_obstacle(obstacles[i]) != 0) {
+                                    printf("Error: Failed to draw obstacle %d.\n", i);
+                                    return 1;
+                                }
+                            }
+                        }
+                        
                         // Draw wombat
                         if (moveDirection != 0) {
-                            moveWombat(wombat, moveDirection, maze); 
+                            moveWombat(wombat, moveDirection, maze, obstacles, MAX_OBSTACLES);
                         }
                         if (drawWombat(wombat) != 0) {
                             printf("Error: Failed to draw wombat after move.\n");
@@ -282,7 +310,17 @@ int (proj_main_loop)(int argc, char *argv[]) {
         doubleBuffer = NULL;
     }
 
-    // Libera os sprites dos dígitos
+    // Free obstales
+    for (int i = 0; i < MAX_OBSTACLES; i++) {
+        if (obstacles[i] != NULL) {
+            if (obstacles[i]->obstacleSprite != NULL) {
+                free(obstacles[i]->obstacleSprite);
+            }
+            free(obstacles[i]);
+        }
+    }
+
+    // Free digits
     for (int i = 0; i < 10; i++) {
         if (digits[i] != NULL) {
             free(digits[i]->colors);
