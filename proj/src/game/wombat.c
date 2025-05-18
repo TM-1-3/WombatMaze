@@ -74,45 +74,68 @@ int moveHandler(uint8_t scan_code) {
 }
 
 // Moves the wombat in a specified direction
-void moveWombat(Wombat* wombat, int moveDirection, Maze* maze) {
+void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacles[], int num_obstacles) {
     if (wombat == NULL) {
         printf("Error: Wombat is NULL.\n");
         return;
     }
 
-    // Determine the new position based on the move direction
+    uint16_t x1, y1, x2, y2;
+
     switch (moveDirection) {
         case 1:
+            x1 = wombat->x + 25;
+            y1 = wombat->y + 25 - 3;
+            x2 = wombat->x + 100 - 25;
+            y2 = wombat->y + 25 - 3;
             if (wombat->y > 0 &&
-                isPath(maze, wombat->x + 25, wombat->y + 25 - 3) &&
-                isPath(maze, wombat->x + 100 - 25, wombat->y + 25 - 3)) {
+                isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
+                !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
+                !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
                 wombat->y -= 3;
             }
             break;
+
         case 2:
+            x1 = wombat->x + 25;
+            y1 = wombat->y + 100 - 25 + 3;
+            x2 = wombat->x + 100 - 25;
+            y2 = wombat->y + 100 - 25 + 3;
             if (wombat->y + 100 < SCREEN_HEIGHT &&
-                isPath(maze, wombat->x + 25, wombat->y + 100 - 25 + 3) &&
-                isPath(maze, wombat->x + 100 - 25, wombat->y + 100 - 25 + 3)) {
+                isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
+                !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
+                !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
                 wombat->y += 3;
             }
             break;
-        case 3:
+
+        case 3: 
+            x1 = wombat->x + 25 - 3;
+            y1 = wombat->y + 25;
+            x2 = wombat->x + 25 - 3;
+            y2 = wombat->y + 100 - 25;
             if (wombat->x > 0 &&
-                isPath(maze, wombat->x + 25 - 3, wombat->y + 25) &&
-                isPath(maze, wombat->x + 25 - 3, wombat->y + 100 - 25)) {
+                isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
+                !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
+                !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
                 wombat->x -= 3;
             }
             break;
-        case 4:
+
+        case 4: 
+            x1 = wombat->x + 100 - 25 + 3;
+            y1 = wombat->y + 25;
+            x2 = wombat->x + 100 - 25 + 3;
+            y2 = wombat->y + 100 - 25;
             if (wombat->x + 100 < SCREEN_WIDTH &&
-                isPath(maze, wombat->x + 100 - 25 + 3, wombat->y + 25) &&
-                isPath(maze, wombat->x + 100 - 25 + 3, wombat->y + 100 - 25)) {
+                isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
+                !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
+                !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
                 wombat->x += 3;
             }
             break;
+
         default:
             printf("Error: Invalid move direction.\n");
-    }    
+    }
 }
-
-
