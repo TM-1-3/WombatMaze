@@ -20,7 +20,7 @@ typedef struct {
  * @param xpm The XPM map used to load the dingoe's sprite
  * @return A pointer to the Dingoe structure
  */
-Dingoe* loadDingoe(uint16_t x, uint16_t y, xpm_map_t xpm);
+Dingoe* loadDingoe(uint16_t x, uint16_t y, Sprite* sprite);
 
 /**
  * @brief Gets the x-coordinate of the dingoe

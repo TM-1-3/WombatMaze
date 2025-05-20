@@ -3,7 +3,7 @@
 extern uint8_t scanCode;
 
 // Loads a dingoe object with a sprite
-Dingoe* loadDingoe(uint16_t x, uint16_t y, xpm_map_t xpm) {
+Dingoe* loadDingoe(uint16_t x, uint16_t y, Sprite* sprite) {
 
     // Allocate memory for the dingoe
     Dingoe* dingoe = (Dingoe*) malloc(sizeof(Dingoe));
@@ -15,7 +15,7 @@ Dingoe* loadDingoe(uint16_t x, uint16_t y, xpm_map_t xpm) {
     // Initialize dingoe's position and load its sprite
     dingoe->x = x;
     dingoe->y = y;
-    dingoe->dingoeSprite = loadSprite(xpm);
+    dingoe->dingoeSprite = sprite;
     if (dingoe->dingoeSprite == NULL) {
         printf("Error: Failed to load dingoe sprite.\n");
         free(dingoe);
