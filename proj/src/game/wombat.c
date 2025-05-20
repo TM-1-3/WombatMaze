@@ -2,7 +2,7 @@
 extern uint8_t scanCode;
 
 // Loads a wombat object with a sprite
-Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm) {
+Wombat* loadWombat(uint16_t x, uint16_t y, Sprite* sprite) {
 
     // Allocate memory for the wombat
     Wombat* wombat = (Wombat*) malloc(sizeof(Wombat));
@@ -14,7 +14,7 @@ Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm) {
     // Initialize wombat's position and load its sprite
     wombat->x = x;
     wombat->y = y;
-    wombat->wombatSprite = loadSprite(xpm);
+    wombat->wombatSprite = sprite;
     if (wombat->wombatSprite == NULL) {
         printf("Error: Failed to load wombat sprite.\n");
         free(wombat);

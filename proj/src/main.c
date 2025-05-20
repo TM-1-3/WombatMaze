@@ -11,12 +11,11 @@
 #include "game/dingoe.h"
 #include "game/maze.h"
 #include "game/cursor.h"
+#include "../assets/wombat/wombat_moving_1.xpm"
 #include "../assets/wombat/wombat_moving_4.xpm"
 #include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
-
-
 
 // Global variable
 volatile extern uint8_t scanCode;
@@ -114,17 +113,26 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
 
-    // Load Wombat sprite
-    Wombat* wombat = loadWombat(0, 0, (xpm_map_t)wombat_moving_4);
-    if (wombat == NULL) {
+    // Load Wombats sprite
+    Sprite* wombatSprite1 = loadSprite((xpm_map_t)wombat_moving_1);
+    Sprite* wombatSprite2 = loadSprite((xpm_map_t)wombat_moving_4);
+    Wombat* currentWombat = loadWombat(0, 0, wombatSprite1);
+
+
+    // Draw wombat
+    if (currentWombat == NULL) {
         printf("Error: Failed to load wombat sprite.\n");
         return 1;
     }
-    if (drawWombat(wombat) != 0) {
+    if (drawWombat(currentWombat) != 0) {
         printf("Error: Failed to draw wombat.\n");
         return 1;
     }
     int moveDirection = 0;
+
+    // Toggle wombats
+    int wombat_counter = 0;
+    bool wombat_toggle = false;
 
     // Load Dingoe sprite
     Dingoe* dingoe = loadDingoe(200, 400, (xpm_map_t)dingoe_moving_4);
@@ -138,6 +146,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
     int seeDirection = 0;
 
+    // Toggle dingoes
+    int dingoe_counter = 0;
+    bool wombat_toggle = false;
+
+    // Cursor
     Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
     if (cursor == NULL){
         printf("Error: Failed to load cursor sprite.\n");
@@ -197,16 +210,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     // Check if it's a timer interrupt
                     if (msg.m_notify.interrupts & timer_irq_set) {
                         
-
-
                         // Clear the screen
                         if (clear_screen() != 0) {
                             printf("Error: Failed to clear screen.\n");
                             return 1;
                         }
-
                         timer_int_handler();
-
                         int elapsed_seconds = timerCounter / 60;
                         int time_left = 200 - elapsed_seconds;
                         
@@ -229,13 +238,17 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("Error: Failed to draw maze.\n");
                             return 1;
                         }
-                        
 
                         // Draw wombat
                         if (moveDirection != 0) {
-                            moveWombat(wombat, moveDirection, maze); 
+                            wombat_counter++;
+                            if (wombat_counter % 5 == 0) {
+                                wombat_toggle = !wombat_toggle;
+                                currentWombat->wombatSprite = wombat_toggle ? wombatSprite2 : wombatSprite1;
+                            }
+                            moveWombat(currentWombat, moveDirection, maze);
                         }
-                        if (drawWombat(wombat) != 0) {
+                        if (drawWombat(currentWombat) != 0) {
                             printf("Error: Failed to draw wombat after move.\n");
                             return 1;
                         }
@@ -245,7 +258,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
 
                         // Check if it sees wombat
-                        int newDirection = seeWombat(dingoe, wombat, maze);
+                        int newDirection = seeWombat(dingoe, currentWombat, maze);
                         if (newDirection != 0) {
                             seeDirection = newDirection;
                         }
@@ -260,7 +273,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
 
                         // Check collision
-                        if (check_collision(dingoe, wombat)) {
+                        if (check_collision(dingoe, currentWombat)) {
                             printf("💥 Game Over! Wombat got caught!\n");
                             gameOver=true;
                         }

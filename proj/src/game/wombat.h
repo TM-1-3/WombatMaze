@@ -19,7 +19,7 @@ typedef struct {
  * @param xpm The XPM map used to load the wombat's sprite
  * @return A pointer to the Wombat structure
  */
-Wombat* loadWombat(uint16_t x, uint16_t y, xpm_map_t xpm);
+Wombat* loadWombat(uint16_t x, uint16_t y, Sprite* sprite);
 
 /**
  * @brief Gets the x-coordinate of the wombat
