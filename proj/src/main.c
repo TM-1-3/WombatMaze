@@ -67,15 +67,16 @@ int (proj_main_loop)(int argc, char *argv[]) {
     message msg;
 
     // Enable stream mode and data report in the mouse
-    if (mouse_write_data(ENABLE_STREAM_MODE)!=0){
+    if (mouse_write_data(ENABLE_STREAM_MODE) != 0 || mouse_write_data(ENABLE_DATA_REPORT) != 0) {
+        printf("Error: Failed to initialize mouse.\n");
         return 1;
     }
-    if (mouse_write_data(ENABLE_DATA_REPORT)!=0){
+
+    // Set frequency
+    if (timer_set_frequency(0, 30)!=0){
         return 1;
     }
-    if (timer_set_frequency(0,30)!=0){
-        return 1;
-    }
+
     // Subscribe to IRQs
     if (timer_subscribe_int(&timer_irq_set) != 0) {
         printf("Error: Failed to subscribe timer interrupts.\n");
@@ -133,8 +134,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
     // Load Obstacle sprites
     for (int i = 0; i < MAX_OBSTACLES; i++) {
-        uint16_t x = 100 + i * 50; // Podes ajustar posições
-        uint16_t y = 250;
+        uint16_t x = 200 + i * 50; // Podes ajustar posições
+        uint16_t y = 500;
         obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
         if (obstacles[i] == NULL) {
             printf("Error: Failed to load obstacle %d\n", i);
@@ -232,7 +233,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
                         timer_int_handler();
                         int elapsed_seconds = timerCounter / 60;
-                        int time_left = 10 - elapsed_seconds;
+                        int time_left = 100 - elapsed_seconds;
                         
                         // Draw time left
                         if (drawNumber(digits, time_left, 790, 10) != 0) {
@@ -260,7 +261,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 wombat_toggle = !wombat_toggle;
                                 currentWombat->wombatSprite = wombat_toggle ? wombatSprite2 : wombatSprite1;
                             }
-                            moveWombat(currentWombat, moveDirection, maze);
+                            moveWombat(currentWombat, moveDirection, maze, obstacles, MAX_OBSTACLES);
+                        }
+
+                        // Draw wombat
+                        if (drawWombat(currentWombat) != 0) {
+                            printf("Error: Failed to draw dingoe after move.\n");
+                            return 1;
                         }
 
                         // Draw obtacles
