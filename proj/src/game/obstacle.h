@@ -46,9 +46,8 @@ int draw_obstacle(Obstacle* obstacle);
  * If the cursor is over the obstacle and the left mouse button is pressed the obstacle is marked as inactive (removed)
  * @param obstacle Pointer to the obstacle to update
  * @param cursor Pointer to the cursor
- * @param pp Pointer to the mouse packet with the latest mouse data
  */
-void update_obstacle_with_cursor(Obstacle* obstacle, Cursor* cursor, struct packet *pp);
+void update_obstacle_with_cursor(Obstacle* obstacle, Cursor* cursor);
 
 /**
  * @brief Checks if the specified coordinates collide with a given obstacle.

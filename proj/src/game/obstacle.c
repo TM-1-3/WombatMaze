@@ -56,13 +56,13 @@ static bool is_mouse_over_obstacle(Obstacle* obstacle, uint16_t mouse_x, uint16_
 }
 
 //Updates the obstacle state based on the cursor position and mouse click
-void update_obstacle_with_cursor(Obstacle* obstacle, Cursor* cursor, struct packet *pp) {
-    if (obstacle == NULL || cursor == NULL || pp == NULL || !obstacle->active) return;
+void update_obstacle_with_cursor(Obstacle* obstacle, Cursor* cursor) {
+    if (obstacle == NULL || cursor == NULL || !obstacle->active) return;
 
     uint16_t mouse_x = cursor->x;
     uint16_t mouse_y = cursor->y;
 
-    if (pp->lb && is_mouse_over_obstacle(obstacle, mouse_x, mouse_y)) {
+    if (is_mouse_over_obstacle(obstacle, mouse_x, mouse_y)) {
         remove_obstacle(obstacle);
     }
 }

@@ -150,15 +150,22 @@ int (proj_main_loop)(int argc, char *argv[]) {
         }
     }
 
-    // Toggle wombats
-    int wombat_counter = 0;
-    bool wombat_toggle = false;
+    // Toggle moving wombats
+    int wombatMoving_counter = 0;
+    bool wombatMoving_toggle = false;
+
+    // Toggle attacking wombats
+    static int wombatAttacking_counter = 0;
+    static bool wombatAttacking_toggle = false;
+
+    // Toggle wombat
+    bool isAttacking = false;
 
     // Load Dingoe sprite
     Sprite* dingoeMoving1 = loadSprite((xpm_map_t)dingoe_moving_1);
     Sprite* dingoeMoving2 = loadSprite((xpm_map_t)dingoe_moving_2);
-    Sprite* dingoeAttacking1 = loadSprite((xpm_map_t)dingoe_attacking_1);
-    Sprite* dingoeAttacking2 = loadSprite((xpm_map_t)dingoe_attacking_2);
+    //Sprite* dingoeAttacking1 = loadSprite((xpm_map_t)dingoe_attacking_1);
+    //Sprite* dingoeAttacking2 = loadSprite((xpm_map_t)dingoe_attacking_2);
     Dingoe* currentDingoe = loadDingoe(200, 100, dingoeMoving1);
 
     // Draw dingoe
@@ -168,9 +175,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
     int seeDirection = 0;
 
-    // Toggle dingoes
-    int dingoe_counter = 0;
-    bool dingoe_toggle = false;
+    // Toggle moving dingoes
+    int dingoeMoving_counter = 0;
+    bool dingoeMoving_toggle = false;
+
+    // Toggle attacking dingoes
+    //static int dingoeAttacking_counter = 0;
+    //static bool dingoeAttacking_toggle = false;
 
     // Cursor
     Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
@@ -226,9 +237,19 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             // Set coordinates
                             setCursorX(cursor, mouseX);
                             setCursorY(cursor, mouseY);
-                            for (int i = 0; i < MAX_OBSTACLES; i++) {
-                                update_obstacle_with_cursor(obstacles[i], cursor, &mousePacket);
-                            }
+
+                            // Check for left button click
+                            if (mousePacket.lb) {
+                                isAttacking = true;
+
+                                // Remove obstacles
+                                for (int i = 0; i < MAX_OBSTACLES; i++) {
+                                    update_obstacle_with_cursor(obstacles[i], cursor);
+                                }
+                            }        
+                            else {
+                                isAttacking = false;
+                            }                    
                         }   
                     }
 
@@ -265,18 +286,32 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         // Move wombat
                         if (moveDirection != 0) {
-                            wombat_counter++;
-                            if (wombat_counter % 5 == 0) {
-                                wombat_toggle = !wombat_toggle;
-                                currentWombat->wombatSprite = wombat_toggle ? wombatMoving2 : wombatMoving1;
+                            wombatMoving_counter++;
+                            if (wombatMoving_counter % 5 == 0) {
+                                wombatMoving_toggle = !wombatMoving_toggle;
+                                currentWombat->wombatSprite = wombatMoving_toggle ? wombatMoving2 : wombatMoving1;
                             }
                             moveWombat(currentWombat, moveDirection, maze, obstacles, MAX_OBSTACLES);
+                        }
+
+                        // Set attack
+                        if (isAttacking){
+                            wombatAttacking_counter++;
+                            if (wombatAttacking_counter % 5 == 0) {
+                                wombatAttacking_toggle = !wombatAttacking_toggle;
+                                currentWombat->wombatSprite = wombatAttacking_toggle ? wombatAttacking2 : wombatAttacking1;
+                            }
                         }
 
                         // Draw wombat
                         if (drawWombat(currentWombat) != 0) {
                             printf("Error: Failed to draw dingoe after move.\n");
                             return 1;
+                        }
+
+                        // Reset
+                        if (!mousePacket.lb && moveDirection == 0) {
+                            currentWombat->wombatSprite = wombatMoving1; 
                         }
 
                         // Draw obtacles
@@ -303,10 +338,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         // Move dingoe
                         if (seeDirection != 0) {
-                            dingoe_counter++;
-                            if (dingoe_counter % 5 == 0) {
-                                dingoe_toggle = !dingoe_toggle;
-                                currentDingoe->dingoeSprite = dingoe_toggle ? dingoeMoving2 : dingoeMoving1;
+                            dingoeMoving_counter++;
+                            if (dingoeMoving_counter % 5 == 0) {
+                                dingoeMoving_toggle = !dingoeMoving_toggle;
+                                currentDingoe->dingoeSprite = dingoeMoving_toggle ? dingoeMoving2 : dingoeMoving1;
                             }
                             moveDingoe(currentDingoe, seeDirection, maze);
                         }
