@@ -74,4 +74,13 @@ int moveHandler(uint8_t scanCode);
  */
 void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacles[], int num_obstacles);
 
+/**
+ * @brief Checks whether the Wombat is close to a given obstacle.
+ * @param wombat Pointer to the wombat object.
+ * @param obstacle Pointer to the Obstacle object.
+ * @return true if the Wombat is near the obstacle, false otherwise.
+ */
+bool is_wombat_near_obstacle(Wombat* wombat, Obstacle* obstacle);
+
+
 #endif

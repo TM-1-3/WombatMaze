@@ -229,7 +229,9 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             setCursorX(cursor, mouseX);
                             setCursorY(cursor, mouseY);
                             for (int i = 0; i < MAX_OBSTACLES; i++) {
-                                update_obstacle_with_cursor(obstacles[i], cursor, &mousePacket);
+                                if(obstacles[i]->active && is_wombat_near_obstacle(currentWombat, obstacles[i])){
+                                    update_obstacle_with_cursor(obstacles[i], cursor, &mousePacket);
+                                }
                             }
                         }   
                     }
