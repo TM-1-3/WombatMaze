@@ -2,7 +2,7 @@
 static char * dingoe_moving_2[] = {
 /* columns rows colors chars-per-pixel */
 "100 100 210 2 ",
-"   c None",
+"   c #FFFFFE",
 ".  c #0E080C",
 "X  c #110A0C",
 "o  c #190A0C",

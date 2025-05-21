@@ -136,8 +136,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
     Sprite* wombatAttacking1 = loadSprite((xpm_map_t)wombat_attacking_1);
     Sprite* wombatAttacking2 = loadSprite((xpm_map_t)wombat_attacking_2);
     Wombat* currentWombat = loadWombat(0, 0, wombatMoving1);
-
-    
     int moveDirection = 0;
 
     // Load Obstacle sprites

@@ -2,7 +2,7 @@
 static char *wombat_attacking_1[] = {
 /* columns rows colors chars-per-pixel */
 "100 100 205 2 ",
-"   c None",
+"   c #FFFFFE",
 ".  c #0E080C",
 "X  c #110A0C",
 "o  c #190A0C",
@@ -204,7 +204,7 @@ static char *wombat_attacking_1[] = {
 ":X c #FBF9FA",
 ">X c #FEFDF9",
 ",X c #FAFAFD",
-"<X c #FFFFFE",
+"<X c #FFFFF1",
 "1X c #FDFDFC",
 "2X c #F5F4F7",
 /* pixels */

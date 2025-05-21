@@ -2,7 +2,7 @@
 static char * wombat_moving_1[] = {
 /* columns rows colors chars-per-pixel */
 "100 100 209 2 ",
-"   c None",
+"   c #FFFFFE",
 ".  c #0E080C",
 "X  c #110A0C",
 "o  c #190A0C",
@@ -208,7 +208,7 @@ static char * wombat_moving_1[] = {
 "1X c #FBF9FA",
 "2X c #FEFDF9",
 "3X c #FAFAFD",
-"4X c #FFFFFE",
+"4X c #FFFFF1",
 "5X c #FDFDFC",
 "6X c #F5F4F7",
 /* pixels */

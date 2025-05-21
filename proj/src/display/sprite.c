@@ -47,15 +47,16 @@ int drawSprite(Sprite *sprite, int x, int y) {
         return 1;  
     }
 
-    const uint32_t TRANSPARENT_COLOR = 0xFFFFFE;
+    // Transparency
+    const uint32_t  TRANSPARENT = 0x00FFFFFE;
 
     // Loop through the sprite's pixels and draw them
     for (int i = 0; i < sprite->height; i++) {
         for (int j = 0; j < sprite->width; j++) {
             uint32_t color = sprite->colors[j + i * sprite->width]; 
-            if (color == TRANSPARENT_COLOR) {
-                continue;
-            }
+
+            // Skip fully transparent pixels
+            if (color == TRANSPARENT) continue;
 
             // If drawing a pixel fails, return error and print a message
             if ((draw_pixel)(x + j, y + i, color) != 0) {
