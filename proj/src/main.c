@@ -11,12 +11,19 @@
 #include "game/dingoe.h"
 #include "game/maze.h"
 #include "game/cursor.h"
+#include "game/menu.h"
 #include "../assets/wombat/wombat_moving_4.xpm"
 #include "../assets/dingoe/dingoe_moving_4.xpm"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
+#include "../../assets/menu/logo.xpm"
 
+typedef enum { 
+    MENU,
+    LEVEL
+} State;
 
+State state = MENU;
 
 // Global variable
 volatile extern uint8_t scanCode;
@@ -96,6 +103,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to set graphics mode.\n");
         return 1;
     }
+    MenuElement* logo = loadMenuElement(130, 80, (xpm_map_t)logo_xpm);
 
     // Load digit sprites
     Sprite **digits = loadDigitSprites();
@@ -109,19 +117,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
-    if (drawMaze(maze) != 0) {
-        printf("Error: Failed to draw maze.\n");
-        return 1;
-    }
 
     // Load Wombat sprite
     Wombat* wombat = loadWombat(0, 0, (xpm_map_t)wombat_moving_4);
     if (wombat == NULL) {
         printf("Error: Failed to load wombat sprite.\n");
-        return 1;
-    }
-    if (drawWombat(wombat) != 0) {
-        printf("Error: Failed to draw wombat.\n");
         return 1;
     }
     int moveDirection = 0;
@@ -132,10 +132,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load dingoe sprite.\n");
         return 1;
     }
-    if (drawDingoe(dingoe) != 0) {
-        printf("Error: Failed to draw dingoe.\n");
-        return 1;
-    }
+    
     int seeDirection = 0;
 
     Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
@@ -144,6 +141,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
     bool gameOver=false;
+    
 
 
     // Main loop to process events until ESC is pressed
@@ -159,7 +157,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     // Check if it's a keyboard interrupt
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
-                        moveDirection = moveHandler(scanCode);
+                        if (state == MENU) {
+                            if (scanCode == MAKE_A) {
+                                state = LEVEL;
+                            }
+                        }
+                        else if (state == LEVEL) {
+                            moveDirection = moveHandler(scanCode);
+                        }
                     }
 
                     // Check if it´s a mouse interrupt
@@ -172,7 +177,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 break;
                             }
                             if (mousePacket.lb){
-                                gameOver=true;
+                                if (state == MENU) {
+                                    state = LEVEL;
+                                }
+                                else if (state == LEVEL) {
+                                    gameOver=true;
+                                }
                             }
                             int mouseX = getCursorX(cursor) + mousePacket.delta_x;
                             int mouseY = getCursorY(cursor) - mousePacket.delta_y;
@@ -207,6 +217,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         timer_int_handler();
 
+                        if (state == MENU) {
+                            drawMenu(logo);
+                        }
+
+                        else if (state == LEVEL) {
+
                         int elapsed_seconds = timerCounter / 60;
                         int time_left = 20 - elapsed_seconds;
                         
@@ -214,7 +230,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         if (drawNumber(digits, time_left, 790, 10) != 0) {
                             printf("Error: Failed to draw time.\n");
                             return 1;
-                        }           
+                        }   
+                    
                                                 
                         // Time's up game over
                         if (time_left <= 0) {
@@ -239,8 +256,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("Error: Failed to draw wombat after move.\n");
                             return 1;
                         }
-                        if (drawCursor(cursor)!=0){
-                            printf("Error: Failed to draw cursor.\n");
+                        if (drawDingoe(dingoe) != 0) {
+                            printf("Error: Failed to draw dingoe.\n");
                             return 1;
                         }
 
@@ -264,6 +281,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("💥 Game Over! Wombat got caught!\n");
                             gameOver=true;
                         }
+                    }
+                    if (drawCursor(cursor)!=0){
+                        printf("Error: Failed to draw cursor.\n");
+                        return 1;
+                    }
                         
                         // Swap buffers
                         if (swap_buffers() != 0) {
@@ -312,3 +334,5 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
     return 0;
 }
+
+
