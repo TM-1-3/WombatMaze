@@ -1,22 +1,60 @@
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 282)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
-Error: Coordinates out of bounds (x: 102, y: 288)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Coordinates out of bounds (x: 282, y: 501)
+Error: Coordinates out of bounds (x: 232, y: 501)
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+Error: Invalid move direction.
+💥 Game Over! Wombat got caught!
