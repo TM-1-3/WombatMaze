@@ -13,8 +13,13 @@
 #include "game/obstacle.h"
 #include "game/cursor.h"
 #include "../assets/wombat/wombat_moving_1.xpm"
-#include "../assets/wombat/wombat_moving_4.xpm"
-#include "../assets/dingoe/dingoe_moving_4.xpm"
+#include "../assets/wombat/wombat_moving_2.xpm"
+#include "../assets/wombat/wombat_attacking_1.xpm"
+#include "../assets/wombat/wombat_attacking_2.xpm"
+#include "../assets/dingoe/dingoe_moving_1.xpm"
+#include "../assets/dingoe/dingoe_moving_2.xpm"
+#include "../assets/dingoe/dingoe_attacking_1.xpm"
+#include "../assets/dingoe/dingoe_attacking_2.xpm"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
 #include "../assets/obstacle/obstacle1.xpm"
@@ -121,9 +126,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
 
     // Load Wombats sprite
-    Sprite* wombatSprite1 = loadSprite((xpm_map_t)wombat_moving_1);
-    Sprite* wombatSprite2 = loadSprite((xpm_map_t)wombat_moving_4);
-    Wombat* currentWombat = loadWombat(0, 0, wombatSprite1);
+    Sprite* wombatMoving1 = loadSprite((xpm_map_t)wombat_moving_1);
+    Sprite* wombatMoving2 = loadSprite((xpm_map_t)wombat_moving_2);
+    Sprite* wombatAttacking1 = loadSprite((xpm_map_t)wombat_attacking_1);
+    Sprite* wombatAttacking2 = loadSprite((xpm_map_t)wombat_attacking_2);
+    Wombat* currentWombat = loadWombat(0, 0, wombatMoving1);
 
     // Draw wombat
     if (drawWombat(currentWombat) != 0) {
@@ -135,7 +142,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     // Load Obstacle sprites
     for (int i = 0; i < MAX_OBSTACLES; i++) {
         uint16_t x = 200 + i * 50; // Podes ajustar posições
-        uint16_t y = 500;
+        uint16_t y = 475;
         obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
         if (obstacles[i] == NULL) {
             printf("Error: Failed to load obstacle %d\n", i);
@@ -148,9 +155,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
     bool wombat_toggle = false;
 
     // Load Dingoe sprite
-    Sprite* dingoeSprite1 = loadSprite((xpm_map_t)wombat_moving_1);
-    Sprite* dingoeSprite2 = loadSprite((xpm_map_t)wombat_moving_4);
-    Dingoe* currentDingoe = loadDingoe(200, 100, dingoeSprite1);
+    Sprite* dingoeMoving1 = loadSprite((xpm_map_t)dingoe_moving_1);
+    Sprite* dingoeMoving2 = loadSprite((xpm_map_t)dingoe_moving_2);
+    Sprite* dingoeAttacking1 = loadSprite((xpm_map_t)dingoe_attacking_1);
+    Sprite* dingoeAttacking2 = loadSprite((xpm_map_t)dingoe_attacking_2);
+    Dingoe* currentDingoe = loadDingoe(200, 100, dingoeMoving1);
 
     // Draw dingoe
     if (drawDingoe(currentDingoe) != 0) {
@@ -197,12 +206,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             if (mousePacket.x_ov || mousePacket.y_ov){
                                 break;
                             }
-                            if (mousePacket.lb){
-                                gameOver=true;
-                            }
+
+                            // Get coordinates
                             int mouseX = getCursorX(cursor) + mousePacket.delta_x;
                             int mouseY = getCursorY(cursor) - mousePacket.delta_y;
-
                             if (mouseX < 0 && !mousePacket.x_ov){
                                 mouseX = 0;
                             }
@@ -215,6 +222,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             else if (mouseY > SCREEN_HEIGHT-cursor->cursorSprite->height && !mousePacket.y_ov) {
                                 mouseY = SCREEN_HEIGHT - cursor->cursorSprite->height;
                             }
+
+                            // Set coordinates
                             setCursorX(cursor, mouseX);
                             setCursorY(cursor, mouseY);
                             for (int i = 0; i < MAX_OBSTACLES; i++) {
@@ -259,7 +268,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             wombat_counter++;
                             if (wombat_counter % 5 == 0) {
                                 wombat_toggle = !wombat_toggle;
-                                currentWombat->wombatSprite = wombat_toggle ? wombatSprite2 : wombatSprite1;
+                                currentWombat->wombatSprite = wombat_toggle ? wombatMoving2 : wombatMoving1;
                             }
                             moveWombat(currentWombat, moveDirection, maze, obstacles, MAX_OBSTACLES);
                         }
@@ -297,7 +306,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             dingoe_counter++;
                             if (dingoe_counter % 5 == 0) {
                                 dingoe_toggle = !dingoe_toggle;
-                                currentDingoe->dingoeSprite = dingoe_toggle ? dingoeSprite2 : dingoeSprite1;
+                                currentDingoe->dingoeSprite = dingoe_toggle ? dingoeMoving2 : dingoeMoving1;
                             }
                             moveDingoe(currentDingoe, seeDirection, maze);
                         }
@@ -311,7 +320,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         // Check collision
                         if (check_collision(currentDingoe, currentWombat)) {
                             printf("💥 Game Over! Wombat got caught!\n");
-                            gameOver=true;
+                            gameOver = true;
                         }
                         
                         // Swap buffers

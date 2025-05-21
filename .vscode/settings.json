@@ -8,6 +8,7 @@
         "algorithm": "c",
         "*.xpm": "c",
         "stdint.h": "c",
-        "colors.h": "c"
+        "colors.h": "c",
+        "cursor.h": "c"
     }
 }
