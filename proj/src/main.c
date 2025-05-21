@@ -20,10 +20,18 @@
 #include "../assets/dingoe/dingoe_moving_2.xpm"
 #include "../assets/dingoe/dingoe_attacking_1.xpm"
 #include "../assets/dingoe/dingoe_attacking_2.xpm"
+#include "game/menu.h"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
 #include "../assets/obstacle/obstacle1.xpm"
+#include "../../assets/menu/logo.xpm"
 
+typedef enum { 
+    MENU,
+    LEVEL
+} State;
+
+State state = MENU;
 
 // Global variable
 volatile extern uint8_t scanCode;
@@ -106,6 +114,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to set graphics mode.\n");
         return 1;
     }
+    MenuElement* logo = loadMenuElement(130, 80, (xpm_map_t)logo_xpm);
 
     // Load digit sprites
     Sprite **digits = loadDigitSprites();
@@ -120,10 +129,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
-    if (drawMaze(maze) != 0) {
-        printf("Error: Failed to draw maze.\n");
-        return 1;
-    }
 
     // Load Wombats sprite
     Sprite* wombatMoving1 = loadSprite((xpm_map_t)wombat_moving_1);
@@ -132,11 +137,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     Sprite* wombatAttacking2 = loadSprite((xpm_map_t)wombat_attacking_2);
     Wombat* currentWombat = loadWombat(0, 0, wombatMoving1);
 
-    // Draw wombat
-    if (drawWombat(currentWombat) != 0) {
-        printf("Error: Failed to draw wombat.\n");
-        return 1;
-    }
+    
     int moveDirection = 0;
 
     // Load Obstacle sprites
@@ -167,12 +168,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     //Sprite* dingoeAttacking1 = loadSprite((xpm_map_t)dingoe_attacking_1);
     //Sprite* dingoeAttacking2 = loadSprite((xpm_map_t)dingoe_attacking_2);
     Dingoe* currentDingoe = loadDingoe(200, 100, dingoeMoving1);
-
-    // Draw dingoe
-    if (drawDingoe(currentDingoe) != 0) {
-        printf("Error: Failed to draw dingoe.\n");
-        return 1;
-    }
+    
     int seeDirection = 0;
 
     // Toggle moving dingoes
@@ -190,8 +186,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
     bool gameOver=false;
-
-
+    
     // Main loop to process events until ESC is pressed
     while (scanCode != BREAK_ESC && !gameOver) {
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
@@ -205,7 +200,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     // Check if it's a keyboard interrupt
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
-                        moveDirection = moveHandler(scanCode);
+                        if (state == MENU) {
+                            if (scanCode == MAKE_A) {
+                                state = LEVEL;
+                            }
+                        }
+                        else if (state == LEVEL) {
+                            moveDirection = moveHandler(scanCode);
+                        }
                     }
 
                     // Check if it´s a mouse interrupt
@@ -216,6 +218,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             mouse_build_packet();
                             if (mousePacket.x_ov || mousePacket.y_ov){
                                 break;
+                            }
+
+                            // Get out of menu
+                            if (mousePacket.lb){
+                                if (state == MENU) {
+                                    state = LEVEL;
+                                }
                             }
 
                             // Get coordinates
@@ -244,12 +253,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                                 // Remove obstacles
                                 for (int i = 0; i < MAX_OBSTACLES; i++) {
-                                    update_obstacle_with_cursor(obstacles[i], cursor);
+                                    if(obstacles[i]->active && is_wombat_near_obstacle(currentWombat, obstacles[i])){
+                                        update_obstacle_with_cursor(obstacles[i], cursor);
+                                    }
                                 }
                             }        
                             else {
                                 isAttacking = false;
-                            }                    
+                            }    
                         }   
                     }
 
@@ -262,6 +273,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             return 1;
                         }
                         timer_int_handler();
+
+                        if (state == MENU) {
+                            drawMenu(logo);
+                        }
+
+                        else if (state == LEVEL) {
                         int elapsed_seconds = timerCounter / 60;
                         int time_left = 100 - elapsed_seconds;
                         
@@ -269,7 +286,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         if (drawNumber(digits, time_left, 790, 10) != 0) {
                             printf("Error: Failed to draw time.\n");
                             return 1;
-                        }           
+                        }   
+                    
                                                 
                         // Time's up game over
                         if (time_left <= 0) {
@@ -324,12 +342,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             }
                         }
 
-                        // Draw cursor
-                        if (drawCursor(cursor)!=0){
-                            printf("Error: Failed to draw cursor.\n");
-                            return 1;
-                        }
-
                         // Check if it sees wombat
                         int newDirection = seeWombat(currentDingoe, currentWombat, maze);
                         if (newDirection != 0) {
@@ -357,6 +369,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("💥 Game Over! Wombat got caught!\n");
                             gameOver = true;
                         }
+                    }
+                    if (drawCursor(cursor)!=0){
+                        printf("Error: Failed to draw cursor.\n");
+                        return 1;
+                    }
                         
                         // Swap buffers
                         if (swap_buffers() != 0) {
@@ -415,3 +432,5 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
     return 0;
 }
+
+

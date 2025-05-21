@@ -139,3 +139,23 @@ void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacl
             printf("Error: Invalid move direction.\n");
     }
 }
+
+
+bool is_wombat_near_obstacle(Wombat* wombat, Obstacle* obstacle) {
+    if (!wombat || !obstacle) return false;
+
+    int max_distance = 80;
+
+    int wombat_center_x = wombat->x + wombat->wombatSprite->width / 2;
+    int wombat_center_y = wombat->y + wombat->wombatSprite->height / 2;
+
+    int obstacle_center_x = obstacle->x + obstacle->obstacleSprite->width / 2;
+    int obstacle_center_y = obstacle->y + obstacle->obstacleSprite->height / 2;
+
+    int dx = wombat_center_x - obstacle_center_x;
+    int dy = wombat_center_y - obstacle_center_y;
+
+    int distance_squared = dx * dx + dy * dy;
+    return distance_squared <= max_distance * max_distance;
+}
+
