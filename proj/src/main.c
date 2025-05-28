@@ -402,6 +402,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 currentDingoe->dingoeSprite = dingoeMoving_toggle ? dingoeMoving2 : dingoeMoving1;
                             }
                             moveDingoe(currentDingoe, seeDirection, maze_bw);
+                            printf("x = %d and y = %d\n", currentWombat->x, currentWombat->y);
+
                         }
 
                         // Draw dingoe
@@ -414,6 +416,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         if (check_collision(currentDingoe, currentWombat)) {
                             printf("💥 Game Over! Wombat got caught!\n");
                             state = GAME_OVER;
+                        }
+
+                        // Check finished level
+                        if (currentWombat->x > 675 && currentWombat->y > 425) {
+                            printf("🏆 Game Won: Larry reached the destination!\n");
+                            state = END;  
                         }
                     }
                     if (drawCursor(cursor)!=0){
