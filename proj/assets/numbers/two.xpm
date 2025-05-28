@@ -1,6 +1,6 @@
 const char * two_xpm[] = {
 "24 32 2 1",       
-"  c None",         
+"  c #FFFFFE",         
 ". c #FFFFFF",      
 "                        ",  
 "     ................   ",  

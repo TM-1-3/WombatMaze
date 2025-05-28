@@ -69,7 +69,7 @@ int isPath(Maze* maze, uint16_t x, uint16_t y) {
     uint32_t pixelColor = getPixelColor(maze->mazeSprite, x, y); 
 
     // Check the color of the pixel 
-    if (pixelColor == 0x000000) {
+    if (pixelColor == 0xFFFFFF) {
         return 1; 
     } 
     return 0;

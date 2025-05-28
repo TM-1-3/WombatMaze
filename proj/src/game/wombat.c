@@ -102,7 +102,7 @@ void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacl
             x2 = wombat->x + 100 - 25;
             y2 = wombat->y + 100 - 25 + 3;
             if (wombat->y + 100 < SCREEN_HEIGHT &&
-                isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
+                isPath(maze, x1, y1) && isPath(maze, x2, y2) && 
                 !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
                 !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
                 wombat->y += 3;

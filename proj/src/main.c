@@ -18,10 +18,13 @@
 #include "../assets/wombat/wombat_attacking_2.xpm"
 #include "../assets/dingoe/dingoe_moving_1.xpm"
 #include "../assets/dingoe/dingoe_moving_2.xpm"
-#include "../assets/dingoe/dingoe_attacking_1.xpm"
-#include "../assets/dingoe/dingoe_attacking_2.xpm"
 #include "game/menu.h"
-#include "../assets/maze/maze_1.xpm"
+#include "../assets/maze/map_forest.xpm"
+#include "../assets/maze/map_space.xpm"
+#include "../assets/maze/map_sand.xpm"
+#include "../assets/maze/map_forest_bw.xpm"
+//#include "../assets/maze/map_space_bw.xpm"
+//#include "../assets/maze/map_sand_bw.xpm"
 #include "../assets/cursor/cursor.xpm"
 #include "../assets/obstacle/obstacle1.xpm"
 #include "../../assets/menu/logo.xpm"
@@ -124,7 +127,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
 
     // Load Maze sprite
-    Maze* maze = loadMaze(0, 0, (xpm_map_t)maze_1);
+    Maze* maze = loadMaze(0, 0, (xpm_map_t)map_forest);
+    if (maze == NULL) {
+        printf("Error: Failed to load maze sprite.\n");
+        return 1;
+    }
+    Maze* maze_bw = loadMaze(0, 0, (xpm_map_t)map_forest_bw);
     if (maze == NULL) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
@@ -135,13 +143,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
     Sprite* wombatMoving2 = loadSprite((xpm_map_t)wombat_moving_2);
     Sprite* wombatAttacking1 = loadSprite((xpm_map_t)wombat_attacking_1);
     Sprite* wombatAttacking2 = loadSprite((xpm_map_t)wombat_attacking_2);
-    Wombat* currentWombat = loadWombat(0, 0, wombatMoving1);
+    Wombat* currentWombat = loadWombat(50, 50, wombatMoving1);
     int moveDirection = 0;
 
     // Load Obstacle sprites
     for (int i = 0; i < MAX_OBSTACLES; i++) {
-        uint16_t x = 200 + i * 50; // Podes ajustar posições
-        uint16_t y = 475;
+        uint16_t x = 125 + i * 50; // Podes ajustar posições
+        uint16_t y = 400;
         obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
         if (obstacles[i] == NULL) {
             printf("Error: Failed to load obstacle %d\n", i);
@@ -163,19 +171,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
     // Load Dingoe sprite
     Sprite* dingoeMoving1 = loadSprite((xpm_map_t)dingoe_moving_1);
     Sprite* dingoeMoving2 = loadSprite((xpm_map_t)dingoe_moving_2);
-    //Sprite* dingoeAttacking1 = loadSprite((xpm_map_t)dingoe_attacking_1);
-    //Sprite* dingoeAttacking2 = loadSprite((xpm_map_t)dingoe_attacking_2);
-    Dingoe* currentDingoe = loadDingoe(200, 100, dingoeMoving1);
+    Dingoe* currentDingoe = loadDingoe(500, 50, dingoeMoving1);
     
     int seeDirection = 0;
 
     // Toggle moving dingoes
     int dingoeMoving_counter = 0;
     bool dingoeMoving_toggle = false;
-
-    // Toggle attacking dingoes
-    //static int dingoeAttacking_counter = 0;
-    //static bool dingoeAttacking_toggle = false;
 
     // Cursor
     Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
@@ -278,15 +280,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                         else if (state == LEVEL) {
                         int elapsed_seconds = timerCounter / 60;
-                        int time_left = 100 - elapsed_seconds;
-                        
-                        // Draw time left
-                        if (drawNumber(digits, time_left, 790, 10) != 0) {
-                            printf("Error: Failed to draw time.\n");
-                            return 1;
-                        }   
-                    
-                                                
+                        int time_left = 100 - elapsed_seconds; 
+                                    
                         // Time's up game over
                         if (time_left <= 0) {
                             time_left = 0;
@@ -300,6 +295,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             return 1;
                         }
 
+                        // Draw time left
+                        if (drawNumber(digits, time_left, 790, 10) != 0) {
+                            printf("Error: Failed to draw time.\n");
+                            return 1;
+                        }  
+
                         // Move wombat
                         if (moveDirection != 0) {
                             wombatMoving_counter++;
@@ -307,7 +308,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 wombatMoving_toggle = !wombatMoving_toggle;
                                 currentWombat->wombatSprite = wombatMoving_toggle ? wombatMoving2 : wombatMoving1;
                             }
-                            moveWombat(currentWombat, moveDirection, maze, obstacles, MAX_OBSTACLES);
+                            moveWombat(currentWombat, moveDirection, maze_bw, obstacles, MAX_OBSTACLES);
                         }
 
                         // Set attack
@@ -341,7 +342,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
 
                         // Check if it sees wombat
-                        int newDirection = seeWombat(currentDingoe, currentWombat, maze);
+                        int newDirection = seeWombat(currentDingoe, currentWombat, maze_bw);
                         if (newDirection != 0) {
                             seeDirection = newDirection;
                         }
@@ -353,7 +354,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 dingoeMoving_toggle = !dingoeMoving_toggle;
                                 currentDingoe->dingoeSprite = dingoeMoving_toggle ? dingoeMoving2 : dingoeMoving1;
                             }
-                            moveDingoe(currentDingoe, seeDirection, maze);
+                            moveDingoe(currentDingoe, seeDirection, maze_bw);
                         }
 
                         // Draw dingoe

@@ -9,6 +9,7 @@
         "*.xpm": "c",
         "stdint.h": "c",
         "colors.h": "c",
-        "cursor.h": "c"
+        "cursor.h": "c",
+        "menu.h": "c"
     }
 }
