@@ -13,7 +13,7 @@ PROG=proj
 
 # Source files to be compiled
 
-SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c dingoe.c cursor.c menu_element.c menu.c obstacle.c
+SRCS = 	main.c timer.c utils.c sprite.c keyboard.c mouse.c video.c KBC.c wombat.c maze.c dingoe.c cursor.c menu_element.c menu.c obstacle.c game.c
 
 
 # Object file output dir
