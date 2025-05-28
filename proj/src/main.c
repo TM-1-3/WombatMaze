@@ -21,14 +21,22 @@
 #include "../assets/dingoe/dingoe_attacking_1.xpm"
 #include "../assets/dingoe/dingoe_attacking_2.xpm"
 #include "game/menu.h"
+#include "game/game.h"
 #include "../assets/maze/maze_1.xpm"
 #include "../assets/cursor/cursor.xpm"
 #include "../assets/obstacle/obstacle1.xpm"
 #include "../../assets/menu/logo.xpm"
+#include "../../assets/menu/backgroundMenu.xpm"
+#include "../../assets/menu/cursorMenu.xpm"
+#include "../../assets/menu/instructions.xpm"
+#include "../../assets/screens/gameOver.xpm"
 
 typedef enum { 
     MENU,
-    LEVEL
+    INSTRUCTIONS,
+    LEVEL,
+    GAME_OVER,
+    END
 } State;
 
 State state = MENU;
@@ -114,7 +122,11 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to set graphics mode.\n");
         return 1;
     }
-    MenuElement* logo = loadMenuElement(130, 80, (xpm_map_t)logo_xpm);
+    MenuElement* menuBackground = loadMenuElement(0, 0, (xpm_map_t)background_xpm);
+    MenuElement* logo = loadMenuElement(150, 30, (xpm_map_t)logo_xpm);
+    MenuElement* menuCursor = loadMenuElement(160, 255, (xpm_map_t)menu_cursor_xpm);
+    MenuElement* instructions = loadMenuElement(0, 0, (xpm_map_t)instructions_xpm);
+    MenuElement* gameOver = loadMenuElement(0, 0, (xpm_map_t)game_over_xpm);
 
     // Load digit sprites
     Sprite **digits = loadDigitSprites();
@@ -183,10 +195,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load cursor sprite.\n");
         return 1;
     }
-    bool gameOver=false;
+    
     
     // Main loop to process events until ESC is pressed
-    while (scanCode != BREAK_ESC && !gameOver) {
+    while (state != END) {
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
             printf("Warning: driver_receive() failed.\n");
             continue;  
@@ -199,12 +211,42 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
                         if (state == MENU) {
-                            if (scanCode == MAKE_A) {
+                            if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 255) {
+                                timerCounter = 0;
+                                reset_level(currentWombat, currentDingoe);
                                 state = LEVEL;
+                            }
+                            else if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 335) {
+                                state = INSTRUCTIONS;
+                            }
+                            else if (scanCode == MAKE_S) {
+                                menuCursorDown(menuCursor);
+                            }
+                            else if (scanCode == MAKE_W) {
+                                menuCursorUp(menuCursor);
+                            }
+                            else if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 405) {
+                                state = END;
+                            }
+                        }
+                        else if (state == INSTRUCTIONS) {
+                            if (scanCode == MAKE_ESC) {
+                                state = MENU;
+                            }
+                        }
+                        else if (state == GAME_OVER) {
+                            if (scanCode == MAKE_ESC) {
+                                state = END;
+                            }
+                            else if (scanCode == MAKE_ENTER) {
+                                state = MENU;
                             }
                         }
                         else if (state == LEVEL) {
                             moveDirection = moveHandler(scanCode);
+                            if (scanCode == MAKE_ESC) {
+                                state = MENU;
+                            }
                         }
                     }
 
@@ -273,9 +315,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         timer_int_handler();
 
                         if (state == MENU) {
-                            drawMenu(logo);
+                            drawMenu(logo, menuBackground, menuCursor);
                         }
-
+                        else if (state == INSTRUCTIONS) {
+                            drawMenuElement(instructions);
+                        }
+                        else if (state == GAME_OVER) {
+                            drawMenuElement(gameOver);
+                        }
                         else if (state == LEVEL) {
                         int elapsed_seconds = timerCounter / 60;
                         int time_left = 100 - elapsed_seconds;
@@ -291,7 +338,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         if (time_left <= 0) {
                             time_left = 0;
                             printf("Time's up! Game Over\n");
-                            gameOver=true;
+                            state = GAME_OVER;
                         }
 
                         // Draw the maze
@@ -365,7 +412,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         // Check collision
                         if (check_collision(currentDingoe, currentWombat)) {
                             printf("💥 Game Over! Wombat got caught!\n");
-                            gameOver = true;
+                            state = GAME_OVER;
                         }
                     }
                     if (drawCursor(cursor)!=0){
