@@ -1,167 +1,5271 @@
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-💥 Game Over! Wombat got caught!
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
-Error: Invalid move direction.
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 50
+x: 50 y: 50
+x = 50 and y = 53
+x: 50 y: 53
+x = 50 and y = 56
+x: 50 y: 56
+x = 50 and y = 59
+x: 50 y: 59
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 50 and y = 62
+x: 50 y: 62
+x = 53 and y = 62
+x: 53 y: 62
+x = 56 and y = 62
+x: 56 y: 62
+x = 59 and y = 62
+x: 59 y: 62
+x = 62 and y = 62
+x: 62 y: 62
+x = 65 and y = 62
+x: 65 y: 62
+x = 68 and y = 62
+x: 68 y: 62
+x = 71 and y = 62
+x: 71 y: 62
+x = 74 and y = 62
+x: 74 y: 62
+x = 77 and y = 62
+x: 77 y: 62
+x = 80 and y = 62
+x: 80 y: 62
+x = 83 and y = 62
+x: 83 y: 62
+x = 86 and y = 62
+x: 86 y: 62
+x = 89 and y = 62
+x: 89 y: 62
+x = 92 and y = 62
+x: 92 y: 62
+x = 95 and y = 62
+x: 95 y: 62
+x = 98 and y = 62
+x: 98 y: 62
+x = 101 and y = 62
+x: 101 y: 62
+x = 104 and y = 62
+x: 104 y: 62
+x = 107 and y = 62
+x: 107 y: 62
+x = 110 and y = 62
+x: 110 y: 62
+x = 113 and y = 62
+x: 113 y: 62
+x = 116 and y = 62
+x: 116 y: 62
+x = 119 and y = 62
+x: 119 y: 62
+x = 119 and y = 62
+x: 119 y: 62
+x = 119 and y = 62
+x: 119 y: 62
+x = 119 and y = 62
+x: 119 y: 62
+x = 119 and y = 62
+x: 119 y: 62
+x = 119 and y = 65
+x: 119 y: 65
+x = 119 and y = 68
+x: 119 y: 68
+x = 119 and y = 71
+x: 119 y: 71
+x = 119 and y = 74
+x: 119 y: 74
+x = 119 and y = 77
+x: 119 y: 77
+x = 119 and y = 80
+x: 119 y: 80
+x = 119 and y = 83
+x: 119 y: 83
+x = 119 and y = 86
+x: 119 y: 86
+x = 119 and y = 89
+x: 119 y: 89
+x = 119 and y = 92
+x: 119 y: 92
+x = 119 and y = 95
+x: 119 y: 95
+x = 119 and y = 98
+x: 119 y: 98
+x = 119 and y = 101
+x: 119 y: 101
+x = 119 and y = 104
+x: 119 y: 104
+x = 119 and y = 107
+x: 119 y: 107
+x = 119 and y = 110
+x: 119 y: 110
+x = 119 and y = 113
+x: 119 y: 113
+x = 119 and y = 116
+x: 119 y: 116
+x = 119 and y = 119
+x: 119 y: 119
+x = 119 and y = 122
+x: 119 y: 122
+x = 119 and y = 125
+x: 119 y: 125
+x = 119 and y = 128
+x: 119 y: 128
+x = 119 and y = 131
+x: 119 y: 131
+x = 119 and y = 134
+x: 119 y: 134
+x = 119 and y = 137
+x: 119 y: 137
+x = 119 and y = 140
+x: 119 y: 140
+x = 119 and y = 143
+x: 119 y: 143
+x = 119 and y = 146
+x: 119 y: 146
+x = 119 and y = 149
+x: 119 y: 149
+x = 119 and y = 152
+x: 119 y: 152
+x = 119 and y = 155
+x: 119 y: 155
+x = 119 and y = 158
+x: 119 y: 158
+x = 119 and y = 161
+x: 119 y: 161
+x = 119 and y = 164
+x: 119 y: 164
+x = 119 and y = 167
+x: 119 y: 167
+x = 119 and y = 170
+x: 119 y: 170
+x = 119 and y = 173
+x: 119 y: 173
+x = 119 and y = 176
+x: 119 y: 176
+x = 119 and y = 179
+x: 119 y: 179
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+x = 119 and y = 182
+x: 119 y: 182
+Error: Invalid move direction.
+x = 119 and y = 182
+x: 119 y: 182
+Error: Invalid move direction.
+x = 119 and y = 182
+x: 119 y: 182
+Error: Invalid move direction.
+x = 119 and y = 182
+x: 119 y: 182
+Error: Invalid move direction.
+x = 119 and y = 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 119 y: 182
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+Error: Invalid move direction.
+x = 50 and y = 50
+x: 50 y: 50
+x = 53 and y = 50
+x: 53 y: 50
+x = 56 and y = 50
+x: 56 y: 50
+x = 59 and y = 50
+x: 59 y: 50
+x = 62 and y = 50
+x: 62 y: 50
+x = 65 and y = 50
+x: 65 y: 50
+x = 68 and y = 50
+x: 68 y: 50
+x = 71 and y = 50
+x: 71 y: 50
+x = 74 and y = 50
+x: 74 y: 50
+x = 77 and y = 50
+x: 77 y: 50
+x = 80 and y = 50
+x: 80 y: 50
+x = 83 and y = 50
+x: 83 y: 50
+x = 86 and y = 50
+x: 86 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 89 and y = 50
+x: 89 y: 50
+x = 92 and y = 50
+x: 92 y: 50
+x = 95 and y = 50
+x: 95 y: 50
+x = 98 and y = 50
+x: 98 y: 50
+x = 101 and y = 50
+x: 101 y: 50
+x = 104 and y = 50
+x: 104 y: 50
+x = 104 and y = 50
+x: 104 y: 50
+x = 104 and y = 50
+x: 104 y: 50
+x = 104 and y = 50
+x: 104 y: 50
+x = 104 and y = 50
+x: 104 y: 50
+x = 104 and y = 53
+x: 104 y: 53
+x = 104 and y = 56
+x: 104 y: 56
+x = 104 and y = 59
+x: 104 y: 59
+x = 104 and y = 62
+x: 104 y: 62
+x = 104 and y = 65
+x: 104 y: 65
+x = 104 and y = 68
+x: 104 y: 68
+x = 104 and y = 71
+x: 104 y: 71
+x = 104 and y = 74
+x: 104 y: 74
+x = 104 and y = 77
+x: 104 y: 77
+x = 104 and y = 80
+x: 104 y: 80
+x = 104 and y = 83
+x: 104 y: 83
+x = 104 and y = 86
+x: 104 y: 86
+x = 104 and y = 89
+x: 104 y: 89
+x = 104 and y = 92
+x: 104 y: 92
+x = 104 and y = 95
+x: 104 y: 95
+x = 104 and y = 98
+x: 104 y: 98
+x = 104 and y = 101
+x: 104 y: 101
+x = 104 and y = 104
+x: 104 y: 104
+x = 104 and y = 107
+x: 104 y: 107
+x = 104 and y = 110
+x: 104 y: 110
+x = 104 and y = 113
+x: 104 y: 113
+x = 104 and y = 116
+x: 104 y: 116
+x = 104 and y = 119
+x: 104 y: 119
+x = 104 and y = 122
+x: 104 y: 122
+x = 104 and y = 125
+x: 104 y: 125
+x = 104 and y = 128
+x: 104 y: 128
+x = 104 and y = 131
+x: 104 y: 131
+x = 104 and y = 134
+x: 104 y: 134
+x = 104 and y = 137
+x: 104 y: 137
+x = 104 and y = 140
+x: 104 y: 140
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 143
+x: 104 y: 143
+x = 104 and y = 146
+x: 104 y: 146
+x = 104 and y = 149
+x: 104 y: 149
+x = 104 and y = 152
+x: 104 y: 152
+x = 104 and y = 155
+x: 104 y: 155
+x = 104 and y = 158
+x: 104 y: 158
+x = 104 and y = 161
+x: 104 y: 161
+x = 104 and y = 164
+x: 104 y: 164
+x = 104 and y = 167
+x: 104 y: 167
+x = 104 and y = 170
+x: 104 y: 170
+x = 104 and y = 173
+x: 104 y: 173
+x = 104 and y = 176
+x: 104 y: 176
+x = 104 and y = 179
+x: 104 y: 179
+x = 104 and y = 182
+x: 104 y: 182
+x = 104 and y = 185
+x: 104 y: 185
+x = 104 and y = 188
+x: 104 y: 188
+x = 104 and y = 191
+x: 104 y: 191
+x = 104 and y = 194
+x: 104 y: 194
+x = 104 and y = 197
+x: 104 y: 197
+x = 104 and y = 200
+x: 104 y: 200
+x = 104 and y = 203
+x: 104 y: 203
+x = 104 and y = 206
+x: 104 y: 206
+x = 104 and y = 209
+x: 104 y: 209
+x = 104 and y = 212
+x: 104 y: 212
+x = 104 and y = 215
+x: 104 y: 215
+x = 104 and y = 218
+x: 104 y: 218
+x = 104 and y = 221
+x: 104 y: 221
+x = 104 and y = 224
+x: 104 y: 224
+x = 104 and y = 227
+x: 104 y: 227
+x = 104 and y = 230
+x: 104 y: 230
+x = 104 and y = 233
+x: 104 y: 233
+x = 104 and y = 236
+x: 104 y: 236
+x = 104 and y = 239
+x: 104 y: 239
+x = 104 and y = 242
+x: 104 y: 242
+x = 104 and y = 245
+x: 104 y: 245
+x = 104 and y = 248
+x: 104 y: 248
+x = 104 and y = 251
+x: 104 y: 251
+x = 104 and y = 254
+x: 104 y: 254
+x = 104 and y = 257
+x: 104 y: 257
+x = 104 and y = 260
+x: 104 y: 260
+x = 104 and y = 263
+x: 104 y: 263
+x = 104 and y = 266
+x: 104 y: 266
+x = 104 and y = 269
+x: 104 y: 269
+x = 104 and y = 272
+x: 104 y: 272
+x = 104 and y = 275
+x: 104 y: 275
+x = 104 and y = 278
+x: 104 y: 278
+x = 104 and y = 281
+x: 104 y: 281
+x = 104 and y = 284
+x: 104 y: 284
+x = 104 and y = 287
+x: 104 y: 287
+x = 104 and y = 290
+x: 104 y: 290
+x = 104 and y = 293
+x: 104 y: 293
+x = 104 and y = 296
+x: 104 y: 296
+x = 104 and y = 299
+x: 104 y: 299
+x = 104 and y = 302
+x: 104 y: 302
+x = 104 and y = 305
+x: 104 y: 305
+x = 104 and y = 308
+x: 104 y: 308
+x = 104 and y = 311
+x: 104 y: 311
+x = 104 and y = 314
+x: 104 y: 314
+x = 104 and y = 317
+x: 104 y: 317
+x = 104 and y = 320
+x: 104 y: 320
+x = 104 and y = 323
+x: 104 y: 323
+Error: Coordinates out of bounds (x: 129, y: 401)
+x = 104 and y = 323
+x: 104 y: 323
+Error: Coordinates out of bounds (x: 129, y: 401)
+x = 104 and y = 323
+x: 104 y: 323
+Error: Coordinates out of bounds (x: 129, y: 401)
+x = 104 and y = 323
+x: 104 y: 323
+Error: Coordinates out of bounds (x: 129, y: 401)
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 104 and y = 323
+x: 104 y: 323
+x = 107 and y = 323
+x: 107 y: 323
+x = 110 and y = 323
+x: 110 y: 323
+x = 113 and y = 323
+x: 113 y: 323
+x = 116 and y = 323
+x: 116 y: 323
+x = 119 and y = 323
+x: 119 y: 323
+x = 122 and y = 323
+x: 122 y: 323
+x = 125 and y = 323
+x: 125 y: 323
+x = 128 and y = 323
+x: 128 y: 323
+x = 131 and y = 323
+x: 131 y: 323
+x = 134 and y = 323
+x: 134 y: 323
+x = 137 and y = 323
+x: 137 y: 323
+x = 140 and y = 323
+x: 140 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 143 and y = 323
+x: 143 y: 323
+x = 146 and y = 323
+x: 146 y: 323
+x = 149 and y = 323
+x: 149 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 323
+x: 152 y: 323
+x = 152 and y = 326
+x: 152 y: 326
+x = 152 and y = 329
+x: 152 y: 329
+x = 152 and y = 332
+x: 152 y: 332
+x = 152 and y = 335
+x: 152 y: 335
+x = 152 and y = 338
+x: 152 y: 338
+x = 152 and y = 341
+x: 152 y: 341
+x = 152 and y = 344
+x: 152 y: 344
+x = 152 and y = 347
+x: 152 y: 347
+x = 152 and y = 350
+x: 152 y: 350
+x = 152 and y = 353
+x: 152 y: 353
+x = 152 and y = 356
+x: 152 y: 356
+x = 152 and y = 359
+x: 152 y: 359
+x = 152 and y = 362
+x: 152 y: 362
+x = 152 and y = 365
+x: 152 y: 365
+x = 152 and y = 368
+x: 152 y: 368
+x = 152 and y = 371
+x: 152 y: 371
+x = 152 and y = 374
+x: 152 y: 374
+x = 152 and y = 377
+x: 152 y: 377
+x = 152 and y = 380
+x: 152 y: 380
+x = 152 and y = 383
+x: 152 y: 383
+x = 152 and y = 386
+x: 152 y: 386
+x = 152 and y = 389
+x: 152 y: 389
+x = 152 and y = 392
+x: 152 y: 392
+x = 152 and y = 395
+x: 152 y: 395
+x = 152 and y = 398
+x: 152 y: 398
+x = 152 and y = 401
+x: 152 y: 401
+x = 152 and y = 404
+x: 152 y: 404
+x = 152 and y = 407
+x: 152 y: 407
+x = 152 and y = 410
+x: 152 y: 410
+x = 152 and y = 413
+x: 152 y: 413
+x = 152 and y = 416
+x: 152 y: 416
+x = 152 and y = 419
+x: 152 y: 419
+x = 152 and y = 422
+x: 152 y: 422
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 152 and y = 425
+x: 152 y: 425
+x = 155 and y = 425
+x: 155 y: 425
+x = 158 and y = 425
+x: 158 y: 425
+x = 161 and y = 425
+x: 161 y: 425
+x = 164 and y = 425
+x: 164 y: 425
+x = 167 and y = 425
+x: 167 y: 425
+x = 170 and y = 425
+x: 170 y: 425
+x = 173 and y = 425
+x: 173 y: 425
+x = 176 and y = 425
+x: 176 y: 425
+x = 179 and y = 425
+x: 179 y: 425
+x = 182 and y = 425
+x: 182 y: 425
+x = 185 and y = 425
+x: 185 y: 425
+x = 188 and y = 425
+x: 188 y: 425
+x = 191 and y = 425
+x: 191 y: 425
+x = 194 and y = 425
+x: 194 y: 425
+x = 197 and y = 425
+x: 197 y: 425
+x = 200 and y = 425
+x: 200 y: 425
+x = 203 and y = 425
+x: 203 y: 425
+x = 206 and y = 425
+x: 206 y: 425
+x = 209 and y = 425
+x: 209 y: 425
+x = 212 and y = 425
+x: 212 y: 425
+x = 215 and y = 425
+x: 215 y: 425
+x = 218 and y = 425
+x: 218 y: 425
+x = 221 and y = 425
+x: 221 y: 425
+x = 224 and y = 425
+x: 224 y: 425
+x = 227 and y = 425
+x: 227 y: 425
+x = 230 and y = 425
+x: 230 y: 425
+x = 230 and y = 425
+x: 230 y: 425
+x = 230 and y = 425
+x: 230 y: 425
+x = 230 and y = 425
+x: 230 y: 425
+x = 230 and y = 428
+x: 230 y: 428
+x = 230 and y = 431
+x: 230 y: 431
+x = 230 and y = 434
+x: 230 y: 434
+x = 230 and y = 437
+x: 230 y: 437
+x = 230 and y = 440
+x: 230 y: 440
+x = 230 and y = 440
+x: 230 y: 440
+x = 230 and y = 440
+x: 230 y: 440
+x = 230 and y = 440
+x: 230 y: 440
+x = 230 and y = 440
+x: 230 y: 440
+x = 233 and y = 440
+x: 233 y: 440
+x = 236 and y = 440
+x: 236 y: 440
+x = 239 and y = 440
+x: 239 y: 440
+x = 242 and y = 440
+x: 242 y: 440
+x = 245 and y = 440
+x: 245 y: 440
+x = 248 and y = 440
+x: 248 y: 440
+x = 251 and y = 440
+x: 251 y: 440
+x = 254 and y = 440
+x: 254 y: 440
+x = 257 and y = 440
+x: 257 y: 440
+x = 260 and y = 440
+x: 260 y: 440
+x = 263 and y = 440
+x: 263 y: 440
+x = 266 and y = 440
+x: 266 y: 440
+x = 269 and y = 440
+x: 269 y: 440
+x = 272 and y = 440
+x: 272 y: 440
+x = 275 and y = 440
+x: 275 y: 440
+x = 278 and y = 440
+x: 278 y: 440
+x = 281 and y = 440
+x: 281 y: 440
+x = 284 and y = 440
+x: 284 y: 440
+x = 287 and y = 440
+x: 287 y: 440
+x = 290 and y = 440
+x: 290 y: 440
+x = 293 and y = 440
+x: 293 y: 440
+x = 296 and y = 440
+x: 296 y: 440
+x = 299 and y = 440
+x: 299 y: 440
+x = 302 and y = 440
+x: 302 y: 440
+x = 305 and y = 440
+x: 305 y: 440
+x = 308 and y = 440
+x: 308 y: 440
+x = 311 and y = 440
+x: 311 y: 440
+x = 314 and y = 440
+x: 314 y: 440
+x = 317 and y = 440
+x: 317 y: 440
+x = 320 and y = 440
+x: 320 y: 440
+x = 323 and y = 440
+x: 323 y: 440
+x = 326 and y = 440
+x: 326 y: 440
+x = 329 and y = 440
+x: 329 y: 440
+x = 332 and y = 440
+x: 332 y: 440
+x = 335 and y = 440
+x: 335 y: 440
+x = 338 and y = 440
+x: 338 y: 440
+x = 341 and y = 440
+x: 341 y: 440
+x = 344 and y = 440
+x: 344 y: 440
+x = 347 and y = 440
+x: 347 y: 440
+x = 350 and y = 440
+x: 350 y: 440
+x = 353 and y = 440
+x: 353 y: 440
+x = 356 and y = 440
+x: 356 y: 440
+x = 359 and y = 440
+x: 359 y: 440
+x = 362 and y = 440
+x: 362 y: 440
+x = 365 and y = 440
+x: 365 y: 440
+x = 368 and y = 440
+x: 368 y: 440
+x = 371 and y = 440
+x: 371 y: 440
+x = 374 and y = 440
+x: 374 y: 440
+x = 374 and y = 440
+x: 374 y: 440
+x = 374 and y = 440
+x: 374 y: 440
+x = 374 and y = 440
+x: 374 y: 440
+x = 374 and y = 443
+x: 374 y: 443
+x = 374 and y = 446
+x: 374 y: 446
+x = 374 and y = 449
+x: 374 y: 449
+x = 374 and y = 452
+x: 374 y: 452
+x = 374 and y = 455
+x: 374 y: 455
+x = 374 and y = 458
+x: 374 y: 458
+x = 374 and y = 458
+x: 374 y: 458
+x = 374 and y = 458
+x: 374 y: 458
+x = 377 and y = 458
+x: 377 y: 458
+x = 380 and y = 458
+x: 380 y: 458
+x = 383 and y = 458
+x: 383 y: 458
+x = 386 and y = 458
+x: 386 y: 458
+x = 389 and y = 458
+x: 389 y: 458
+x = 392 and y = 458
+x: 392 y: 458
+x = 395 and y = 458
+x: 395 y: 458
+x = 398 and y = 458
+x: 398 y: 458
+x = 401 and y = 458
+x: 401 y: 458
+x = 404 and y = 458
+x: 404 y: 458
+x = 407 and y = 458
+x: 407 y: 458
+x = 410 and y = 458
+x: 410 y: 458
+x = 413 and y = 458
+x: 413 y: 458
+x = 416 and y = 458
+x: 416 y: 458
+x = 419 and y = 458
+x: 419 y: 458
+x = 422 and y = 458
+x: 422 y: 458
+x = 425 and y = 458
+x: 425 y: 458
+x = 428 and y = 458
+x: 428 y: 458
+x = 431 and y = 458
+x: 431 y: 458
+x = 434 and y = 458
+x: 434 y: 458
+x = 437 and y = 458
+x: 437 y: 458
+x = 440 and y = 458
+x: 440 y: 458
+x = 443 and y = 458
+x: 443 y: 458
+x = 446 and y = 458
+x: 446 y: 458
+x = 449 and y = 458
+x: 449 y: 458
+x = 452 and y = 458
+x: 452 y: 458
+x = 455 and y = 458
+x: 455 y: 458
+x = 458 and y = 458
+x: 458 y: 458
+x = 461 and y = 458
+x: 461 y: 458
+x = 464 and y = 458
+x: 464 y: 458
+x = 467 and y = 458
+x: 467 y: 458
+x = 470 and y = 458
+x: 470 y: 458
+x = 473 and y = 458
+x: 473 y: 458
+x = 476 and y = 458
+x: 476 y: 458
+x = 479 and y = 458
+x: 479 y: 458
+x = 482 and y = 458
+x: 482 y: 458
+x = 485 and y = 458
+x: 485 y: 458
+x = 488 and y = 458
+x: 488 y: 458
+x = 491 and y = 458
+x: 491 y: 458
+x = 494 and y = 458
+x: 494 y: 458
+x = 497 and y = 458
+x: 497 y: 458
+x = 500 and y = 458
+x: 500 y: 458
+x = 503 and y = 458
+x: 503 y: 458
+x = 506 and y = 458
+x: 506 y: 458
+x = 509 and y = 458
+x: 509 y: 458
+x = 512 and y = 458
+x: 512 y: 458
+x = 515 and y = 458
+x: 515 y: 458
+x = 518 and y = 458
+x: 518 y: 458
+x = 521 and y = 458
+x: 521 y: 458
+x = 524 and y = 458
+x: 524 y: 458
+x = 527 and y = 458
+x: 527 y: 458
+x = 530 and y = 458
+x: 530 y: 458
+x = 533 and y = 458
+x: 533 y: 458
+x = 536 and y = 458
+x: 536 y: 458
+x = 539 and y = 458
+x: 539 y: 458
+x = 542 and y = 458
+x: 542 y: 458
+x = 545 and y = 458
+x: 545 y: 458
+x = 548 and y = 458
+x: 548 y: 458
+x = 551 and y = 458
+x: 551 y: 458
+x = 554 and y = 458
+x: 554 y: 458
+x = 557 and y = 458
+x: 557 y: 458
+x = 560 and y = 458
+x: 560 y: 458
+x = 563 and y = 458
+x: 563 y: 458
+x = 566 and y = 458
+x: 566 y: 458
+x = 569 and y = 458
+x: 569 y: 458
+x = 572 and y = 458
+x: 572 y: 458
+x = 575 and y = 458
+x: 575 y: 458
+x = 578 and y = 458
+x: 578 y: 458
+x = 581 and y = 458
+x: 581 y: 458
+x = 584 and y = 458
+x: 584 y: 458
+x = 587 and y = 458
+x: 587 y: 458
+x = 590 and y = 458
+x: 590 y: 458
+x = 593 and y = 458
+x: 593 y: 458
+x = 596 and y = 458
+x: 596 y: 458
+x = 599 and y = 458
+x: 599 y: 458
+x = 602 and y = 458
+x: 602 y: 458
+x = 605 and y = 458
+x: 605 y: 458
+x = 608 and y = 458
+x: 608 y: 458
+x = 611 and y = 458
+x: 611 y: 458
+x = 614 and y = 458
+x: 614 y: 458
+x = 617 and y = 458
+x: 617 y: 458
+x = 620 and y = 458
+x: 620 y: 458
+x = 623 and y = 458
+x: 623 y: 458
+x = 626 and y = 458
+x: 626 y: 458
+x = 629 and y = 458
+x: 629 y: 458
+x = 632 and y = 458
+x: 632 y: 458
+x = 635 and y = 458
+x: 635 y: 458
+x = 638 and y = 458
+x: 638 y: 458
+x = 641 and y = 458
+x: 641 y: 458
+x = 644 and y = 458
+x: 644 y: 458
+x = 647 and y = 458
+x: 647 y: 458
+x = 650 and y = 458
+x: 650 y: 458
+x = 653 and y = 458
+x: 653 y: 458
+x = 656 and y = 458
+x: 656 y: 458
+x = 659 and y = 458
+x: 659 y: 458
+x = 662 and y = 458
+x: 662 y: 458
+x = 665 and y = 458
+x: 665 y: 458
+x = 668 and y = 458
+x: 668 y: 458
+x = 671 and y = 458
+x: 671 y: 458
+x = 674 and y = 458
+x: 674 y: 458
+x = 677 and y = 458
+🏆 Game Won: Larry reached the destination!
+x: 11 y: 8
+x = 14 and y = 8
+x: 14 y: 8
+x = 17 and y = 8
+x: 17 y: 8
+x = 20 and y = 8
+x: 20 y: 8
+x = 23 and y = 8
+x: 23 y: 8
+x = 26 and y = 8
+x: 26 y: 8
+x = 29 and y = 8
+x: 29 y: 8
+x = 32 and y = 8
+x: 32 y: 8
+x = 35 and y = 8
+x: 35 y: 8
+x = 38 and y = 8
+x: 38 y: 8
+x = 41 and y = 8
+x: 41 y: 8
+x = 44 and y = 8
+x: 44 y: 8
+x = 47 and y = 8
+x: 47 y: 8
+x = 50 and y = 8
+x: 50 y: 8
+x = 53 and y = 8
+x: 53 y: 8
+x = 56 and y = 8
+x: 56 y: 8
+x = 59 and y = 8
+x: 59 y: 8
+x = 62 and y = 8
+x: 62 y: 8
+x = 65 and y = 8
+x: 65 y: 8
+x = 68 and y = 8
+x: 68 y: 8
+x = 71 and y = 8
+x: 71 y: 8
+x = 74 and y = 8
+x: 74 y: 8
+x = 77 and y = 8
+x: 77 y: 8
+x = 80 and y = 8
+x: 80 y: 8
+x = 83 and y = 8
+x: 83 y: 8
+x = 86 and y = 8
+x: 86 y: 8
+x = 89 and y = 8
+x: 89 y: 8
+x = 92 and y = 8
+x: 92 y: 8
+x = 95 and y = 8
+x: 95 y: 8
+x = 98 and y = 8
+x: 98 y: 8
+x = 101 and y = 8
+x: 101 y: 8
+x = 104 and y = 8
+x: 104 y: 8
+x = 107 and y = 8
+x: 107 y: 8
+x = 110 and y = 8
+x: 110 y: 8
+x = 113 and y = 8
+x: 113 y: 8
+x = 116 and y = 8
+x: 116 y: 8
+x = 119 and y = 8
+x: 119 y: 8
+x = 122 and y = 8
+x: 122 y: 8
+x = 125 and y = 8
+x: 125 y: 8
+x = 128 and y = 8
+x: 128 y: 8
+x = 131 and y = 8
+x: 131 y: 8
+x = 134 and y = 8
+x: 134 y: 8
+x = 137 and y = 8
+x: 137 y: 8
+x = 140 and y = 8
+x: 140 y: 8
+x = 143 and y = 8
+x: 143 y: 8
+x = 146 and y = 8
+x: 146 y: 8
+x = 149 and y = 8
+x: 149 y: 8
+x = 152 and y = 8
+x: 152 y: 8
+x = 155 and y = 8
+x: 155 y: 8
+x = 158 and y = 8
+x: 158 y: 8
+x = 161 and y = 8
+x: 161 y: 8
+x = 164 and y = 8
+x: 164 y: 8
+x = 167 and y = 8
+x: 167 y: 8
+x = 170 and y = 8
+x: 170 y: 8
+x = 173 and y = 8
+x: 173 y: 8
+x = 176 and y = 8
+x: 176 y: 8
+x = 176 and y = 8
+x: 176 y: 8
+x = 176 and y = 8
+x: 176 y: 8
+x = 176 and y = 8
+x: 176 y: 8
+x = 176 and y = 11
+x: 176 y: 11
+x = 176 and y = 14
+x: 176 y: 14
+x = 176 and y = 17
+x: 176 y: 17
+x = 176 and y = 20
+x: 176 y: 20
+x = 176 and y = 23
+x: 176 y: 23
+x = 176 and y = 23
+x: 176 y: 23
+x = 176 and y = 23
+x: 176 y: 23
+x = 176 and y = 23
+x: 176 y: 23
+x = 176 and y = 23
+x: 176 y: 23
+x = 179 and y = 23
+x: 179 y: 23
+x = 182 and y = 23
+x: 182 y: 23
+x = 185 and y = 23
+x: 185 y: 23
+x = 188 and y = 23
+x: 188 y: 23
+x = 191 and y = 23
+x: 191 y: 23
+x = 194 and y = 23
+x: 194 y: 23
+x = 197 and y = 23
+x: 197 y: 23
+x = 200 and y = 23
+x: 200 y: 23
+x = 203 and y = 23
+x: 203 y: 23
+x = 206 and y = 23
+x: 206 y: 23
+x = 209 and y = 23
+x: 209 y: 23
+x = 212 and y = 23
+x: 212 y: 23
+x = 215 and y = 23
+x: 215 y: 23
+x = 218 and y = 23
+x: 218 y: 23
+x = 221 and y = 23
+x: 221 y: 23
+x = 224 and y = 23
+x: 224 y: 23
+x = 227 and y = 23
+x: 227 y: 23
+x = 230 and y = 23
+x: 230 y: 23
+x = 233 and y = 23
+x: 233 y: 23
+x = 236 and y = 23
+x: 236 y: 23
+x = 239 and y = 23
+x: 239 y: 23
+x = 242 and y = 23
+x: 242 y: 23
+x = 245 and y = 23
+x: 245 y: 23
+x = 248 and y = 23
+x: 248 y: 23
+x = 251 and y = 23
+x: 251 y: 23
+x = 254 and y = 23
+x: 254 y: 23
+x = 257 and y = 23
+x: 257 y: 23
+x = 260 and y = 23
+x: 260 y: 23
+x = 263 and y = 23
+x: 263 y: 23
+x = 266 and y = 23
+x: 266 y: 23
+x = 269 and y = 23
+x: 269 y: 23
+x = 272 and y = 23
+x: 272 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 275 and y = 23
+x: 275 y: 23
+x = 278 and y = 23
+x: 278 y: 23
+x = 281 and y = 23
+x: 281 y: 23
+x = 284 and y = 23
+x: 284 y: 23
+x = 287 and y = 23
+x: 287 y: 23
+x = 290 and y = 23
+x: 290 y: 23
+x = 293 and y = 23
+x: 293 y: 23
+x = 296 and y = 23
+x: 296 y: 23
+x = 299 and y = 23
+x: 299 y: 23
+x = 302 and y = 23
+x: 302 y: 23
+x = 305 and y = 23
+x: 305 y: 23
+x = 308 and y = 23
+x: 308 y: 23
+x = 311 and y = 23
+x: 311 y: 23
+x = 314 and y = 23
+x: 314 y: 23
+x = 317 and y = 23
+x: 317 y: 23
+x = 320 and y = 23
+x: 320 y: 23
+x = 323 and y = 23
+x: 323 y: 23
+x = 326 and y = 23
+x: 326 y: 23
+x = 329 and y = 23
+x: 329 y: 23
+x = 332 and y = 23
+x: 332 y: 23
+x = 335 and y = 23
+x: 335 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 338 and y = 23
+x: 338 y: 23
+x = 341 and y = 23
+x: 341 y: 23
+x = 344 and y = 23
+x: 344 y: 23
+x = 347 and y = 23
+x: 347 y: 23
+x = 350 and y = 23
+x: 350 y: 23
+x = 353 and y = 23
+x: 353 y: 23
+x = 356 and y = 23
+x: 356 y: 23
+x = 359 and y = 23
+x: 359 y: 23
+x = 362 and y = 23
+x: 362 y: 23
+x = 365 and y = 23
+x: 365 y: 23
+x = 368 and y = 23
+x: 368 y: 23
+x = 371 and y = 23
+x: 371 y: 23
+x = 374 and y = 23
+x: 374 y: 23
+x = 377 and y = 23
+x: 377 y: 23
+x = 380 and y = 23
+x: 380 y: 23
+x = 383 and y = 23
+x: 383 y: 23
+x = 386 and y = 23
+x: 386 y: 23
+x = 389 and y = 23
+x: 389 y: 23
+x = 392 and y = 23
+x: 392 y: 23
+x = 395 and y = 23
+x: 395 y: 23
+x = 398 and y = 23
+x: 398 y: 23
+x = 401 and y = 23
+x: 401 y: 23
+x = 404 and y = 23
+x: 404 y: 23
+x = 407 and y = 23
+x: 407 y: 23
+x = 410 and y = 23
+x: 410 y: 23
+x = 413 and y = 23
+x: 413 y: 23
+x = 416 and y = 23
+x: 416 y: 23
+x = 419 and y = 23
+x: 419 y: 23
+x = 422 and y = 23
+x: 422 y: 23
+x = 425 and y = 23
+x: 425 y: 23
+x = 428 and y = 23
+x: 428 y: 23
+x = 431 and y = 23
+x: 431 y: 23
+x = 434 and y = 23
+x: 434 y: 23
+x = 437 and y = 23
+x: 437 y: 23
+x = 440 and y = 23
+x: 440 y: 23
+x = 443 and y = 23
+x: 443 y: 23
+x = 446 and y = 23
+x: 446 y: 23
+x = 449 and y = 23
+x: 449 y: 23
+x = 452 and y = 23
+x: 452 y: 23
+x = 455 and y = 23
+x: 455 y: 23
+x = 458 and y = 23
+x: 458 y: 23
+x = 461 and y = 23
+x: 461 y: 23
+x = 464 and y = 23
+x: 464 y: 23
+x = 467 and y = 23
+x: 467 y: 23
+x = 470 and y = 23
+x: 470 y: 23
+x = 473 and y = 23
+x: 473 y: 23
+x = 476 and y = 23
+x: 476 y: 23
+x = 479 and y = 23
+x: 479 y: 23
+x = 482 and y = 23
+x: 482 y: 23
+x = 485 and y = 23
+x: 485 y: 23
+x = 488 and y = 23
+x: 488 y: 23
+x = 491 and y = 23
+x: 491 y: 23
+x = 494 and y = 23
+x: 494 y: 23
+x = 497 and y = 23
+x: 497 y: 23
+x = 500 and y = 23
+x: 500 y: 23
+x = 503 and y = 23
+x: 503 y: 23
+x = 506 and y = 23
+x: 506 y: 23
+x = 509 and y = 23
+x: 509 y: 23
+x = 512 and y = 23
+x: 512 y: 23
+x = 515 and y = 23
+x: 515 y: 23
+x = 518 and y = 23
+x: 518 y: 23
+x = 521 and y = 23
+x: 521 y: 23
+x = 524 and y = 23
+x: 524 y: 23
+x = 527 and y = 23
+x: 527 y: 23
+x = 530 and y = 23
+x: 530 y: 23
+x = 533 and y = 23
+x: 533 y: 23
+x = 536 and y = 23
+x: 536 y: 23
+x = 539 and y = 23
+x: 539 y: 23
+x = 542 and y = 23
+x: 542 y: 23
+x = 545 and y = 23
+x: 545 y: 23
+x = 548 and y = 23
+x: 548 y: 23
+x = 551 and y = 23
+x: 551 y: 23
+x = 554 and y = 23
+x: 554 y: 23
+x = 557 and y = 23
+x: 557 y: 23
+x = 560 and y = 23
+x: 560 y: 23
+x = 563 and y = 23
+x: 563 y: 23
+x = 566 and y = 23
+x: 566 y: 23
+x = 569 and y = 23
+x: 569 y: 23
+x = 572 and y = 23
+x: 572 y: 23
+x = 575 and y = 23
+x: 575 y: 23
+x = 578 and y = 23
+x: 578 y: 23
+x = 581 and y = 23
+x: 581 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 23
+x: 584 y: 23
+x = 584 and y = 26
+x: 584 y: 26
+x = 584 and y = 29
+x: 584 y: 29
+x = 584 and y = 32
+x: 584 y: 32
+x = 584 and y = 35
+x: 584 y: 35
+x = 584 and y = 38
+x: 584 y: 38
+x = 584 and y = 41
+x: 584 y: 41
+x = 584 and y = 44
+x: 584 y: 44
+x = 584 and y = 47
+x: 584 y: 47
+x = 584 and y = 50
+x: 584 y: 50
+x = 584 and y = 53
+x: 584 y: 53
+x = 584 and y = 56
+x: 584 y: 56
+x = 584 and y = 59
+x: 584 y: 59
+x = 584 and y = 62
+x: 584 y: 62
+x = 584 and y = 65
+x: 584 y: 65
+x = 584 and y = 68
+x: 584 y: 68
+x = 584 and y = 71
+x: 584 y: 71
+x = 584 and y = 74
+x: 584 y: 74
+x = 584 and y = 77
+x: 584 y: 77
+x = 584 and y = 80
+x: 584 y: 80
+x = 584 and y = 83
+x: 584 y: 83
+x = 584 and y = 86
+x: 584 y: 86
+x = 584 and y = 89
+x: 584 y: 89
+x = 584 and y = 92
+x: 584 y: 92
+x = 584 and y = 95
+x: 584 y: 95
+x = 584 and y = 98
+x: 584 y: 98
+x = 584 and y = 101
+x: 584 y: 101
+x = 584 and y = 104
+x: 584 y: 104
+x = 584 and y = 107
+x: 584 y: 107
+x = 584 and y = 110
+x: 584 y: 110
+x = 584 and y = 113
+x: 584 y: 113
+x = 584 and y = 116
+x: 584 y: 116
+x = 584 and y = 119
+x: 584 y: 119
+x = 584 and y = 122
+x: 584 y: 122
+x = 584 and y = 125
+x: 584 y: 125
+x = 584 and y = 128
+x: 584 y: 128
+x = 584 and y = 131
+x: 584 y: 131
+x = 584 and y = 134
+x: 584 y: 134
+x = 584 and y = 137
+x: 584 y: 137
+x = 584 and y = 140
+x: 584 y: 140
+x = 584 and y = 143
+x: 584 y: 143
+x = 584 and y = 146
+x: 584 y: 146
+x = 584 and y = 149
+x: 584 y: 149
+x = 584 and y = 152
+x: 584 y: 152
+x = 584 and y = 155
+x: 584 y: 155
+x = 584 and y = 158
+x: 584 y: 158
+x = 584 and y = 161
+x: 584 y: 161
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+Error: Invalid move direction.
+x = 584 and y = 164
+x: 584 y: 164
+x = 581 and y = 164
+x: 581 y: 164
+x = 578 and y = 164
+x: 578 y: 164
+x = 575 and y = 164
+x: 575 y: 164
+x = 572 and y = 164
+x: 572 y: 164
+x = 569 and y = 164
+x: 569 y: 164
+x = 566 and y = 164
+x: 566 y: 164
+x = 563 and y = 164
+x: 563 y: 164
+x = 560 and y = 164
+x: 560 y: 164
+x = 557 and y = 164
+x: 557 y: 164
+x = 554 and y = 164
+x: 554 y: 164
+x = 551 and y = 164
+x: 551 y: 164
+x = 548 and y = 164
+x: 548 y: 164
+x = 545 and y = 164
+x: 545 y: 164
+x = 542 and y = 164
+x: 542 y: 164
+x = 539 and y = 164
+x: 539 y: 164
+x = 536 and y = 164
+x: 536 y: 164
+x = 533 and y = 164
+x: 533 y: 164
+x = 530 and y = 164
+x: 530 y: 164
+x = 527 and y = 164
+x: 527 y: 164
+x = 524 and y = 164
+x: 524 y: 164
+x = 521 and y = 164
+x: 521 y: 164
+x = 518 and y = 164
+x: 518 y: 164
+x = 515 and y = 164
+x: 515 y: 164
+x = 512 and y = 164
+x: 512 y: 164
+x = 509 and y = 164
+x: 509 y: 164
+x = 506 and y = 164
+x: 506 y: 164
+x = 503 and y = 164
+x: 503 y: 164
+x = 500 and y = 164
+x: 500 y: 164
+x = 497 and y = 164
+x: 497 y: 164
+x = 494 and y = 164
+x: 494 y: 164
+x = 491 and y = 164
+x: 491 y: 164
+x = 488 and y = 164
+x: 488 y: 164
+x = 485 and y = 164
+x: 485 y: 164
+x = 482 and y = 164
+x: 482 y: 164
+x = 479 and y = 164
+x: 479 y: 164
+x = 476 and y = 164
+x: 476 y: 164
+x = 473 and y = 164
+x: 473 y: 164
+x = 470 and y = 164
+x: 470 y: 164
+x = 467 and y = 164
+x: 467 y: 164
+x = 464 and y = 164
+x: 464 y: 164
+x = 461 and y = 164
+x: 461 y: 164
+x = 458 and y = 164
+x: 458 y: 164
+x = 455 and y = 164
+x: 455 y: 164
+x = 452 and y = 164
+x: 452 y: 164
+x = 449 and y = 164
+x: 449 y: 164
+x = 446 and y = 164
+x: 446 y: 164
+x = 443 and y = 164
+x: 443 y: 164
+x = 440 and y = 164
+x: 440 y: 164
+x = 437 and y = 164
+x: 437 y: 164
+x = 434 and y = 164
+x: 434 y: 164
+x = 431 and y = 164
+x: 431 y: 164
+x = 428 and y = 164
+x: 428 y: 164
+x = 425 and y = 164
+x: 425 y: 164
+x = 422 and y = 164
+x: 422 y: 164
+x = 419 and y = 164
+x: 419 y: 164
+x = 419 and y = 164
+x: 419 y: 164
+x = 419 and y = 164
+x: 419 y: 164
+x = 419 and y = 167
+x: 419 y: 167
+x = 419 and y = 170
+x: 419 y: 170
+x = 419 and y = 173
+x: 419 y: 173
+x = 419 and y = 176
+x: 419 y: 176
+x = 419 and y = 179
+x: 419 y: 179
+x = 419 and y = 182
+x: 419 y: 182
+x = 419 and y = 185
+x: 419 y: 185
+x = 419 and y = 188
+x: 419 y: 188
+x = 419 and y = 191
+x: 419 y: 191
+x = 419 and y = 194
+x: 419 y: 194
+x = 419 and y = 197
+x: 419 y: 197
+x = 419 and y = 200
+x: 419 y: 200
+x = 419 and y = 203
+x: 419 y: 203
+x = 419 and y = 206
+x: 419 y: 206
+x = 419 and y = 209
+x: 419 y: 209
+x = 419 and y = 212
+x: 419 y: 212
+x = 419 and y = 215
+x: 419 y: 215
+x = 419 and y = 218
+x: 419 y: 218
+x = 419 and y = 221
+x: 419 y: 221
+x = 419 and y = 224
+x: 419 y: 224
+x = 419 and y = 227
+x: 419 y: 227
+x = 419 and y = 230
+x: 419 y: 230
+x = 419 and y = 233
+x: 419 y: 233
+x = 419 and y = 236
+x: 419 y: 236
+x = 419 and y = 239
+x: 419 y: 239
+x = 419 and y = 242
+x: 419 y: 242
+x = 419 and y = 245
+x: 419 y: 245
+x = 419 and y = 248
+x: 419 y: 248
+x = 419 and y = 251
+x: 419 y: 251
+x = 419 and y = 254
+x: 419 y: 254
+x = 419 and y = 257
+x: 419 y: 257
+x = 419 and y = 260
+x: 419 y: 260
+x = 419 and y = 263
+x: 419 y: 263
+x = 419 and y = 266
+x: 419 y: 266
+x = 419 and y = 269
+x: 419 y: 269
+x = 419 and y = 272
+x: 419 y: 272
+x = 419 and y = 275
+x: 419 y: 275
+x = 419 and y = 278
+x: 419 y: 278
+x = 419 and y = 281
+x: 419 y: 281
+x = 419 and y = 284
+x: 419 y: 284
+x = 419 and y = 287
+x: 419 y: 287
+x = 419 and y = 290
+x: 419 y: 290
+x = 419 and y = 293
+x: 419 y: 293
+x = 419 and y = 296
+x: 419 y: 296
+x = 419 and y = 299
+x: 419 y: 299
+x = 419 and y = 302
+x: 419 y: 302
+x = 419 and y = 305
+x: 419 y: 305
+x = 419 and y = 308
+x: 419 y: 308
+x = 419 and y = 311
+x: 419 y: 311
+x = 419 and y = 314
+x: 419 y: 314
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 419 and y = 317
+x: 419 y: 317
+x = 422 and y = 317
+x: 422 y: 317
+x = 425 and y = 317
+x: 425 y: 317
+x = 428 and y = 317
+x: 428 y: 317
+x = 431 and y = 317
+x: 431 y: 317
+x = 434 and y = 317
+x: 434 y: 317
+x = 437 and y = 317
+x: 437 y: 317
+x = 440 and y = 317
+x: 440 y: 317
+x = 443 and y = 317
+x: 443 y: 317
+x = 446 and y = 317
+x: 446 y: 317
+x = 449 and y = 317
+x: 449 y: 317
+x = 452 and y = 317
+x: 452 y: 317
+x = 455 and y = 317
+x: 455 y: 317
+x = 458 and y = 317
+x: 458 y: 317
+x = 461 and y = 317
+x: 461 y: 317
+x = 464 and y = 317
+x: 464 y: 317
+x = 467 and y = 317
+x: 467 y: 317
+x = 470 and y = 317
+x: 470 y: 317
+x = 473 and y = 317
+x: 473 y: 317
+x = 476 and y = 317
+x: 476 y: 317
+x = 479 and y = 317
+x: 479 y: 317
+x = 482 and y = 317
+x: 482 y: 317
+x = 485 and y = 317
+x: 485 y: 317
+x = 488 and y = 317
+x: 488 y: 317
+x = 491 and y = 317
+x: 491 y: 317
+x = 494 and y = 317
+x: 494 y: 317
+x = 497 and y = 317
+x: 497 y: 317
+x = 500 and y = 317
+x: 500 y: 317
+x = 503 and y = 317
+x: 503 y: 317
+x = 506 and y = 317
+x: 506 y: 317
+x = 509 and y = 317
+x: 509 y: 317
+x = 512 and y = 317
+x: 512 y: 317
+x = 515 and y = 317
+x: 515 y: 317
+x = 518 and y = 317
+x: 518 y: 317
+x = 521 and y = 317
+x: 521 y: 317
+x = 524 and y = 317
+x: 524 y: 317
+x = 527 and y = 317
+x: 527 y: 317
+x = 530 and y = 317
+x: 530 y: 317
+x = 533 and y = 317
+x: 533 y: 317
+x = 536 and y = 317
+x: 536 y: 317
+x = 539 and y = 317
+x: 539 y: 317
+x = 542 and y = 317
+x: 542 y: 317
+x = 545 and y = 317
+x: 545 y: 317
+x = 548 and y = 317
+x: 548 y: 317
+x = 551 and y = 317
+x: 551 y: 317
+x = 554 and y = 317
+x: 554 y: 317
+x = 557 and y = 317
+x: 557 y: 317
+x = 560 and y = 317
+x: 560 y: 317
+x = 563 and y = 317
+x: 563 y: 317
+x = 566 and y = 317
+x: 566 y: 317
+x = 569 and y = 317
+x: 569 y: 317
+x = 572 and y = 317
+x: 572 y: 317
+x = 575 and y = 317
+x: 575 y: 317
+x = 578 and y = 317
+x: 578 y: 317
+x = 581 and y = 317
+x: 581 y: 317
+x = 584 and y = 317
+x: 584 y: 317
+x = 587 and y = 317
+x: 587 y: 317
+x = 590 and y = 317
+x: 590 y: 317
+x = 593 and y = 317
+x: 593 y: 317
+x = 596 and y = 317
+x: 596 y: 317
+x = 599 and y = 317
+x: 599 y: 317
+x = 602 and y = 317
+x: 602 y: 317
+x = 605 and y = 317
+x: 605 y: 317
+x = 608 and y = 317
+x: 608 y: 317
+x = 611 and y = 317
+x: 611 y: 317
+x = 614 and y = 317
+x: 614 y: 317
+x = 617 and y = 317
+x: 617 y: 317
+x = 620 and y = 317
+x: 620 y: 317
+x = 623 and y = 317
+x: 623 y: 317
+x = 626 and y = 317
+x: 626 y: 317
+x = 629 and y = 317
+x: 629 y: 317
+x = 632 and y = 317
+x: 632 y: 317
+x = 635 and y = 317
+x: 635 y: 317
+x = 638 and y = 317
+x: 638 y: 317
+x = 641 and y = 317
+x: 641 y: 317
+x = 644 and y = 317
+x: 644 y: 317
+x = 647 and y = 317
+x: 647 y: 317
+x = 650 and y = 317
+x: 650 y: 317
+x = 653 and y = 317
+x: 653 y: 317
+x = 656 and y = 317
+x: 656 y: 317
+x = 659 and y = 317
+x: 659 y: 317
+x = 662 and y = 317
+x: 662 y: 317
+x = 665 and y = 317
+x: 665 y: 317
+x = 668 and y = 317
+x: 668 y: 317
+x = 671 and y = 317
+x: 671 y: 317
+x = 674 and y = 317
+x: 674 y: 317
+x = 677 and y = 317
+x: 10 y: 10
+x = 13 and y = 10
+x: 13 y: 10
+x = 16 and y = 10
+x: 16 y: 10
+x = 19 and y = 10
+x: 19 y: 10
+x = 22 and y = 10
+x: 22 y: 10
+x = 25 and y = 10
+x: 25 y: 10
+x = 28 and y = 10
+x: 28 y: 10
+x = 31 and y = 10
+x: 31 y: 10
+x = 34 and y = 10
+x: 34 y: 10
+x = 37 and y = 10
+x: 37 y: 10
+x = 40 and y = 10
+x: 40 y: 10
+x = 43 and y = 10
+x: 43 y: 10
+x = 46 and y = 10
+x: 46 y: 10
+x = 49 and y = 10
+x: 49 y: 10
+x = 52 and y = 10
+x: 52 y: 10
+x = 55 and y = 10
+x: 55 y: 10
+x = 58 and y = 10
+x: 58 y: 10
+x = 61 and y = 10
+x: 61 y: 10
+x = 64 and y = 10
+x: 64 y: 10
+x = 67 and y = 10
+x: 67 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 10
+x: 70 y: 10
+x = 70 and y = 13
+x: 70 y: 13
+x = 70 and y = 16
+x: 70 y: 16
+x = 70 and y = 19
+x: 70 y: 19
+x = 70 and y = 22
+x: 70 y: 22
+x = 70 and y = 25
+x: 70 y: 25
+x = 70 and y = 28
+x: 70 y: 28
+x = 70 and y = 31
+x: 70 y: 31
+x = 70 and y = 34
+x: 70 y: 34
+x = 70 and y = 37
+x: 70 y: 37
+x = 70 and y = 40
+x: 70 y: 40
+x = 70 and y = 43
+x: 70 y: 43
+x = 70 and y = 46
+x: 70 y: 46
+x = 70 and y = 49
+x: 70 y: 49
+x = 70 and y = 52
+x: 70 y: 52
+x = 70 and y = 55
+x: 70 y: 55
+x = 70 and y = 58
+x: 70 y: 58
+x = 70 and y = 61
+x: 70 y: 61
+x = 70 and y = 64
+x: 70 y: 64
+x = 70 and y = 67
+x: 70 y: 67
+x = 70 and y = 70
+x: 70 y: 70
+x = 70 and y = 73
+x: 70 y: 73
+x = 70 and y = 76
+x: 70 y: 76
+x = 70 and y = 79
+x: 70 y: 79
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 70 and y = 82
+x: 70 y: 82
+x = 67 and y = 82
+x: 67 y: 82
+x = 64 and y = 82
+x: 64 y: 82
+x = 61 and y = 82
+x: 61 y: 82
+x = 58 and y = 82
+x: 58 y: 82
+x = 55 and y = 82
+x: 55 y: 82
+x = 52 and y = 82
+x: 52 y: 82
+x = 49 and y = 82
+x: 49 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 82
+x: 46 y: 82
+x = 46 and y = 85
+x: 46 y: 85
+x = 46 and y = 88
+x: 46 y: 88
+x = 46 and y = 91
+x: 46 y: 91
+x = 46 and y = 94
+x: 46 y: 94
+x = 46 and y = 97
+x: 46 y: 97
+x = 46 and y = 100
+x: 46 y: 100
+x = 46 and y = 103
+x: 46 y: 103
+x = 46 and y = 106
+x: 46 y: 106
+x = 46 and y = 109
+x: 46 y: 109
+x = 46 and y = 112
+x: 46 y: 112
+x = 46 and y = 115
+x: 46 y: 115
+x = 46 and y = 118
+x: 46 y: 118
+x = 46 and y = 121
+x: 46 y: 121
+x = 46 and y = 124
+x: 46 y: 124
+x = 46 and y = 127
+x: 46 y: 127
+x = 46 and y = 130
+x: 46 y: 130
+x = 46 and y = 133
+x: 46 y: 133
+x = 46 and y = 136
+x: 46 y: 136
+x = 46 and y = 139
+x: 46 y: 139
+x = 46 and y = 142
+x: 46 y: 142
+x = 46 and y = 142
+x: 46 y: 142
+x = 46 and y = 142
+x: 46 y: 142
+x = 46 and y = 142
+x: 46 y: 142
+x = 46 and y = 142
+x: 46 y: 142
+x = 43 and y = 142
+x: 43 y: 142
+x = 40 and y = 142
+x: 40 y: 142
+x = 37 and y = 142
+x: 37 y: 142
+x = 34 and y = 142
+x: 34 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 142
+x: 31 y: 142
+x = 31 and y = 145
+x: 31 y: 145
+x = 31 and y = 148
+x: 31 y: 148
+x = 31 and y = 151
+x: 31 y: 151
+x = 31 and y = 154
+x: 31 y: 154
+x = 31 and y = 157
+x: 31 y: 157
+x = 31 and y = 160
+x: 31 y: 160
+x = 31 and y = 163
+x: 31 y: 163
+x = 31 and y = 166
+x: 31 y: 166
+x = 31 and y = 169
+x: 31 y: 169
+x = 31 and y = 172
+x: 31 y: 172
+x = 31 and y = 175
+x: 31 y: 175
+x = 31 and y = 178
+x: 31 y: 178
+x = 31 and y = 181
+x: 31 y: 181
+x = 31 and y = 184
+x: 31 y: 184
+x = 31 and y = 187
+x: 31 y: 187
+x = 31 and y = 190
+x: 31 y: 190
+x = 31 and y = 193
+x: 31 y: 193
+x = 31 and y = 196
+x: 31 y: 196
+x = 31 and y = 199
+x: 31 y: 199
+x = 31 and y = 202
+x: 31 y: 202
+x = 31 and y = 205
+x: 31 y: 205
+x = 31 and y = 208
+x: 31 y: 208
+x = 31 and y = 211
+x: 31 y: 211
+x = 31 and y = 214
+x: 31 y: 214
+x = 31 and y = 217
+x: 31 y: 217
+x = 31 and y = 220
+x: 31 y: 220
+x = 31 and y = 223
+x: 31 y: 223
+x = 31 and y = 226
+x: 31 y: 226
+x = 31 and y = 229
+x: 31 y: 229
+x = 31 and y = 232
+x: 31 y: 232
+x = 31 and y = 235
+x: 31 y: 235
+x = 31 and y = 238
+x: 31 y: 238
+x = 31 and y = 241
+x: 31 y: 241
+x = 31 and y = 244
+x: 31 y: 244
+x = 31 and y = 247
+x: 31 y: 247
+x = 31 and y = 250
+x: 31 y: 250
+x = 31 and y = 253
+x: 31 y: 253
+x = 31 and y = 256
+x: 31 y: 256
+x = 31 and y = 259
+x: 31 y: 259
+x = 31 and y = 262
+x: 31 y: 262
+x = 31 and y = 265
+x: 31 y: 265
+x = 31 and y = 268
+x: 31 y: 268
+x = 31 and y = 271
+x: 31 y: 271
+x = 31 and y = 274
+x: 31 y: 274
+x = 31 and y = 277
+x: 31 y: 277
+x = 31 and y = 280
+x: 31 y: 280
+x = 31 and y = 283
+x: 31 y: 283
+x = 31 and y = 286
+x: 31 y: 286
+x = 31 and y = 289
+x: 31 y: 289
+x = 31 and y = 292
+x: 31 y: 292
+x = 31 and y = 295
+x: 31 y: 295
+x = 31 and y = 298
+x: 31 y: 298
+x = 31 and y = 301
+x: 31 y: 301
+x = 31 and y = 304
+x: 31 y: 304
+x = 31 and y = 307
+x: 31 y: 307
+x = 31 and y = 310
+x: 31 y: 310
+x = 31 and y = 313
+x: 31 y: 313
+x = 31 and y = 316
+x: 31 y: 316
+x = 31 and y = 319
+x: 31 y: 319
+x = 31 and y = 322
+x: 31 y: 322
+x = 31 and y = 325
+x: 31 y: 325
+x = 31 and y = 328
+x: 31 y: 328
+x = 31 and y = 331
+x: 31 y: 331
+x = 31 and y = 334
+x: 31 y: 334
+x = 31 and y = 337
+x: 31 y: 337
+x = 31 and y = 340
+x: 31 y: 340
+x = 31 and y = 343
+x: 31 y: 343
+x = 31 and y = 346
+x: 31 y: 346
+x = 31 and y = 349
+x: 31 y: 349
+x = 31 and y = 352
+x: 31 y: 352
+x = 31 and y = 355
+x: 31 y: 355
+x = 31 and y = 358
+x: 31 y: 358
+x = 31 and y = 361
+x: 31 y: 361
+x = 31 and y = 364
+x: 31 y: 364
+x = 31 and y = 367
+x: 31 y: 367
+x = 31 and y = 370
+x: 31 y: 370
+x = 31 and y = 373
+x: 31 y: 373
+x = 31 and y = 376
+x: 31 y: 376
+x = 31 and y = 379
+x: 31 y: 379
+x = 31 and y = 382
+x: 31 y: 382
+x = 31 and y = 385
+x: 31 y: 385
+x = 31 and y = 388
+x: 31 y: 388
+x = 31 and y = 391
+x: 31 y: 391
+x = 31 and y = 394
+x: 31 y: 394
+x = 31 and y = 397
+x: 31 y: 397
+x = 31 and y = 400
+x: 31 y: 400
+x = 31 and y = 403
+x: 31 y: 403
+x = 31 and y = 406
+x: 31 y: 406
+x = 31 and y = 409
+x: 31 y: 409
+x = 31 and y = 412
+x: 31 y: 412
+x = 31 and y = 415
+x: 31 y: 415
+x = 31 and y = 418
+x: 31 y: 418
+x = 31 and y = 421
+x: 31 y: 421
+x = 31 and y = 424
+x: 31 y: 424
+x = 31 and y = 427
+x: 31 y: 427
+x = 31 and y = 430
+x: 31 y: 430
+x = 31 and y = 433
+x: 31 y: 433
+x = 31 and y = 436
+x: 31 y: 436
+x = 31 and y = 439
+x: 31 y: 439
+x = 31 and y = 442
+x: 31 y: 442
+x = 31 and y = 445
+x: 31 y: 445
+x = 31 and y = 448
+x: 31 y: 448
+x = 31 and y = 451
+x: 31 y: 451
+x = 31 and y = 454
+x: 31 y: 454
+x = 31 and y = 457
+x: 31 y: 457
+x = 31 and y = 460
+x: 31 y: 460
+x = 31 and y = 463
+x: 31 y: 463
+x = 31 and y = 466
+x: 31 y: 466
+x = 31 and y = 469
+x: 31 y: 469
+x = 31 and y = 469
+x: 31 y: 469
+x = 31 and y = 469
+x: 31 y: 469
+x = 31 and y = 469
+x: 31 y: 469
+x = 31 and y = 469
+x: 31 y: 469
+x = 34 and y = 469
+x: 34 y: 469
+x = 37 and y = 469
+x: 37 y: 469
+x = 40 and y = 469
+x: 40 y: 469
+x = 43 and y = 469
+x: 43 y: 469
+x = 46 and y = 469
+x: 46 y: 469
+x = 49 and y = 469
+x: 49 y: 469
+x = 52 and y = 469
+x: 52 y: 469
+x = 55 and y = 469
+x: 55 y: 469
+x = 58 and y = 469
+x: 58 y: 469
+x = 61 and y = 469
+x: 61 y: 469
+x = 64 and y = 469
+x: 64 y: 469
+x = 67 and y = 469
+x: 67 y: 469
+x = 70 and y = 469
+x: 70 y: 469
+x = 73 and y = 469
+x: 73 y: 469
+x = 76 and y = 469
+x: 76 y: 469
+x = 79 and y = 469
+x: 79 y: 469
+x = 82 and y = 469
+x: 82 y: 469
+x = 85 and y = 469
+x: 85 y: 469
+x = 88 and y = 469
+x: 88 y: 469
+x = 91 and y = 469
+x: 91 y: 469
+x = 94 and y = 469
+x: 94 y: 469
+x = 97 and y = 469
+x: 97 y: 469
+x = 100 and y = 469
+x: 100 y: 469
+x = 103 and y = 469
+x: 103 y: 469
+x = 106 and y = 469
+x: 106 y: 469
+x = 109 and y = 469
+x: 109 y: 469
+x = 112 and y = 469
+x: 112 y: 469
+x = 115 and y = 469
+x: 115 y: 469
+x = 118 and y = 469
+x: 118 y: 469
+x = 121 and y = 469
+x: 121 y: 469
+x = 124 and y = 469
+x: 124 y: 469
+x = 127 and y = 469
+x: 127 y: 469
+x = 130 and y = 469
+x: 130 y: 469
+x = 133 and y = 469
+x: 133 y: 469
+x = 136 and y = 469
+x: 136 y: 469
+x = 139 and y = 469
+x: 139 y: 469
+x = 142 and y = 469
+x: 142 y: 469
+x = 145 and y = 469
+x: 145 y: 469
+x = 148 and y = 469
+x: 148 y: 469
+x = 151 and y = 469
+x: 151 y: 469
+x = 154 and y = 469
+x: 154 y: 469
+x = 157 and y = 469
+x: 157 y: 469
+x = 160 and y = 469
+x: 160 y: 469
+x = 163 and y = 469
+x: 163 y: 469
+x = 166 and y = 469
+x: 166 y: 469
+x = 169 and y = 469
+x: 169 y: 469
+x = 172 and y = 469
+x: 172 y: 469
+x = 175 and y = 469
+x: 175 y: 469
+x = 178 and y = 469
+x: 178 y: 469
+x = 181 and y = 469
+x: 181 y: 469
+x = 184 and y = 469
+x: 184 y: 469
+x = 187 and y = 469
+x: 187 y: 469
+x = 190 and y = 469
+x: 190 y: 469
+x = 193 and y = 469
+x: 193 y: 469
+x = 196 and y = 469
+x: 196 y: 469
+x = 199 and y = 469
+x: 199 y: 469
+x = 202 and y = 469
+x: 202 y: 469
+x = 205 and y = 469
+x: 205 y: 469
+x = 208 and y = 469
+x: 208 y: 469
+x = 211 and y = 469
+x: 211 y: 469
+x = 214 and y = 469
+x: 214 y: 469
+x = 217 and y = 469
+x: 217 y: 469
+x = 220 and y = 469
+x: 220 y: 469
+x = 223 and y = 469
+x: 223 y: 469
+x = 226 and y = 469
+x: 226 y: 469
+x = 229 and y = 469
+x: 229 y: 469
+x = 232 and y = 469
+x: 232 y: 469
+x = 235 and y = 469
+x: 235 y: 469
+x = 238 and y = 469
+x: 238 y: 469
+x = 241 and y = 469
+x: 241 y: 469
+x = 244 and y = 469
+x: 244 y: 469
+x = 247 and y = 469
+x: 247 y: 469
+x = 250 and y = 469
+x: 250 y: 469
+x = 253 and y = 469
+x: 253 y: 469
+x = 256 and y = 469
+x: 256 y: 469
+x = 259 and y = 469
+x: 259 y: 469
+x = 262 and y = 469
+x: 262 y: 469
+x = 265 and y = 469
+x: 265 y: 469
+x = 268 and y = 469
+x: 268 y: 469
+x = 271 and y = 469
+x: 271 y: 469
+x = 274 and y = 469
+x: 274 y: 469
+x = 277 and y = 469
+x: 277 y: 469
+x = 280 and y = 469
+x: 280 y: 469
+x = 283 and y = 469
+x: 283 y: 469
+x = 286 and y = 469
+x: 286 y: 469
+x = 289 and y = 469
+x: 289 y: 469
+x = 292 and y = 469
+x: 292 y: 469
+x = 295 and y = 469
+x: 295 y: 469
+x = 298 and y = 469
+x: 298 y: 469
+x = 301 and y = 469
+x: 301 y: 469
+x = 304 and y = 469
+x: 304 y: 469
+x = 307 and y = 469
+x: 307 y: 469
+x = 310 and y = 469
+x: 310 y: 469
+x = 313 and y = 469
+x: 313 y: 469
+x = 316 and y = 469
+x: 316 y: 469
+x = 319 and y = 469
+x: 319 y: 469
+x = 322 and y = 469
+x: 322 y: 469
+x = 325 and y = 469
+x: 325 y: 469
+x = 328 and y = 469
+x: 328 y: 469
+x = 331 and y = 469
+x: 331 y: 469
+x = 334 and y = 469
+x: 334 y: 469
+x = 337 and y = 469
+x: 337 y: 469
+x = 340 and y = 469
+x: 340 y: 469
+x = 343 and y = 469
+x: 343 y: 469
+x = 346 and y = 469
+x: 346 y: 469
+x = 349 and y = 469
+x: 349 y: 469
+x = 352 and y = 469
+x: 352 y: 469
+x = 355 and y = 469
+x: 355 y: 469
+x = 358 and y = 469
+x: 358 y: 469
+x = 361 and y = 469
+x: 361 y: 469
+x = 364 and y = 469
+x: 364 y: 469
+x = 367 and y = 469
+x: 367 y: 469
+x = 370 and y = 469
+x: 370 y: 469
+x = 373 and y = 469
+x: 373 y: 469
+x = 376 and y = 469
+x: 376 y: 469
+x = 379 and y = 469
+x: 379 y: 469
+x = 382 and y = 469
+x: 382 y: 469
+x = 385 and y = 469
+x: 385 y: 469
+x = 388 and y = 469
+x: 388 y: 469
+x = 391 and y = 469
+x: 391 y: 469
+x = 394 and y = 469
+x: 394 y: 469
+x = 397 and y = 469
+x: 397 y: 469
+x = 400 and y = 469
+x: 400 y: 469
+x = 403 and y = 469
+x: 403 y: 469
+x = 406 and y = 469
+x: 406 y: 469
+x = 409 and y = 469
+x: 409 y: 469
+x = 412 and y = 469
+x: 412 y: 469
+x = 415 and y = 469
+x: 415 y: 469
+x = 418 and y = 469
+x: 418 y: 469
+x = 421 and y = 469
+x: 421 y: 469
+x = 424 and y = 469
+x: 424 y: 469
+x = 427 and y = 469
+x: 427 y: 469
+x = 430 and y = 469
+x: 430 y: 469
+x = 433 and y = 469
+x: 433 y: 469
+x = 436 and y = 469
+x: 436 y: 469
+x = 439 and y = 469
+x: 439 y: 469
+x = 442 and y = 469
+x: 442 y: 469
+x = 445 and y = 469
+x: 445 y: 469
+x = 448 and y = 469
+x: 448 y: 469
+x = 451 and y = 469
+x: 451 y: 469
+x = 454 and y = 469
+x: 454 y: 469
+x = 457 and y = 469
+x: 457 y: 469
+x = 460 and y = 469
+x: 460 y: 469
+x = 463 and y = 469
+x: 463 y: 469
+x = 466 and y = 469
+x: 466 y: 469
+x = 469 and y = 469
+x: 469 y: 469
+x = 472 and y = 469
+x: 472 y: 469
+x = 475 and y = 469
+x: 475 y: 469
+x = 478 and y = 469
+x: 478 y: 469
+x = 481 and y = 469
+x: 481 y: 469
+x = 484 and y = 469
+x: 484 y: 469
+x = 487 and y = 469
+x: 487 y: 469
+x = 490 and y = 469
+x: 490 y: 469
+x = 493 and y = 469
+x: 493 y: 469
+x = 496 and y = 469
+x: 496 y: 469
+x = 499 and y = 469
+x: 499 y: 469
+x = 502 and y = 469
+x: 502 y: 469
+x = 505 and y = 469
+x: 505 y: 469
+x = 508 and y = 469
+x: 508 y: 469
+x = 511 and y = 469
+x: 511 y: 469
+x = 514 and y = 469
+x: 514 y: 469
+x = 517 and y = 469
+x: 517 y: 469
+x = 520 and y = 469
+x: 520 y: 469
+x = 523 and y = 469
+x: 523 y: 469
+x = 526 and y = 469
+x: 526 y: 469
+x = 529 and y = 469
+x: 529 y: 469
+x = 532 and y = 469
+x: 532 y: 469
+x = 535 and y = 469
+x: 535 y: 469
+x = 538 and y = 469
+x: 538 y: 469
+x = 541 and y = 469
+x: 541 y: 469
+x = 544 and y = 469
+x: 544 y: 469
+x = 547 and y = 469
+x: 547 y: 469
+x = 550 and y = 469
+x: 550 y: 469
+x = 553 and y = 469
+x: 553 y: 469
+x = 556 and y = 469
+x: 556 y: 469
+x = 559 and y = 469
+x: 559 y: 469
+x = 562 and y = 469
+x: 562 y: 469
+x = 565 and y = 469
+x: 565 y: 469
+x = 568 and y = 469
+x: 568 y: 469
+x = 571 and y = 469
+x: 571 y: 469
+x = 574 and y = 469
+x: 574 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 469
+x: 577 y: 469
+x = 577 and y = 466
+x: 577 y: 466
+x = 577 and y = 463
+x: 577 y: 463
+x = 577 and y = 460
+x: 577 y: 460
+x = 577 and y = 457
+x: 577 y: 457
+x = 577 and y = 454
+x: 577 y: 454
+x = 577 and y = 451
+x: 577 y: 451
+x = 577 and y = 448
+x: 577 y: 448
+x = 577 and y = 445
+x: 577 y: 445
+x = 577 and y = 442
+x: 577 y: 442
+x = 577 and y = 439
+x: 577 y: 439
+x = 577 and y = 436
+x: 577 y: 436
+x = 577 and y = 433
+x: 577 y: 433
+x = 577 and y = 430
+x: 577 y: 430
+x = 577 and y = 427
+x: 577 y: 427
+x = 577 and y = 424
+x: 577 y: 424
+x = 577 and y = 421
+x: 577 y: 421
+x = 577 and y = 418
+x: 577 y: 418
+x = 577 and y = 415
+x: 577 y: 415
+x = 577 and y = 412
+x: 577 y: 412
+x = 577 and y = 409
+x: 577 y: 409
+x = 577 and y = 406
+x: 577 y: 406
+x = 577 and y = 403
+x: 577 y: 403
+x = 577 and y = 400
+x: 577 y: 400
+x = 577 and y = 397
+x: 577 y: 397
+x = 577 and y = 394
+x: 577 y: 394
+x = 577 and y = 391
+x: 577 y: 391
+x = 577 and y = 388
+x: 577 y: 388
+x = 577 and y = 385
+x: 577 y: 385
+x = 577 and y = 382
+x: 577 y: 382
+x = 577 and y = 379
+x: 577 y: 379
+x = 577 and y = 376
+x: 577 y: 376
+x = 577 and y = 373
+x: 577 y: 373
+x = 577 and y = 370
+x: 577 y: 370
+x = 577 and y = 367
+x: 577 y: 367
+x = 577 and y = 364
+x: 577 y: 364
+x = 577 and y = 361
+x: 577 y: 361
+x = 577 and y = 358
+x: 577 y: 358
+x = 577 and y = 355
+x: 577 y: 355
+x = 577 and y = 352
+x: 577 y: 352
+x = 577 and y = 349
+x: 577 y: 349
+x = 577 and y = 346
+x: 577 y: 346
+x = 577 and y = 343
+x: 577 y: 343
+x = 577 and y = 340
+x: 577 y: 340
+x = 577 and y = 337
+x: 577 y: 337
+x = 577 and y = 334
+x: 577 y: 334
+x = 577 and y = 331
+x: 577 y: 331
+x = 577 and y = 328
+x: 577 y: 328
+x = 577 and y = 325
+x: 577 y: 325
+x = 577 and y = 322
+x: 577 y: 322
+x = 577 and y = 319
+x: 577 y: 319
+x = 577 and y = 316
+x: 577 y: 316
+x = 577 and y = 313
+x: 577 y: 313
+x = 577 and y = 310
+x: 577 y: 310
+x = 577 and y = 307
+x: 577 y: 307
+x = 577 and y = 304
+x: 577 y: 304
+x = 577 and y = 301
+x: 577 y: 301
+x = 577 and y = 298
+x: 577 y: 298
+x = 577 and y = 295
+x: 577 y: 295
+x = 577 and y = 292
+x: 577 y: 292
+x = 577 and y = 289
+x: 577 y: 289
+x = 577 and y = 286
+x: 577 y: 286
+x = 577 and y = 283
+x: 577 y: 283
+x = 577 and y = 280
+x: 577 y: 280
+x = 577 and y = 277
+x: 577 y: 277
+x = 577 and y = 274
+x: 577 y: 274
+x = 577 and y = 271
+x: 577 y: 271
+x = 577 and y = 268
+x: 577 y: 268
+x = 577 and y = 265
+x: 577 y: 265
+x = 577 and y = 262
+x: 577 y: 262
+x = 577 and y = 259
+x: 577 y: 259
+x = 577 and y = 256
+x: 577 y: 256
+x = 577 and y = 253
+x: 577 y: 253
+x = 577 and y = 250
+x: 577 y: 250
+x = 577 and y = 247
+x: 577 y: 247
+x = 577 and y = 244
+x: 577 y: 244
+x = 577 and y = 241
+x: 577 y: 241
+x = 577 and y = 238
+x: 577 y: 238
+x = 577 and y = 235
+x: 577 y: 235
+x = 577 and y = 232
+x: 577 y: 232
+x = 577 and y = 229
+x: 577 y: 229
+x = 577 and y = 226
+x: 577 y: 226
+x = 577 and y = 223
+x: 577 y: 223
+x = 577 and y = 220
+x: 577 y: 220
+x = 577 and y = 217
+x: 577 y: 217
+x = 577 and y = 214
+x: 577 y: 214
+x = 577 and y = 211
+x: 577 y: 211
+x = 577 and y = 208
+x: 577 y: 208
+x = 577 and y = 205
+x: 577 y: 205
+x = 577 and y = 202
+x: 577 y: 202
+x = 577 and y = 199
+x: 577 y: 199
+x = 577 and y = 196
+x: 577 y: 196
+x = 577 and y = 193
+x: 577 y: 193
+x = 577 and y = 190
+x: 577 y: 190
+x = 577 and y = 187
+x: 577 y: 187
+x = 577 and y = 184
+x: 577 y: 184
+x = 577 and y = 181
+x: 577 y: 181
+x = 577 and y = 178
+x: 577 y: 178
+x = 577 and y = 175
+x: 577 y: 175
+x = 577 and y = 172
+x: 577 y: 172
+x = 577 and y = 169
+x: 577 y: 169
+x = 577 and y = 166
+x: 577 y: 166
+x = 577 and y = 163
+x: 577 y: 163
+x = 577 and y = 160
+x: 577 y: 160
+x = 577 and y = 157
+x: 577 y: 157
+x = 577 and y = 154
+x: 577 y: 154
+x = 577 and y = 151
+x: 577 y: 151
+x = 577 and y = 148
+x: 577 y: 148
+x = 577 and y = 145
+x: 577 y: 145
+x = 577 and y = 142
+x: 577 y: 142
+x = 577 and y = 139
+x: 577 y: 139
+x = 577 and y = 136
+x: 577 y: 136
+x = 577 and y = 133
+x: 577 y: 133
+x = 577 and y = 130
+x: 577 y: 130
+x = 577 and y = 127
+x: 577 y: 127
+x = 577 and y = 124
+x: 577 y: 124
+x = 577 and y = 121
+x: 577 y: 121
+x = 577 and y = 118
+x: 577 y: 118
+x = 577 and y = 115
+x: 577 y: 115
+x = 577 and y = 112
+x: 577 y: 112
+x = 577 and y = 109
+x: 577 y: 109
+x = 577 and y = 106
+x: 577 y: 106
+x = 577 and y = 103
+x: 577 y: 103
+x = 577 and y = 100
+x: 577 y: 100
+x = 577 and y = 97
+x: 577 y: 97
+x = 577 and y = 94
+x: 577 y: 94
+x = 577 and y = 91
+x: 577 y: 91
+x = 577 and y = 88
+x: 577 y: 88
+x = 577 and y = 85
+x: 577 y: 85
+x = 577 and y = 82
+x: 577 y: 82
+x = 577 and y = 79
+x: 577 y: 79
+x = 577 and y = 76
+x: 577 y: 76
+x = 577 and y = 73
+x: 577 y: 73
+x = 577 and y = 70
+x: 577 y: 70
+x = 577 and y = 67
+x: 577 y: 67
+x = 577 and y = 64
+x: 577 y: 64
+x = 577 and y = 61
+x: 577 y: 61
+x = 577 and y = 58
+x: 577 y: 58
+x = 577 and y = 55
+x: 577 y: 55
+x = 577 and y = 52
+x: 577 y: 52
+x = 577 and y = 49
+x: 577 y: 49
+x = 577 and y = 46
+x: 577 y: 46
+x = 577 and y = 43
+x: 577 y: 43
+x = 577 and y = 40
+x: 577 y: 40
+x = 577 and y = 37
+x: 577 y: 37
+x = 577 and y = 34
+x: 577 y: 34
+x = 577 and y = 31
+x: 577 y: 31
+x = 577 and y = 28
+x: 577 y: 28
+x = 577 and y = 25
+x: 577 y: 25
+x = 577 and y = 22
+x: 577 y: 22
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 19
+x: 577 y: 19
+x = 577 and y = 16
+x: 577 y: 16
+x = 577 and y = 13
+x: 577 y: 13
+x = 577 and y = 10
+x: 577 y: 10
+x = 577 and y = 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7
+x: 577 y: 7

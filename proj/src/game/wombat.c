@@ -65,10 +65,14 @@ int moveHandler(uint8_t scan_code) {
 
     // Handle movement based on the pressed key
     switch (baseCode) {
-        case MAKE_W: return isBreak ? 0 : 1; 
+        case MAKE_W: return isBreak ? 0 : 1;
+        case MAKE_UP: return isBreak ? 0 : 1; 
         case MAKE_S: return isBreak ? 0 : 2;  
+        case MAKE_DOWN: return isBreak ? 0 : 2; 
         case MAKE_A: return isBreak ? 0 : 3;  
-        case MAKE_D: return isBreak ? 0 : 4;  
+        case MAKE_LEFT: return isBreak ? 0 : 3;
+        case MAKE_D: return isBreak ? 0 : 4;
+        case MAKE_RIGHT: return isBreak ? 0 : 4;    
         default: return -1;
     }
 }

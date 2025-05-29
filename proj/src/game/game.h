@@ -4,7 +4,9 @@
 #include "wombat.h"
 #include "dingoe.h"
 
-void reset_level(Wombat *wombat, Dingoe *dingoe);
+void reset_creatures(Wombat *wombat, Dingoe *dingoe);
+
+void reset_obstacles(Obstacle* obstacles[], int count);
 
 #endif
 

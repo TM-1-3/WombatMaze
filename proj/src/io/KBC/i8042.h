@@ -112,4 +112,16 @@
 #define MAKE_Y          0x15
 #define MAKE_Z          0x2C
 
+#define MAKE_LEFT       0x4B
+#define BREAK_LEFT      0xCB
+
+#define MAKE_RIGHT      0x4D
+#define BREAK_RIGHT     0xCD
+
+#define MAKE_UP         0x48
+#define BREAK_UP        0xC8
+
+#define MAKE_DOWN       0x50
+#define BREAK_DOWN      0xD0
+
 #endif /* _LCOM_I8042_H_ */

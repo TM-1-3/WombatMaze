@@ -19,12 +19,12 @@
 #include "../assets/dingoe/dingoe_moving_1.xpm"
 #include "../assets/dingoe/dingoe_moving_2.xpm"
 #include "game/menu.h"
-#include "../assets/maze/map_forest.xpm"
-#include "../assets/maze/map_space.xpm"
-#include "../assets/maze/map_sand.xpm"
-#include "../assets/maze/map_forest_bw.xpm"
-#include "../assets/maze/map_space_bw.xpm"
-#include "../assets/maze/map_sand_bw.xpm"
+#include "../../assets/maze/map_forest.xpm"
+#include "../../assets/maze/map_space.xpm"
+#include "../../assets/maze/map_sand.xpm"
+#include "../../assets/maze/map_forest_bw.xpm"
+#include "../../assets/maze/map_space_bw.xpm"
+#include "../../assets/maze/map_sand_bw.xpm"
 #include "game/game.h"
 #include "../assets/cursor/cursor.xpm"
 #include "../assets/obstacle/obstacle1.xpm"
@@ -33,12 +33,16 @@
 #include "../../assets/menu/cursorMenu.xpm"
 #include "../../assets/menu/instructions.xpm"
 #include "../../assets/screens/gameOver.xpm"
+#include "../../assets/screens/victory.xpm"
 
 typedef enum { 
     MENU,
     INSTRUCTIONS,
     LEVEL,
+    LEVEL2,
+    LEVEL3,
     GAME_OVER,
+    VICTORY,
     END
 } State;
 
@@ -130,6 +134,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     MenuElement* menuCursor = loadMenuElement(160, 255, (xpm_map_t)menu_cursor_xpm);
     MenuElement* instructions = loadMenuElement(0, 0, (xpm_map_t)instructions_xpm);
     MenuElement* gameOver = loadMenuElement(0, 0, (xpm_map_t)game_over_xpm);
+    MenuElement* victory = loadMenuElement(0, 0, (xpm_map_t)victory_xpm);
 
     // Load digit sprites
     Sprite **digits = loadDigitSprites();
@@ -139,16 +144,44 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
 
     // Load Maze sprite
-    Maze* maze = loadMaze(0, 0, (xpm_map_t)map_forest);
-    if (maze == NULL) {
+    Maze* maze1 = loadMaze(0, 0, (xpm_map_t)map_forest);
+    if (maze1 == NULL) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
-    Maze* maze_bw = loadMaze(0, 0, (xpm_map_t)map_forest_bw);
-    if (maze == NULL) {
+    Maze* maze_bw1 = loadMaze(0, 0, (xpm_map_t)map_forest_bw);
+    if (maze1 == NULL) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
+
+    // Load Maze sprite
+    Maze* maze2 = loadMaze(0, 0, (xpm_map_t)map_sand);
+    if (maze2 == NULL) {
+        printf("Error: Failed to load second maze sprite.\n");
+        return 1;
+    }
+    Maze* maze_bw2 = loadMaze(0, 0, (xpm_map_t)map_sand_bw);
+    if (maze2 == NULL) {
+        printf("Error: Failed to load second bw maze sprite.\n");
+        return 1;
+    }
+
+    // Load Maze sprite
+    Maze* maze3 = loadMaze(0, 0, (xpm_map_t)map_space);
+    if (maze3 == NULL) {
+        printf("Error: Failed to load second maze sprite.\n");
+        return 1;
+    }
+    Maze* maze_bw3 = loadMaze(0, 0, (xpm_map_t)map_space_bw);
+    if (maze3 == NULL) {
+        printf("Error: Failed to load second bw maze sprite.\n");
+        return 1;
+    }
+
+
+    Maze* maze;
+    Maze* maze_bw;
 
     // Load Wombats sprite
     Sprite* wombatMoving1 = loadSprite((xpm_map_t)wombat_moving_1);
@@ -213,40 +246,41 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
                         if (state == MENU) {
-                            if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 255) {
+                            if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 255) {
                                 timerCounter = 0;
-                                reset_level(currentWombat, currentDingoe);
+                                reset_creatures(currentWombat, currentDingoe);
+                                reset_obstacles(obstacles, MAX_OBSTACLES);
                                 state = LEVEL;
                             }
-                            else if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 335) {
+                            else if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 335) {
                                 state = INSTRUCTIONS;
                             }
-                            else if (scanCode == MAKE_S) {
+                            else if (scanCode == MAKE_S || scanCode == MAKE_DOWN) {
                                 menuCursorDown(menuCursor);
                             }
-                            else if (scanCode == MAKE_W) {
+                            else if (scanCode == MAKE_W || scanCode == MAKE_UP) {
                                 menuCursorUp(menuCursor);
                             }
-                            else if (scanCode == MAKE_ENTER && getMenuElementY(menuCursor) == 405) {
+                            else if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 405) {
                                 state = END;
                             }
                         }
                         else if (state == INSTRUCTIONS) {
-                            if (scanCode == MAKE_ESC) {
+                            if (scanCode == BREAK_ESC) {
                                 state = MENU;
                             }
                         }
-                        else if (state == GAME_OVER) {
-                            if (scanCode == MAKE_ESC) {
+                        else if (state == GAME_OVER || state == VICTORY) {
+                            if (scanCode == BREAK_ESC) {
                                 state = END;
                             }
-                            else if (scanCode == MAKE_ENTER) {
+                            else if (scanCode == BREAK_ENTER) {
                                 state = MENU;
                             }
                         }
-                        else if (state == LEVEL) {
+                        else if (state == LEVEL || state == LEVEL2 || state == LEVEL3) {
                             moveDirection = moveHandler(scanCode);
-                            if (scanCode == MAKE_ESC) {
+                            if (scanCode == BREAK_ESC) {
                                 state = MENU;
                             }
                         }
@@ -315,6 +349,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             return 1;
                         }
                         timer_int_handler();
+                        printf("x: %d y: %d\n", currentWombat->x, currentWombat->y);
+
 
                         if (state == MENU) {
                             drawMenu(logo, menuBackground, menuCursor);
@@ -325,7 +361,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         else if (state == GAME_OVER) {
                             drawMenuElement(gameOver);
                         }
-                        else if (state == LEVEL) {
+                        else if (state == VICTORY) {
+                            drawMenuElement(victory);
+                        }
+                        else if (state == LEVEL || state == LEVEL2 || state == LEVEL3) {
                         int elapsed_seconds = timerCounter / 60;
                         int time_left = 100 - elapsed_seconds; 
                                     
@@ -335,6 +374,25 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             printf("Time's up! Game Over\n");
                             state = GAME_OVER;
                         }
+
+
+                        switch (state) {
+                            case LEVEL:
+                               maze = maze1;
+                               maze_bw = maze_bw1;
+                               break;
+                            case LEVEL2:
+                               maze = maze2;
+                               maze_bw = maze_bw2;
+                               break;
+                            case LEVEL3:
+                               maze = maze3;
+                               maze_bw = maze_bw3;
+                               break;
+                            default:
+                               break;
+                        }
+                    
 
                         // Draw the maze
                         if (drawMaze(maze) != 0) {
@@ -419,9 +477,25 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         }
 
                         // Check finished level
-                        if (currentWombat->x > 675 && currentWombat->y > 425) {
-                            printf("🏆 Game Won: Larry reached the destination!\n");
-                            state = END;  
+                        if (state == LEVEL) {
+                            if (currentWombat->x > 675 && currentWombat->y > 425) {
+                                printf("🏆 Game Won: Larry reached the destination!\n");
+                                state = LEVEL2;  
+                                setWombatX(currentWombat, 11);
+                                setWombatY(currentWombat, 8);
+                            }
+                        }
+                        else if (state == LEVEL2) {
+                            if (currentWombat->x > 675 && currentWombat->y > 300) {
+                                state = LEVEL3;
+                                setWombatX(currentWombat, 10);
+                                setWombatY(currentWombat, 10);
+                            }
+                        }
+                        else if (state == LEVEL3) {
+                            if (currentWombat->x > 575 && currentWombat->y < 10) {
+                                state = VICTORY;
+                            }
                         }
                     }
                     if (drawCursor(cursor)!=0){
