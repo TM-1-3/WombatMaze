@@ -135,7 +135,7 @@ void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacl
                 isPath(maze, x1, y1) && isPath(maze, x2, y2) &&
                 !isAnyObstacle(obstacles, num_obstacles, x1, y1) &&
                 !isAnyObstacle(obstacles, num_obstacles, x2, y2)) {
-                wombat->x += 4;
+                wombat->x += 5;
             }
             break;
 
