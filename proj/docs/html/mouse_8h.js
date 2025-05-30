@@ -1,9 +1,9 @@
 var mouse_8h =
 [
-    [ "mouse_build_packet", "mouse_8h.html#a0e02a911146c3e015b30e5e37281fa15", null ],
-    [ "mouse_ih", "mouse_8h.html#a834b6d7efe311484d6da234db333cb97", null ],
-    [ "mouse_subscribe_int", "mouse_8h.html#a9da18257ff113b686bb826d154bfaa87", null ],
-    [ "mouse_sync_bytes", "mouse_8h.html#a8d6ee7592c47e8f3830a140c1c36587d", null ],
-    [ "mouse_unsubscribe_int", "mouse_8h.html#a685ad2706aca36d9869a30a19b9f446a", null ],
-    [ "mouse_write_data", "mouse_8h.html#a3847e7e7414eab82d6519109042192af", null ]
+    [ "mouse_build_packet", "mouse_8h.html#a96ec8f04c0a326b8c26c498b98f5244a", null ],
+    [ "mouse_ih", "mouse_8h.html#a210374b50462acdedab00df64d5cea3c", null ],
+    [ "mouse_subscribe_int", "mouse_8h.html#a20285aed4b3ef45812cd967532dd09db", null ],
+    [ "mouse_sync_bytes", "mouse_8h.html#a1538254b8ccba2f68e02cc3d5547722c", null ],
+    [ "mouse_unsubscribe_int", "mouse_8h.html#a3ecf823d80520009ae5e0d76ae40a3c3", null ],
+    [ "mouse_write_data", "mouse_8h.html#aff6714ca2e7a4d67674b5755d4bf3b35", null ]
 ];

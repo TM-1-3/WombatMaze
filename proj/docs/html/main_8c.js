@@ -10,8 +10,8 @@ var main_8c =
       [ "VICTORY", "main_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8a38088c60165dc5b369946da1d8797d00", null ],
       [ "END", "main_8c.html#a5d74787dedbc4e11c1ab15bf487e61f8adc6f24fd6915a3f2786a1b7045406924", null ]
     ] ],
-    [ "main", "main_8c.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
-    [ "proj_main_loop", "main_8c.html#a7a72220d8366dd84709e79ce415862e5", null ],
+    [ "main", "main_8c.html#af397c014b1ca8ac21809c7b1262fbe81", null ],
+    [ "proj_main_loop", "main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b", null ],
     [ "byteIndex", "main_8c.html#af4b0411f5ba8899391c182a4371ad4fc", null ],
     [ "mousePacket", "main_8c.html#ae23031e882e8e9e04089a46bcba23e6d", null ],
     [ "scanCode", "main_8c.html#a80019183be6732271c1276a173e8bc1d", null ],

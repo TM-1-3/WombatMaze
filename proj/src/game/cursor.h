@@ -54,6 +54,12 @@ void setCursorY(Cursor* cursor, uint16_t y);
  */
 int drawCursor(Cursor* cursor);
 
+/**
+ * @brief Frees memory associated with the Cursor and its Sprite.
+ * @param cursor A pointer to the Cursor object.
+ */
+void destroyCursor(Cursor* cursor);
+
 
 #endif
 

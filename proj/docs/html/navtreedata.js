@@ -50,9 +50,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_o_l_o_r_s_8h.html",
-"keyboard_8c.html"
+"COLORS_8h.html",
+"i8254_8h.html#acf926951944b6cf370b7229ebd50dd8b"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

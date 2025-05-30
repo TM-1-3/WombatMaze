@@ -65,4 +65,10 @@ int drawMaze(Maze* maze);
  */
 int isPath(Maze* maze, uint16_t x, uint16_t y);
 
+/**
+ * @brief Frees memory associated with the Maze and its Sprite.
+ * @param maze A pointer to the Maze object.
+ */
+void destroyMaze(Maze* maze);
+
 #endif

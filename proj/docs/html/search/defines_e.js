@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['teal_0',['TEAL',['../_c_o_l_o_r_s_8h.html#a03e7881ce42823bcd8c3e798e03e7507',1,'COLORS.h']]],
+  ['teal_0',['TEAL',['../COLORS_8h.html#a03e7881ce42823bcd8c3e798e03e7507',1,'COLORS.h']]],
   ['timer0_5firq_1',['TIMER0_IRQ',['../i8254_8h.html#a30bf84c312af248cb81bb224e09f9ba8',1,'i8254.h']]],
   ['timer_5f0_2',['TIMER_0',['../i8254_8h.html#acc9ff9df4a9674a1ce9ba08fc4a4679e',1,'i8254.h']]],
   ['timer_5f1_3',['TIMER_1',['../i8254_8h.html#ac62c99c2a9289891c1b83052242cca49',1,'i8254.h']]],

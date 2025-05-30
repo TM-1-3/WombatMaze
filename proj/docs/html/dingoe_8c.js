@@ -1,6 +1,7 @@
 var dingoe_8c =
 [
     [ "check_collision", "dingoe_8c.html#a7e96e210bf5d905b3b3bdba513cca2db", null ],
+    [ "destroyDingoe", "dingoe_8c.html#a5774d5de9311047fafd98f045cc3907f", null ],
     [ "drawDingoe", "dingoe_8c.html#a8749fc7f91562d417941214d3c26e3b8", null ],
     [ "getDingoeX", "dingoe_8c.html#a5e2313bd350fe698e6b5a83dccc95980", null ],
     [ "getDingoeY", "dingoe_8c.html#ad24134d10df5a3e30cfc7f781e0e470d", null ],

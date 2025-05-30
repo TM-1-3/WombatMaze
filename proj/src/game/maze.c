@@ -74,3 +74,11 @@ int isPath(Maze* maze, uint16_t x, uint16_t y) {
     } 
     return 0;
 }
+
+void destroyMaze(Maze* maze) {
+    if (maze == NULL) return;
+    if (maze->mazeSprite) {
+         destroySprite(maze->mazeSprite);
+    }
+    free(maze);
+}

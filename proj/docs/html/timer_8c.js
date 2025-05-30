@@ -1,11 +1,11 @@
 var timer_8c =
 [
-    [ "timer_display_conf", "timer_8c.html#a2f6a1c71f61dce5b3b6eecba83e7d7e9", null ],
-    [ "timer_get_conf", "timer_8c.html#afafc1891c876602d55b894103b1841a7", null ],
-    [ "timer_int_handler", "timer_8c.html#a10fc9c867b15c7da6649311c9987cd17", null ],
-    [ "timer_set_frequency", "timer_8c.html#aca1506be74dfc71c6f90772ca269c619", null ],
-    [ "timer_subscribe_int", "timer_8c.html#a6f786481e80308348d629d605ffa2d84", null ],
-    [ "timer_unsubscribe_int", "timer_8c.html#ab9eea51549744bca5c5c923b388bb4ee", null ],
+    [ "timer_display_conf", "timer_8c.html#a140d8f092c0913cabdca949c4a1cc650", null ],
+    [ "timer_get_conf", "timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a", null ],
+    [ "timer_int_handler", "timer_8c.html#a91a2072306c68353712a6b771287dc2c", null ],
+    [ "timer_set_frequency", "timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7", null ],
+    [ "timer_subscribe_int", "timer_8c.html#ac57a7e1140a7e00ad95ac5488d2a671b", null ],
+    [ "timer_unsubscribe_int", "timer_8c.html#afabd21de449be154dd65d5fdb2d8045d", null ],
     [ "timer_hook_id", "timer_8c.html#a96e6321e488d93a8134897510c435eb7", null ],
     [ "timerCounter", "timer_8c.html#a01e71bf70855ac557d19b8a5da0e3928", null ]
 ];

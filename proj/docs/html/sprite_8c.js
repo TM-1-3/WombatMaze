@@ -1,5 +1,6 @@
 var sprite_8c =
 [
+    [ "destroySprite", "sprite_8c.html#a0df3be0ecfd03c1945309a52456c29e7", null ],
     [ "drawNumber", "sprite_8c.html#aced0422182ba8d72b992ef4b22eec96d", null ],
     [ "drawSprite", "sprite_8c.html#a3fc1965bb7f45fd72fff8a402c507186", null ],
     [ "getPixelColor", "sprite_8c.html#a459d9f81c63b3080706e2e8d56a13431", null ],

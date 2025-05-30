@@ -1,5 +1,6 @@
 var obstacle_8c =
 [
+    [ "destroyObstacle", "obstacle_8c.html#ae70e41610d2062e10bbeec689509ff23", null ],
     [ "draw_obstacle", "obstacle_8c.html#a6c2367254b1c9b59d1edfed87eeed766", null ],
     [ "is_obstacle_active", "obstacle_8c.html#a6aeec48ae3b58e21faf206b513729523", null ],
     [ "isAnyObstacle", "obstacle_8c.html#ac0e578d2306e0ae786b827e77295484a", null ],

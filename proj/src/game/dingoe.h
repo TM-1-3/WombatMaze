@@ -81,6 +81,12 @@ int seeWombat(Dingoe* dingoe, Wombat* wombat, Maze* maze);
  * @param dingoe Pointer to the Dingoe
  * @return true if collide, false otherwise
  */
-bool check_collision( Dingoe* dingoe, Wombat* womba);
+bool check_collision( Dingoe* dingoe, Wombat* wombat);
+
+/**
+ * @brief Frees memory associated with the Dingoe and its Sprite.
+ * @param dingoe A pointer to the Dingoe object.
+ */
+void destroyDingoe(Dingoe* dingoe);
 
 #endif

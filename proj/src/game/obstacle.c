@@ -98,3 +98,11 @@ int isAnyObstacle(Obstacle* obstacles[], int num_obstacles, uint16_t x, uint16_t
     }
     return 0;
 }
+
+void destroyObstacle(Obstacle* obstacle) {
+    if (obstacle == NULL) return;
+    if (obstacle->obstacleSprite) {
+         destroySprite(obstacle->obstacleSprite);
+    }
+    free(obstacle);
+}

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['magenta_0',['MAGENTA',['../_c_o_l_o_r_s_8h.html#a6f699060902f800f12aaae150f3a708e',1,'COLORS.h']]],
+  ['magenta_0',['MAGENTA',['../COLORS_8h.html#a6f699060902f800f12aaae150f3a708e',1,'COLORS.h']]],
   ['make_5f0_1',['MAKE_0',['../i8042_8h.html#a41964c1101f93fddcaab1d32a9ed65a3',1,'i8042.h']]],
   ['make_5f1_2',['MAKE_1',['../i8042_8h.html#a7323faa8df8d0eaaa2f295a10b47b734',1,'i8042.h']]],
   ['make_5f2_3',['MAKE_2',['../i8042_8h.html#abc760bcfe107799691af0a7cfb81c953',1,'i8042.h']]],
@@ -47,11 +47,11 @@ var searchData=
   ['make_5fx_44',['MAKE_X',['../i8042_8h.html#a30c9f1029ae4e95160ea30b5b99d9de0',1,'i8042.h']]],
   ['make_5fy_45',['MAKE_Y',['../i8042_8h.html#a3fdc624928cb325bc1aedeb2dd798d01',1,'i8042.h']]],
   ['make_5fz_46',['MAKE_Z',['../i8042_8h.html#a73cf4a8229159c5a3d6fd29f68543835',1,'i8042.h']]],
-  ['maroon_47',['MAROON',['../_c_o_l_o_r_s_8h.html#acb94f6551a49a0687321b68cc5ff5ae7',1,'COLORS.h']]],
+  ['maroon_47',['MAROON',['../COLORS_8h.html#acb94f6551a49a0687321b68cc5ff5ae7',1,'COLORS.h']]],
   ['max_5fattempts_48',['MAX_ATTEMPTS',['../i8042_8h.html#a7e1856ac7c6ed757978fc30bb92ace74',1,'i8042.h']]],
-  ['mode_5finfo_49',['MODE_INFO',['../_v_b_e_8h.html#a4e3e7f03722747a4a98704e034564442',1,'VBE.h']]],
-  ['model_5fdirect_50',['MODEL_DIRECT',['../_v_b_e_8h.html#a07627ebaaa3041ee154105ab71fe61cf',1,'VBE.h']]],
-  ['model_5findexed_51',['MODEL_INDEXED',['../_v_b_e_8h.html#a13a1a2ccde2446ac4ca245dc588b9cbf',1,'VBE.h']]],
+  ['mode_5finfo_49',['MODE_INFO',['../VBE_8h.html#a4e3e7f03722747a4a98704e034564442',1,'VBE.h']]],
+  ['model_5fdirect_50',['MODEL_DIRECT',['../VBE_8h.html#a07627ebaaa3041ee154105ab71fe61cf',1,'VBE.h']]],
+  ['model_5findexed_51',['MODEL_INDEXED',['../VBE_8h.html#a13a1a2ccde2446ac4ca245dc588b9cbf',1,'VBE.h']]],
   ['mouse_5fack_52',['MOUSE_ACK',['../i8042_8h.html#a064ec583ce5b039303686ce4c64b4f3e',1,'i8042.h']]],
   ['mouse_5ferror_53',['MOUSE_ERROR',['../i8042_8h.html#a75ebb9e8d0615febfa6c7c96ad48a38b',1,'i8042.h']]],
   ['mouse_5flb_54',['MOUSE_LB',['../i8042_8h.html#a81c0f94add844b0761bd142f7f708431',1,'i8042.h']]],

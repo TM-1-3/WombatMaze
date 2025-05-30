@@ -1,6 +1,7 @@
 var menu__element_8h =
 [
-    [ "MenuElement", "struct_menu_element.html", "struct_menu_element" ],
+    [ "MenuElement", "structMenuElement.html", "structMenuElement" ],
+    [ "destroyMenuElement", "menu__element_8h.html#aad17ac2bb3cc28a7551e6411209c3293", null ],
     [ "drawMenuElement", "menu__element_8h.html#ae2d5dd31e34fc5cee92c8188590e46af", null ],
     [ "getMenuElementX", "menu__element_8h.html#ab4c7186a774c574f735f6bb7a2b8a9bc", null ],
     [ "getMenuElementY", "menu__element_8h.html#a90712035b43d95a6f4d57f6eee8517a6", null ],

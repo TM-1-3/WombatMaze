@@ -1,6 +1,7 @@
 var obstacle_8h =
 [
-    [ "Obstacle", "struct_obstacle.html", "struct_obstacle" ],
+    [ "Obstacle", "structObstacle.html", "structObstacle" ],
+    [ "destroyObstacle", "obstacle_8h.html#ae70e41610d2062e10bbeec689509ff23", null ],
     [ "draw_obstacle", "obstacle_8h.html#a6c2367254b1c9b59d1edfed87eeed766", null ],
     [ "is_obstacle_active", "obstacle_8h.html#a6aeec48ae3b58e21faf206b513729523", null ],
     [ "isAnyObstacle", "obstacle_8h.html#ac0e578d2306e0ae786b827e77295484a", null ],

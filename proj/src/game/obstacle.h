@@ -69,4 +69,10 @@ int isObstacle(Obstacle* obstacle, uint16_t x, uint16_t y);
  */
 int isAnyObstacle(Obstacle* obstacles[], int num_obstacles, uint16_t x, uint16_t y);
 
+/**
+ * @brief Frees memory associated with the Obstacle and its Sprite.
+ * @param obstacle A pointer to the Obstacle object.
+ */
+void destroyObstacle(Obstacle* obstacle);
+
 #endif

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dingoe_0',['Dingoe',['../struct_dingoe.html',1,'']]]
+  ['dingoe_0',['Dingoe',['../structDingoe.html',1,'']]]
 ];

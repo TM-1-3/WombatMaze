@@ -50,5 +50,11 @@ Sprite **loadDigitSprites();
  */
 int drawNumber(Sprite **digits, int number, int x, int y);
 
+/**
+ * @brief Frees memory associated with the Sprite.
+ * @param sprite A pointer to the Sprite object.
+ */
+void destroySprite(Sprite *sprite);
+
 #endif
 

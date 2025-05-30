@@ -1,10 +1,10 @@
 var annotated_dup =
 [
-    [ "Cursor", "struct_cursor.html", "struct_cursor" ],
-    [ "Dingoe", "struct_dingoe.html", "struct_dingoe" ],
-    [ "Maze", "struct_maze.html", "struct_maze" ],
-    [ "MenuElement", "struct_menu_element.html", "struct_menu_element" ],
-    [ "Obstacle", "struct_obstacle.html", "struct_obstacle" ],
-    [ "Sprite", "struct_sprite.html", "struct_sprite" ],
-    [ "Wombat", "struct_wombat.html", "struct_wombat" ]
+    [ "Cursor", "structCursor.html", "structCursor" ],
+    [ "Dingoe", "structDingoe.html", "structDingoe" ],
+    [ "Maze", "structMaze.html", "structMaze" ],
+    [ "MenuElement", "structMenuElement.html", "structMenuElement" ],
+    [ "Obstacle", "structObstacle.html", "structObstacle" ],
+    [ "Sprite", "structSprite.html", "structSprite" ],
+    [ "Wombat", "structWombat.html", "structWombat" ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wombat_0',['Wombat',['../struct_wombat.html',1,'']]]
+  ['wombat_0',['Wombat',['../structWombat.html',1,'']]]
 ];

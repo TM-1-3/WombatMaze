@@ -1,6 +1,7 @@
 var wombat_8h =
 [
-    [ "Wombat", "struct_wombat.html", "struct_wombat" ],
+    [ "Wombat", "structWombat.html", "structWombat" ],
+    [ "destroyWombat", "wombat_8h.html#a9726916bf7e5a074a853642f1c883c0f", null ],
     [ "drawWombat", "wombat_8h.html#ad5e6857bbc68bccfe0bc295471eaaa92", null ],
     [ "getWombatX", "wombat_8h.html#a1ed6b26993bb1b8db3717fbf13216014", null ],
     [ "getWombatY", "wombat_8h.html#a9f23c546fbd63f4667c1427216b9ee7d", null ],

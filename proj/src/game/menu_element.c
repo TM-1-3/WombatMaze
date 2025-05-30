@@ -53,4 +53,12 @@ int drawMenuElement(MenuElement* menuElement){
     return drawSprite(menuElement->menuElementSprite, menuElement->x, menuElement->y);
 }
 
+void destroyMenuElement(MenuElement* menuElement) {
+    if (menuElement == NULL) return;
+    if (menuElement->menuElementSprite) {
+         destroySprite(menuElement->menuElementSprite);
+    }
+    free(menuElement);
+}
+
 

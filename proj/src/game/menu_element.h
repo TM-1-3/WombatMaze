@@ -54,6 +54,12 @@ void setMenuElementY(MenuElement* menuElement, uint16_t y);
  */
 int drawMenuElement(MenuElement* menuElement);
 
+/**
+ * @brief Frees memory associated with the Menu Element and its Sprite.
+ * @param menuElement A pointer to the Menu Element object.
+ */
+void destroyMenuElement(MenuElement* menuElement);
+
 #endif
 
 

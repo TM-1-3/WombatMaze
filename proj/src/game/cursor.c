@@ -53,4 +53,12 @@ int drawCursor(Cursor* cursor){
     return drawSprite(cursor->cursorSprite, cursor->x, cursor->y);
 }
 
+void destroyCursor(Cursor* cursor) {
+    if (cursor == NULL) return;
+    if (cursor->cursorSprite) {
+         destroySprite(cursor->cursorSprite);
+    }
+    free(cursor);
+}
+
 

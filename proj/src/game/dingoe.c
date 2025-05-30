@@ -191,6 +191,14 @@ bool check_collision(Dingoe* dingoe, Wombat* wombat) {
             wy + size > dy);
 }
 
+void destroyDingoe(Dingoe* dingoe) {
+    if (dingoe == NULL) return;
+    if (dingoe->dingoeSprite) {
+         destroySprite(dingoe->dingoeSprite);
+    }
+    free(dingoe);
+}
+
 
 
 

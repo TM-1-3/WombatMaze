@@ -587,6 +587,40 @@ int (proj_main_loop)(int argc, char *argv[]) {
             }
         }
     }
+    
+    // Free Sprites
+    destroySprite(wombatMoving1);
+    destroySprite(wombatMoving2);
+    destroySprite(wombatAttacking1);
+    destroySprite(wombatAttacking2);
+    destroySprite(dingoeMoving1);
+    destroySprite(dingoeMoving2);
+    
+    // Free Wombat, Dingoe and Cursor
+    destroyWombat(currentWombat);
+    destroyDingoe(currentDingoe);
+    destroyCursor(cursor);
+    
+    // Free Screens and Menu Elements
+    destroyMenuElement(menuBackground);
+    destroyMenuElement(logo);
+    destroyMenuElement(menuCursor);
+    destroyMenuElement(instructions);
+    destroyMenuElement(gameOver);
+    destroyMenuElement(victory);
+    
+    // Free Obstacles
+    for (int i = 0; i < num_obstacles; i++) {
+        destroyObstacle(obstacles[i]);
+    }
+    
+    // Free Mazes
+    destroyMaze(maze1);
+    destroyMaze(maze_bw1);
+    destroyMaze(maze2);
+    destroyMaze(maze_bw2);
+    destroyMaze(maze3);
+    destroyMaze(maze_bw3);
 
     // Free double buffer
     if (doubleBuffer != NULL) {
@@ -618,7 +652,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to exit graphics mode.\n");
         return 1;
     }
-
+    
+    // Unsubscribe Interrupts
     if (timer_unsubscribe_int()!=0){
         return 1;
     }

@@ -82,4 +82,10 @@ void moveWombat(Wombat* wombat, int moveDirection, Maze* maze, Obstacle* obstacl
  */
 bool is_wombat_near_obstacle(Wombat* wombat, Obstacle* obstacle);
 
+/**
+ * @brief Frees memory associated with the Wombat and its Sprite.
+ * @param wombat A pointer to the Wombat object.
+ */
+void destroyWombat(Wombat* wombat);
+
 #endif

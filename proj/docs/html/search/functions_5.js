@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['kbc_5fih_0',['kbc_ih',['../keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536',1,'kbc_ih():&#160;keyboard.c'],['../keyboard_8h.html#ab9e6ed7960d60aa4834f2038247d4536',1,'kbc_ih():&#160;keyboard.c']]],
-  ['keyboard_5frestore_5fint_1',['keyboard_restore_int',['../keyboard_8c.html#ae9d9aecd950ed73e5af4a2029ab7d347',1,'keyboard_restore_int():&#160;keyboard.c'],['../keyboard_8h.html#ae9d9aecd950ed73e5af4a2029ab7d347',1,'keyboard_restore_int():&#160;keyboard.c']]],
-  ['keyboard_5fsubscribe_5fint_2',['keyboard_subscribe_int',['../keyboard_8c.html#a8eee4d0a15beada731a514481b5ad4bf',1,'keyboard_subscribe_int(uint8_t *bit_no):&#160;keyboard.c'],['../keyboard_8h.html#a8eee4d0a15beada731a514481b5ad4bf',1,'keyboard_subscribe_int(uint8_t *bit_no):&#160;keyboard.c']]],
-  ['keyboard_5funsubscribe_5fint_3',['keyboard_unsubscribe_int',['../keyboard_8c.html#ac95aea27a5e91b363b876fed881f368f',1,'keyboard_unsubscribe_int():&#160;keyboard.c'],['../keyboard_8h.html#ac95aea27a5e91b363b876fed881f368f',1,'keyboard_unsubscribe_int():&#160;keyboard.c']]]
+  ['kbc_5fih_0',['kbc_ih',['../keyboard_8c.html#aea970a154161a35f6894898a092ed70a',1,'kbc_ih():&#160;keyboard.c'],['../keyboard_8h.html#aea970a154161a35f6894898a092ed70a',1,'kbc_ih():&#160;keyboard.c']]],
+  ['keyboard_5frestore_5fint_1',['keyboard_restore_int',['../keyboard_8c.html#a01727e90837bef7cb8bf6944a8f72133',1,'keyboard_restore_int():&#160;keyboard.c'],['../keyboard_8h.html#a01727e90837bef7cb8bf6944a8f72133',1,'keyboard_restore_int():&#160;keyboard.c']]],
+  ['keyboard_5fsubscribe_5fint_2',['keyboard_subscribe_int',['../keyboard_8c.html#a178b1db0b319dccad2840cc3fd273132',1,'keyboard_subscribe_int(uint8_t *bit_no):&#160;keyboard.c'],['../keyboard_8h.html#a178b1db0b319dccad2840cc3fd273132',1,'keyboard_subscribe_int(uint8_t *bit_no):&#160;keyboard.c']]],
+  ['keyboard_5funsubscribe_5fint_3',['keyboard_unsubscribe_int',['../keyboard_8c.html#a32cc4de66854f8a7bd909e7aa8b901ed',1,'keyboard_unsubscribe_int():&#160;keyboard.c'],['../keyboard_8h.html#a32cc4de66854f8a7bd909e7aa8b901ed',1,'keyboard_unsubscribe_int():&#160;keyboard.c']]]
 ];

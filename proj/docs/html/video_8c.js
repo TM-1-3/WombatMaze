@@ -1,14 +1,14 @@
 var video_8c =
 [
-    [ "build_frame_buffer", "video_8c.html#a5cc567b99b5525231518bd2b4b93038e", null ],
-    [ "clear_screen", "video_8c.html#afa445e5837d138c8bc596dd2f287fc44", null ],
-    [ "draw_horizontal_line", "video_8c.html#a7a0255d65c3ac9feabd9f8b96dfc9a31", null ],
-    [ "draw_pixel", "video_8c.html#abcd14d829edc3257916bdcc1a9aca216", null ],
-    [ "draw_rectangle", "video_8c.html#ae74d0dd07c6fb9ca5913c7cee002ba1e", null ],
-    [ "draw_xpm", "video_8c.html#a87e704e058fee705dcaadd38077f0818", null ],
-    [ "normalize_color", "video_8c.html#a97273f4e6f78b3bcbe587e60284abd85", null ],
-    [ "set_mode_graphic", "video_8c.html#a39ebb66c0d3510eecb23607b214aa4b0", null ],
-    [ "swap_buffers", "video_8c.html#ad1d0642d73fd9d01692127e5daa39219", null ],
+    [ "build_frame_buffer", "video_8c.html#a8ed5dfce821ab680874fce9f7e6f07fb", null ],
+    [ "clear_screen", "video_8c.html#a9fec4cae8035845e3ff857a6fef03904", null ],
+    [ "draw_horizontal_line", "video_8c.html#a4ad4d8073d34b4758ee4a651c991cdc4", null ],
+    [ "draw_pixel", "video_8c.html#aa75d96618132cccec2c977ae043d31fe", null ],
+    [ "draw_rectangle", "video_8c.html#a3e0ae1e5cdf246627fc120f6a239a0fe", null ],
+    [ "draw_xpm", "video_8c.html#a8dc3b64d819195e41495b03be84f9db5", null ],
+    [ "normalize_color", "video_8c.html#ab37e2a57df33238c9816e748dc3d1044", null ],
+    [ "set_mode_graphic", "video_8c.html#abf882ba9f99cd9bccc8b5ffb231931e5", null ],
+    [ "swap_buffers", "video_8c.html#a32659541708692c0dda94dab8db36ae4", null ],
     [ "doubleBuffer", "video_8c.html#a2e70e597b1c98462c186b1a67ebeb6ee", null ],
     [ "frameBuffer", "video_8c.html#a9a2fdf82b1d05e2a1cbcb68ad1237ae4", null ],
     [ "modeInfo", "video_8c.html#acbcf61ec794276372586878110524b97", null ]

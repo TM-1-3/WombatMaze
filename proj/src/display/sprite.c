@@ -134,3 +134,12 @@ int drawNumber(Sprite **digits, int number, int x, int y) {
     }
     return 0;
 }
+
+void destroySprite(Sprite *sprite) {
+    if (sprite == NULL) return;
+    if (sprite->colors != NULL) {
+        free(sprite->colors);
+        sprite->colors = NULL;
+    }
+    free(sprite);
+}

@@ -163,3 +163,12 @@ bool is_wombat_near_obstacle(Wombat* wombat, Obstacle* obstacle) {
     return distance_squared <= max_distance * max_distance;
 }
 
+
+void destroyWombat(Wombat* wombat) {
+    if (wombat == NULL) return;
+    if (wombat->wombatSprite) {
+         destroySprite(wombat->wombatSprite);
+    }
+    free(wombat);
+}
+

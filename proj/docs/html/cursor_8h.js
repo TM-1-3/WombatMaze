@@ -1,6 +1,7 @@
 var cursor_8h =
 [
-    [ "Cursor", "struct_cursor.html", "struct_cursor" ],
+    [ "Cursor", "structCursor.html", "structCursor" ],
+    [ "destroyCursor", "cursor_8h.html#ad510a9ebcbf765461cba72ab75b0e314", null ],
     [ "drawCursor", "cursor_8h.html#a81059be1927090ad79cfb2444b624ad4", null ],
     [ "getCursorX", "cursor_8h.html#a41b72bef37baa40ff71d0214864be22e", null ],
     [ "getCursorY", "cursor_8h.html#aaadffeb1399edec6d222d5c99e677658", null ],

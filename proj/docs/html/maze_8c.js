@@ -1,5 +1,6 @@
 var maze_8c =
 [
+    [ "destroyMaze", "maze_8c.html#a7ab82b36194ba217d6a403781bae09f1", null ],
     [ "drawMaze", "maze_8c.html#a6ff4396782e00bcb8582f6c55142f195", null ],
     [ "getMazeX", "maze_8c.html#acb98acd10254718adb54bdf31028d860", null ],
     [ "getMazeY", "maze_8c.html#ac9b585e183bcff90e0d4cfd84a268f22", null ],
