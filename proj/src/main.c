@@ -510,7 +510,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                                     // Add more obstacles
                                     int old_num = num_obstacles;
-                                    num_obstacles += 2;
+                                    num_obstacles = 6;
                                     obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
 
                                     // Load the new ones
@@ -543,7 +543,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                                     // Add more obstacles
                                     int old_num = num_obstacles;
-                                    num_obstacles += 0;
+                                    num_obstacles = 8;
                                     obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
 
                                     // Load the new ones

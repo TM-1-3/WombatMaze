@@ -50,11 +50,6 @@ void reset_obstacles(Obstacle* obstacles[], int level) {
             obstacles[i]->x = 575 + (5 - i) * 50;
             obstacles[i]->y = 325;
         }
-        // for (int i = 6; i < 8; i++) {
-        //     obstacles[i]->active = true;
-        //     obstacles[i]->x = 50 + (7 - i) * 50;
-        //     obstacles[i]->y = 350;
-        // }
     }
     else if (level == 3) {
         for (int i = 0; i < 2; i++) {
@@ -64,29 +59,19 @@ void reset_obstacles(Obstacle* obstacles[], int level) {
         }
         for (int i = 2; i < 4; i++) {
             obstacles[i]->active = true;
-            obstacles[i]->x = 50 + (3 - i) * 50;
-            obstacles[i]->y = 150;
+            obstacles[i]->x = 550;
+            obstacles[i]->y = 175 + (3 - i) * 50;
         }
-        // for (int i = 4; i < 6; i++) {
-        //     obstacles[i]->active = true;
-        //     obstacles[i]->x = 50 + (5 - i) * 50;
-        //     obstacles[i]->y = 250;
-        // }
-        // for (int i = 6; i < 8; i++) {
-        //     obstacles[i]->active = true;
-        //     obstacles[i]->x = 50 + (7 - i) * 50;
-        //     obstacles[i]->y = 350;
-        // }
-        // for (int i = 8; i < 10; i++) {
-        //     obstacles[i]->active = true;
-        //     obstacles[i]->x = 50 + (10 - i) * 50;
-        //     obstacles[i]->y = 450;
-        // }
-        // for (int i = 10; i < 12; i++) {
-        //     obstacles[i]->active = true;
-        //     obstacles[i]->x = 50 + (11 - i) * 50;
-        // //     obstacles[i]->y = 550;
-        // }
+        for (int i = 4; i < 6; i++) {
+            obstacles[i]->active = true;
+            obstacles[i]->x = 350;
+            obstacles[i]->y = 225 + (5 - i) * 50;
+        }
+        for (int i = 6; i < 8; i++) {
+            obstacles[i]->active = true;
+            obstacles[i]->x = 550;
+            obstacles[i]->y = 325 + (7 - i) * 50;
+        }
     }
 }
 
