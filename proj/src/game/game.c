@@ -16,7 +16,7 @@ void reset_creatures(Wombat *wombat, Dingoe *dingoe, int level){
     else if (level == 3) {
         setWombatX(wombat,  625);
         setWombatY(wombat,  475);
-        setDingoeX(dingoe, 300);
+        setDingoeX(dingoe, 425);
         setDingoeY(dingoe, 225);
     }
 }
@@ -42,8 +42,8 @@ void reset_obstacles(Obstacle* obstacles[], int level) {
         }
         for (int i = 2; i < 4; i++) {
             obstacles[i]->active = true;
-            obstacles[i]->x = 50 + (3 - i) * 50;
-            obstacles[i]->y = 450;
+            obstacles[i]->x = 300;
+            obstacles[i]->y = 475 + (3 - i) * 50;;
         }
         for (int i = 4; i < 6; i++) {
             obstacles[i]->active = true;
@@ -59,8 +59,8 @@ void reset_obstacles(Obstacle* obstacles[], int level) {
     else if (level == 3) {
         for (int i = 0; i < 2; i++) {
             obstacles[i]->active = true;
-            obstacles[i]->x = 50 + (1 - i) * 50;
-            obstacles[i]->y = 50;
+            obstacles[i]->x = 175 + (1 - i) * 50;
+            obstacles[i]->y = 100;
         }
         for (int i = 2; i < 4; i++) {
             obstacles[i]->active = true;

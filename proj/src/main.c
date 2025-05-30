@@ -498,7 +498,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                             // Check finished level 1
                             if (state == LEVEL) {
-                                if (675 < currentWombat->x < 700 && 425 < currentWombat->y < 400) {
+                                if (675 < currentWombat->x && currentWombat->x < 700 && 425 < currentWombat->y && currentWombat->y < 500) {
                                     printf("🏆 Level1 Won: Larry reached the destination!\n");
                                     state = LEVEL2;  
 
@@ -531,7 +531,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                             // Check finished level 2
                             else if (state == LEVEL2) {
-                                if (525 < currentWombat->x < 625 && currentWombat->y < 15) {
+                                if (525 < currentWombat->x && currentWombat->x < 625 && 0 < currentWombat->y && currentWombat->y < 15) {
                                     printf("🏆 Level2 Won: Larry reached the destination!\n");
                                     state = LEVEL3;
 
