@@ -35,6 +35,7 @@
 #include "../../assets/screens/gameOver.xpm"
 #include "../../assets/screens/victory.xpm"
 
+// States
 typedef enum { 
     MENU,
     INSTRUCTIONS,
@@ -45,7 +46,6 @@ typedef enum {
     VICTORY,
     END
 } State;
-
 State state = MENU;
 
 // Global variable
@@ -88,8 +88,6 @@ int (main)(int argc, char *argv[]) {
  * @return 0 on success, non-zero otherwise
  */
 int (proj_main_loop)(int argc, char *argv[]) {
-    #define MAX_OBSTACLES 2
-    Obstacle* obstacles[MAX_OBSTACLES];
     uint8_t timer_irq_set, keyboard_irq_set, mouse_irq_set;
     int ipc_status;
     message msg;
@@ -119,7 +117,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
 
-
     // Initialize video mode and framebuffer
     if (build_frame_buffer(DIRECT_600) != 0) {
         printf("Error: Failed to build framebuffer.\n");
@@ -129,6 +126,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to set graphics mode.\n");
         return 1;
     }
+
+    // Load menu sprites
     MenuElement* menuBackground = loadMenuElement(0, 0, (xpm_map_t)background_xpm);
     MenuElement* logo = loadMenuElement(150, 30, (xpm_map_t)logo_xpm);
     MenuElement* menuCursor = loadMenuElement(160, 255, (xpm_map_t)menu_cursor_xpm);
@@ -143,43 +142,37 @@ int (proj_main_loop)(int argc, char *argv[]) {
         return 1;
     }
 
-    // Load Maze sprite
+    // Load maze sprites
     Maze* maze1 = loadMaze(0, 0, (xpm_map_t)map_forest);
     if (maze1 == NULL) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
     Maze* maze_bw1 = loadMaze(0, 0, (xpm_map_t)map_forest_bw);
-    if (maze1 == NULL) {
+    if (maze_bw1 == NULL) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
-
-    // Load Maze sprite
     Maze* maze2 = loadMaze(0, 0, (xpm_map_t)map_sand);
     if (maze2 == NULL) {
         printf("Error: Failed to load second maze sprite.\n");
         return 1;
     }
     Maze* maze_bw2 = loadMaze(0, 0, (xpm_map_t)map_sand_bw);
-    if (maze2 == NULL) {
+    if (maze_bw2 == NULL) {
         printf("Error: Failed to load second bw maze sprite.\n");
         return 1;
     }
-
-    // Load Maze sprite
     Maze* maze3 = loadMaze(0, 0, (xpm_map_t)map_space);
     if (maze3 == NULL) {
         printf("Error: Failed to load second maze sprite.\n");
         return 1;
     }
     Maze* maze_bw3 = loadMaze(0, 0, (xpm_map_t)map_space_bw);
-    if (maze3 == NULL) {
+    if (maze_bw3 == NULL) {
         printf("Error: Failed to load second bw maze sprite.\n");
         return 1;
     }
-
-
     Maze* maze;
     Maze* maze_bw;
 
@@ -189,20 +182,9 @@ int (proj_main_loop)(int argc, char *argv[]) {
     Sprite* wombatAttacking1 = loadSprite((xpm_map_t)wombat_attacking_1);
     Sprite* wombatAttacking2 = loadSprite((xpm_map_t)wombat_attacking_2);
     Wombat* currentWombat = loadWombat(50, 50, wombatMoving1);
-    int moveDirection = 0;
-
-    // Load Obstacle sprites
-    for (int i = 0; i < MAX_OBSTACLES; i++) {
-        uint16_t x = 125 + i * 50; // Podes ajustar posições
-        uint16_t y = 400;
-        obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
-        if (obstacles[i] == NULL) {
-            printf("Error: Failed to load obstacle %d\n", i);
-            return 1;
-        }
-    }
 
     // Toggle moving wombats
+    int moveDirection = 0;
     int wombatMoving_counter = 0;
     bool wombatMoving_toggle = false;
 
@@ -213,24 +195,36 @@ int (proj_main_loop)(int argc, char *argv[]) {
     // Toggle wombat
     bool isAttacking = false;
 
+    // Load Obstacle sprites
+    int num_obstacles = 2;
+    Obstacle** obstacles = malloc(num_obstacles * sizeof(Obstacle*));
+    for (int i = 0; i < num_obstacles; i++) {
+        uint16_t x = 125 + i * 50; // Podes ajustar posições
+        uint16_t y = 400;
+        obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
+        if (obstacles[i] == NULL) {
+            printf("Error: Failed to load obstacle %d\n", i);
+            return 1;
+        }
+    }
+    
     // Load Dingoe sprite
     Sprite* dingoeMoving1 = loadSprite((xpm_map_t)dingoe_moving_1);
     Sprite* dingoeMoving2 = loadSprite((xpm_map_t)dingoe_moving_2);
-    Dingoe* currentDingoe = loadDingoe(500, 50, dingoeMoving1);
+    Dingoe* currentDingoe = loadDingoe(350, 50, dingoeMoving1);
     
-    int seeDirection = 0;
-
     // Toggle moving dingoes
+    int seeDirection = 0;
+    int speed = 1;
     int dingoeMoving_counter = 0;
     bool dingoeMoving_toggle = false;
 
-    // Cursor
+    // Load cursor
     Cursor* cursor = loadCursor(5, 5, (xpm_map_t)cursor_xpm);
     if (cursor == NULL){
         printf("Error: Failed to load cursor sprite.\n");
         return 1;
     }
-    
     
     // Main loop to process events until ESC is pressed
     while (state != END) {
@@ -245,41 +239,73 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     // Check if it's a keyboard interrupt
                     if (msg.m_notify.interrupts & keyboard_irq_set) {
                         kbc_ih();
+
+                        // In menu
                         if (state == MENU) {
+
+                            // Go to level
                             if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 255) {
                                 timerCounter = 0;
-                                reset_creatures(currentWombat, currentDingoe);
-                                reset_obstacles(obstacles, MAX_OBSTACLES);
                                 state = LEVEL;
+
+                                // Reset creatures
+                                speed = 1;
+                                seeDirection = 0;
+                                reset_creatures(currentWombat, currentDingoe, 1);
+
+                                // Reset obstacles
+                                num_obstacles = 2;
+                                obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
+                                reset_obstacles(obstacles, num_obstacles, 1);
                             }
+
+                            // Go to instructions
                             else if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 335) {
                                 state = INSTRUCTIONS;
                             }
+
+                            // Move
                             else if (scanCode == MAKE_S || scanCode == MAKE_DOWN) {
                                 menuCursorDown(menuCursor);
                             }
                             else if (scanCode == MAKE_W || scanCode == MAKE_UP) {
                                 menuCursorUp(menuCursor);
                             }
+
+                            // Exit
                             else if (scanCode == BREAK_ENTER && getMenuElementY(menuCursor) == 405) {
                                 state = END;
                             }
                         }
+
+                        // In instructions
                         else if (state == INSTRUCTIONS) {
+
+                            // Go to menu
                             if (scanCode == BREAK_ESC) {
                                 state = MENU;
                             }
                         }
+
+                        // In view screens
                         else if (state == GAME_OVER || state == VICTORY) {
+
+                            // Exit
                             if (scanCode == BREAK_ESC) {
                                 state = END;
                             }
+
+                            // Go to menu
                             else if (scanCode == BREAK_ENTER) {
                                 state = MENU;
                             }
                         }
+
+                        // In levels
                         else if (state == LEVEL || state == LEVEL2 || state == LEVEL3) {
                             moveDirection = moveHandler(scanCode);
+
+                            // Go to menu
                             if (scanCode == BREAK_ESC) {
                                 state = MENU;
                             }
@@ -294,13 +320,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             mouse_build_packet();
                             if (mousePacket.x_ov || mousePacket.y_ov){
                                 break;
-                            }
-
-                            // Get out of menu
-                            if (mousePacket.lb){
-                                if (state == MENU) {
-                                    state = LEVEL;
-                                }
                             }
 
                             // Get coordinates
@@ -328,7 +347,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 isAttacking = true;
 
                                 // Remove obstacles
-                                for (int i = 0; i < MAX_OBSTACLES; i++) {
+                                for (int i = 0; i < num_obstacles; i++) {
                                     if(obstacles[i]->active && is_wombat_near_obstacle(currentWombat, obstacles[i])){
                                         update_obstacle_with_cursor(obstacles[i], cursor);
                                     }
@@ -349,9 +368,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
                             return 1;
                         }
                         timer_int_handler();
-                        printf("x: %d y: %d\n", currentWombat->x, currentWombat->y);
 
-
+                        // Draw screens
                         if (state == MENU) {
                             drawMenu(logo, menuBackground, menuCursor);
                         }
@@ -364,145 +382,198 @@ int (proj_main_loop)(int argc, char *argv[]) {
                         else if (state == VICTORY) {
                             drawMenuElement(victory);
                         }
+
+                        // If in game
                         else if (state == LEVEL || state == LEVEL2 || state == LEVEL3) {
-                        int elapsed_seconds = timerCounter / 60;
-                        int time_left = 100 - elapsed_seconds; 
-                                    
-                        // Time's up game over
-                        if (time_left <= 0) {
-                            time_left = 0;
-                            printf("Time's up! Game Over\n");
-                            state = GAME_OVER;
-                        }
-
-
-                        switch (state) {
-                            case LEVEL:
-                               maze = maze1;
-                               maze_bw = maze_bw1;
-                               break;
-                            case LEVEL2:
-                               maze = maze2;
-                               maze_bw = maze_bw2;
-                               break;
-                            case LEVEL3:
-                               maze = maze3;
-                               maze_bw = maze_bw3;
-                               break;
-                            default:
-                               break;
-                        }
-                    
-
-                        // Draw the maze
-                        if (drawMaze(maze) != 0) {
-                            printf("Error: Failed to draw maze.\n");
-                            return 1;
-                        }
-
-                        // Draw time left
-                        if (drawNumber(digits, time_left, 790, 10) != 0) {
-                            printf("Error: Failed to draw time.\n");
-                            return 1;
-                        }  
-
-                        // Move wombat
-                        if (moveDirection != 0) {
-                            wombatMoving_counter++;
-                            if (wombatMoving_counter % 5 == 0) {
-                                wombatMoving_toggle = !wombatMoving_toggle;
-                                currentWombat->wombatSprite = wombatMoving_toggle ? wombatMoving2 : wombatMoving1;
+                            int elapsed_seconds = timerCounter / 60;
+                            int time_left = 60 - elapsed_seconds; 
+                                        
+                            // Time's up game over
+                            if (time_left <= 0) {
+                                time_left = 0;
+                                printf("Time's up! Game Over\n");
+                                state = GAME_OVER;
                             }
-                            moveWombat(currentWombat, moveDirection, maze_bw, obstacles, MAX_OBSTACLES);
-                        }
 
-                        // Set attack
-                        if (isAttacking){
-                            wombatAttacking_counter++;
-                            if (wombatAttacking_counter % 5 == 0) {
-                                wombatAttacking_toggle = !wombatAttacking_toggle;
-                                currentWombat->wombatSprite = wombatAttacking_toggle ? wombatAttacking2 : wombatAttacking1;
+                            // Get level
+                            switch (state) {
+                                case LEVEL:
+                                    maze = maze1;
+                                    maze_bw = maze_bw1;
+                                    break;
+                                case LEVEL2:
+                                    maze = maze2;
+                                    maze_bw = maze_bw2;
+                                    break;
+                                case LEVEL3:
+                                    maze = maze3;
+                                    maze_bw = maze_bw3;
+                                    break;
+                                default:
+                                    break;
                             }
-                        }
+                        
+                            // Draw the maze
+                            if (drawMaze(maze) != 0) {
+                                printf("Error: Failed to draw maze.\n");
+                                return 1;
+                            }
 
-                        // Draw wombat
-                        if (drawWombat(currentWombat) != 0) {
-                            printf("Error: Failed to draw dingoe after move.\n");
-                            return 1;
-                        }
+                            // Draw time left
+                            if (drawNumber(digits, time_left, 790, 10) != 0) {
+                                printf("Error: Failed to draw time.\n");
+                                return 1;
+                            }  
 
-                        // Reset
-                        if (!mousePacket.lb && moveDirection == 0) {
-                            currentWombat->wombatSprite = wombatMoving1; 
-                        }
+                            // Move wombat
+                            if (moveDirection != 0) {
+                                wombatMoving_counter++;
+                                if (wombatMoving_counter % 5 == 0) {
+                                    wombatMoving_toggle = !wombatMoving_toggle;
+                                    currentWombat->wombatSprite = wombatMoving_toggle ? wombatMoving2 : wombatMoving1;
+                                }
+                                moveWombat(currentWombat, moveDirection, maze_bw, obstacles, num_obstacles);
+                                printf("🐾 Wombat moved — New position: (%d, %d)\n", currentWombat->x, currentWombat->y);
+                            }
 
-                        // Draw obtacles
-                        for (int i = 0; i < MAX_OBSTACLES; i++) {
-                            if (obstacles[i]->active) {
-                                if (draw_obstacle(obstacles[i]) != 0) {
-                                    printf("Error: Failed to draw obstacle %d.\n", i);
-                                    return 1;
+                            // Set wombat attack
+                            if (isAttacking){
+                                wombatAttacking_counter++;
+                                if (wombatAttacking_counter % 5 == 0) {
+                                    wombatAttacking_toggle = !wombatAttacking_toggle;
+                                    currentWombat->wombatSprite = wombatAttacking_toggle ? wombatAttacking2 : wombatAttacking1;
+                                }
+                            }
+
+                            // Draw wombat
+                            if (drawWombat(currentWombat) != 0) {
+                                printf("Error: Failed to draw dingoe after move.\n");
+                                return 1;
+                            }
+
+                            // Reset wombat moving
+                            if (!mousePacket.lb && moveDirection == 0) {
+                                currentWombat->wombatSprite = wombatMoving1; 
+                            }
+
+                            // Draw obtacles
+                            for (int i = 0; i < num_obstacles; i++) {
+                                if (obstacles[i]->active) {
+                                    if (draw_obstacle(obstacles[i]) != 0) {
+                                        printf("Error: Failed to draw obstacle %d.\n", i);
+                                        return 1;
+                                    }
+                                }
+                            }
+
+                            // Check if dingoe sees wombat
+                            int newDirection = seeWombat(currentDingoe, currentWombat, maze_bw);
+                            if (newDirection != 0) {
+                                seeDirection = newDirection;
+                            }
+
+                            // Move dingoe
+                            if (seeDirection != 0) {
+                                dingoeMoving_counter++;
+                                if (dingoeMoving_counter % 5 == 0) {
+                                    dingoeMoving_toggle = !dingoeMoving_toggle;
+                                    currentDingoe->dingoeSprite = dingoeMoving_toggle ? dingoeMoving2 : dingoeMoving1;
+                                }
+                                moveDingoe(currentDingoe, seeDirection, speed, maze_bw);
+
+                            }
+
+                            // Draw dingoe
+                            if (drawDingoe(currentDingoe) != 0) {
+                                printf("Error: Failed to draw dingoe after move.\n");
+                                return 1;
+                            }
+
+                            // Check collision between dingoe and wombat
+                            if (check_collision(currentDingoe, currentWombat)) {
+                                printf("💥 Game Over! Wombat got caught!\n");
+                                state = GAME_OVER;
+                            }
+
+                            // Check finished level 1
+                            if (state == LEVEL) {
+                                if (currentWombat->x > 675 && currentWombat->y > 425) {
+                                    printf("🏆 Level1 Won: Larry reached the destination!\n");
+                                    state = LEVEL2;  
+
+                                    // Reset creatures
+                                    speed = 2;
+                                    seeDirection = 0;
+                                    reset_creatures(currentWombat, currentDingoe, 2);
+
+                                    // Add more obstacles
+                                    int old_num = num_obstacles;
+                                    num_obstacles += 2;
+                                    obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
+
+                                    // Load the new ones
+                                    for (int i = old_num; i < num_obstacles; i++) {
+                                        uint16_t x = 125 + i * 50;
+                                        uint16_t y = 400;
+                                        obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
+                                        if (obstacles[i] == NULL) {
+                                            printf("Error: Failed to load obstacle %d\n", i);
+                                            return 1;
+                                        }
+                                    }
+
+                                    // Reset obstacles
+                                    reset_obstacles(obstacles, num_obstacles, 3);
+                                }
+                            }
+
+                            // Check finished level 2
+                            else if (state == LEVEL2) {
+                                if (currentWombat->x > 675 && currentWombat->y > 300) {
+                                    printf("🏆 Level2 Won: Larry reached the destination!\n");
+                                    state = LEVEL3;
+
+                                    // Reset creatures
+                                    speed = 3;
+                                    seeDirection = 0;
+                                    reset_creatures(currentWombat, currentDingoe, 3);
+
+                                    // Add more obstacles
+                                    int old_num = num_obstacles;
+                                    num_obstacles += 2;
+                                    obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
+
+                                    // Load the new ones
+                                    for (int i = old_num; i < num_obstacles; i++) {
+                                        uint16_t x = 125 + i * 50;
+                                        uint16_t y = 400;
+                                        obstacles[i] = load_obstacle(x, y, (xpm_map_t)obstacle_xpm);
+                                        if (obstacles[i] == NULL) {
+                                            printf("Error: Failed to load obstacle %d\n", i);
+                                            return 1;
+                                        }
+                                    }
+
+                                    // Reset obstacles
+                                    reset_obstacles(obstacles, num_obstacles, 3);
+                                }
+                            }
+
+                            // Check finished level 3
+                            else if (state == LEVEL3) {
+                                if (currentWombat->x > 575 && currentWombat->y < 10) {
+                                    printf("🏆 Game Won: Larry reached the destination!\n");
+                                    state = VICTORY;
                                 }
                             }
                         }
 
-                        // Check if it sees wombat
-                        int newDirection = seeWombat(currentDingoe, currentWombat, maze_bw);
-                        if (newDirection != 0) {
-                            seeDirection = newDirection;
-                        }
-
-                        // Move dingoe
-                        if (seeDirection != 0) {
-                            dingoeMoving_counter++;
-                            if (dingoeMoving_counter % 5 == 0) {
-                                dingoeMoving_toggle = !dingoeMoving_toggle;
-                                currentDingoe->dingoeSprite = dingoeMoving_toggle ? dingoeMoving2 : dingoeMoving1;
-                            }
-                            moveDingoe(currentDingoe, seeDirection, maze_bw);
-                            printf("x = %d and y = %d\n", currentWombat->x, currentWombat->y);
-
-                        }
-
-                        // Draw dingoe
-                        if (drawDingoe(currentDingoe) != 0) {
-                            printf("Error: Failed to draw dingoe after move.\n");
+                        // Draw cursor
+                        if (drawCursor(cursor)!=0){
+                            printf("Error: Failed to draw cursor.\n");
                             return 1;
                         }
-
-                        // Check collision
-                        if (check_collision(currentDingoe, currentWombat)) {
-                            printf("💥 Game Over! Wombat got caught!\n");
-                            state = GAME_OVER;
-                        }
-
-                        // Check finished level
-                        if (state == LEVEL) {
-                            if (currentWombat->x > 675 && currentWombat->y > 425) {
-                                printf("🏆 Game Won: Larry reached the destination!\n");
-                                state = LEVEL2;  
-                                setWombatX(currentWombat, 11);
-                                setWombatY(currentWombat, 8);
-                            }
-                        }
-                        else if (state == LEVEL2) {
-                            if (currentWombat->x > 675 && currentWombat->y > 300) {
-                                state = LEVEL3;
-                                setWombatX(currentWombat, 10);
-                                setWombatY(currentWombat, 10);
-                            }
-                        }
-                        else if (state == LEVEL3) {
-                            if (currentWombat->x > 575 && currentWombat->y < 10) {
-                                state = VICTORY;
-                            }
-                        }
-                    }
-                    if (drawCursor(cursor)!=0){
-                        printf("Error: Failed to draw cursor.\n");
-                        return 1;
-                    }
-                        
+                            
                         // Swap buffers
                         if (swap_buffers() != 0) {
                             printf("Error: Failed to swap buffers.\n");
@@ -521,7 +592,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
 
     // Free obstales
-    for (int i = 0; i < MAX_OBSTACLES; i++) {
+    for (int i = 0; i < num_obstacles; i++) {
         if (obstacles[i] != NULL) {
             if (obstacles[i]->obstacleSprite != NULL) {
                 free(obstacles[i]->obstacleSprite);

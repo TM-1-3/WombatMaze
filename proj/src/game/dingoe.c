@@ -60,7 +60,7 @@ int drawDingoe(Dingoe* dingoe) {
 }
 
 // Moves the wombat in a specified direction
-void moveDingoe(Dingoe* dingoe, int seeDirection, Maze* maze) {
+void moveDingoe(Dingoe* dingoe, int seeDirection, int speed, Maze* maze) {
     if (dingoe == NULL) {
         printf("Error: Dingoe is NULL.\n");
         return;
@@ -72,28 +72,28 @@ void moveDingoe(Dingoe* dingoe, int seeDirection, Maze* maze) {
             if (dingoe->y > 0 &&
                 isPath(maze, dingoe->x + 25, dingoe->y + 25 - 1) &&
                 isPath(maze, dingoe->x + 100 - 25, dingoe->y + 25 - 1)) {
-                dingoe->y -= 1;
+                dingoe->y -= speed;
             }
             break;
         case 2:
             if (dingoe->y + 100 < SCREEN_HEIGHT &&
                 isPath(maze, dingoe->x + 25, dingoe->y + 100 - 25 + 1) &&
                 isPath(maze, dingoe->x + 100 - 25, dingoe->y + 100 - 25 + 1)) {
-                dingoe->y += 1;
+                dingoe->y += speed;
             }
             break;
         case 3:
             if (dingoe->x > 0 &&
                 isPath(maze, dingoe->x + 25 - 1, dingoe->y + 25) &&
                 isPath(maze, dingoe->x + 25 - 1, dingoe->y + 100 - 25)) {
-                dingoe->x -= 1;
+                dingoe->x -= speed;
             }
             break;
         case 4:
             if (dingoe->x + 100 < SCREEN_WIDTH &&
                 isPath(maze, dingoe->x + 100 - 25 + 1, dingoe->y + 25) &&
                 isPath(maze, dingoe->x + 100 - 25 + 1, dingoe->y + 100 - 25)) {
-                dingoe->x += 1;
+                dingoe->x += speed;
             }
             break;
         default:

@@ -61,9 +61,10 @@ int drawDingoe(Dingoe* dingoe);
 /**
  * @brief Moves the dingoe in a specified direction
  * @param dingoe A pointer to the dingoe object
- * @param moveDirection The direction to move the dingoe 
+ * @param seeDirection The direction to move the dingoe 
+ * @param speed The speed of the dingoe
  */
-void moveDingoe(Dingoe* dingoe, int moveDirection, Maze* maze);
+void moveDingoe(Dingoe* dingoe, int seeDirection, int speed, Maze* maze);
 
 /**
  * @brief Checks if the dingoe can see the wombat

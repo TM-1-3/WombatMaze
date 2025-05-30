@@ -4,9 +4,21 @@
 #include "wombat.h"
 #include "dingoe.h"
 
-void reset_creatures(Wombat *wombat, Dingoe *dingoe);
+/**
+ * @brief Resets the state of the creatures wombat and dingoe for the given level
+ * @param wombat Pointer to the Wombat creature to reset
+ * @param dingoe Pointer to the Dingoe creature to reset
+ * @param level The current game level to reset creatures for
+ */
+void reset_creatures(Wombat *wombat, Dingoe *dingoe, int level);
 
-void reset_obstacles(Obstacle* obstacles[], int count);
+/**
+ * @brief Resets an array of obstacles for the given level
+ * @param obstacles Array of pointers to Obstacle objects
+ * @param count The number of obstacles in the array
+ * @param level The current game level to reset obstacles for
+ */
+void reset_obstacles(Obstacle* obstacles[], int count, int level);
 
 #endif
 
