@@ -15,10 +15,9 @@ void reset_creatures(Wombat *wombat, Dingoe *dingoe, int level);
 /**
  * @brief Resets an array of obstacles for the given level
  * @param obstacles Array of pointers to Obstacle objects
- * @param count The number of obstacles in the array
  * @param level The current game level to reset obstacles for
  */
-void reset_obstacles(Obstacle* obstacles[], int count, int level);
+void reset_obstacles(Obstacle* obstacles[], int level);
 
 #endif
 

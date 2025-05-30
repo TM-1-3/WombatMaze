@@ -153,22 +153,22 @@ int (proj_main_loop)(int argc, char *argv[]) {
         printf("Error: Failed to load maze sprite.\n");
         return 1;
     }
-    Maze* maze2 = loadMaze(0, 0, (xpm_map_t)map_sand);
+    Maze* maze2 = loadMaze(0, 0, (xpm_map_t)map_space);
     if (maze2 == NULL) {
         printf("Error: Failed to load second maze sprite.\n");
         return 1;
     }
-    Maze* maze_bw2 = loadMaze(0, 0, (xpm_map_t)map_sand_bw);
+    Maze* maze_bw2 = loadMaze(0, 0, (xpm_map_t)map_space_bw);
     if (maze_bw2 == NULL) {
         printf("Error: Failed to load second bw maze sprite.\n");
         return 1;
     }
-    Maze* maze3 = loadMaze(0, 0, (xpm_map_t)map_space);
+    Maze* maze3 = loadMaze(0, 0, (xpm_map_t)map_sand);
     if (maze3 == NULL) {
         printf("Error: Failed to load second maze sprite.\n");
         return 1;
     }
-    Maze* maze_bw3 = loadMaze(0, 0, (xpm_map_t)map_space_bw);
+    Maze* maze_bw3 = loadMaze(0, 0, (xpm_map_t)map_sand_bw);
     if (maze_bw3 == NULL) {
         printf("Error: Failed to load second bw maze sprite.\n");
         return 1;
@@ -196,7 +196,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     bool isAttacking = false;
 
     // Load Obstacle sprites
-    int num_obstacles = 2;
+    int num_obstacles = 4;
     Obstacle** obstacles = malloc(num_obstacles * sizeof(Obstacle*));
     for (int i = 0; i < num_obstacles; i++) {
         uint16_t x = 125 + i * 50; // Podes ajustar posições
@@ -251,12 +251,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                 // Reset creatures
                                 speed = 1;
                                 seeDirection = 0;
+                                moveDirection = 0;
                                 reset_creatures(currentWombat, currentDingoe, 1);
 
                                 // Reset obstacles
-                                num_obstacles = 2;
+                                num_obstacles = 4;
                                 obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
-                                reset_obstacles(obstacles, num_obstacles, 1);
+                                reset_obstacles(obstacles, 1);
                             }
 
                             // Go to instructions
@@ -497,13 +498,14 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
                             // Check finished level 1
                             if (state == LEVEL) {
-                                if (currentWombat->x > 675 && currentWombat->y > 425) {
+                                if (675 < currentWombat->x < 700 && 425 < currentWombat->y < 400) {
                                     printf("🏆 Level1 Won: Larry reached the destination!\n");
                                     state = LEVEL2;  
 
                                     // Reset creatures
                                     speed = 2;
                                     seeDirection = 0;
+                                    moveDirection = 0;
                                     reset_creatures(currentWombat, currentDingoe, 2);
 
                                     // Add more obstacles
@@ -523,24 +525,25 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                     }
 
                                     // Reset obstacles
-                                    reset_obstacles(obstacles, num_obstacles, 3);
+                                    reset_obstacles(obstacles, 2);
                                 }
                             }
 
                             // Check finished level 2
                             else if (state == LEVEL2) {
-                                if (currentWombat->x > 675 && currentWombat->y > 300) {
+                                if (525 < currentWombat->x < 625 && currentWombat->y < 15) {
                                     printf("🏆 Level2 Won: Larry reached the destination!\n");
                                     state = LEVEL3;
 
                                     // Reset creatures
                                     speed = 3;
                                     seeDirection = 0;
+                                    moveDirection = 0;
                                     reset_creatures(currentWombat, currentDingoe, 3);
 
                                     // Add more obstacles
                                     int old_num = num_obstacles;
-                                    num_obstacles += 2;
+                                    num_obstacles += 0;
                                     obstacles = realloc(obstacles, num_obstacles * sizeof(Obstacle*));
 
                                     // Load the new ones
@@ -555,13 +558,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
                                     }
 
                                     // Reset obstacles
-                                    reset_obstacles(obstacles, num_obstacles, 3);
+                                    reset_obstacles(obstacles, 3);
                                 }
                             }
 
                             // Check finished level 3
                             else if (state == LEVEL3) {
-                                if (currentWombat->x > 575 && currentWombat->y < 10) {
+                                if (currentWombat->x > 675 && currentWombat->y > 300) {
                                     printf("🏆 Game Won: Larry reached the destination!\n");
                                     state = VICTORY;
                                 }
