@@ -72,32 +72,82 @@ character collisions, obstacles and menus.
 **Architecture Diagram of the Project**
 </div>
 
-Implemented Devices
-The i8254 PC’s Timer
+## Implemented Devices
+
+### The i8254 PC’s Timer
+
  The Timer 0 was used to generate periodic interrupts at a frequency of 30Hz, basically
 regulating and processing all in-game events, at this given rate, like refreshing the screen,
 drawing elements, updating positions, checking for collisions etc.
+
  The implementation of the Timer was mostly notable through the inclusion of an in-game
 timer inside the levels,which was programmed to decrease by one unit every two real-time
 seconds.
+
  In order to successfully include the i8254 PC’s Timer in the project, the functions
 timer_subscribe_int, timer_unsubscribe_int, timer_set_frequency and
 timer_int_handler were implemented and used.
-The i8042 PC’s Keyboard
+
+### The i8042 PC’s Keyboard
  The Keyboard was implemented to process key presses and releases, via interrupts.
  These actions, depending on the current game state, are used to control the Wombat,
 navigate through the menu (using the WASD or Arrow keys), select options and exit screens
 and maps (using the ESC or ENTER key).
+
  In order to successfularily used to move a cursor inside the game screen, however, although
 this element is presly include the i8042 PC’s Keyboard in the project, the functions
 keyboard_subscribe_int, keyboard_unsubscribe_int and kbc_ih were implemented and
 used.
-The i8042 PC’s Mouse
+
+### The i8042 PC’s Mouse
+
  The Mouse was configured to process the pressing of its left button and movement, via
 interrupts.
+
  This device is priment in the entirety of the game, its use is only relevant inside the levels,
 where the player can make the Wombat destroy the obstacles in its way,by moving the cursor
 over the obstacle and then pressing the Mouse’s left button.
+
  In order to successfully include the i8042 PC’s Mouse in the project, the functions
 mouse_subscribe_int, mouse_unsubscribe_int and mouse_ih were implemented and used.
 
+### Video Card
+
+ The video card was configured to use direct color mode with a screen resolution of
+800x600 pixels and 8 bits per RGB color component (32 bits in total).To eliminate flickering,
+Double Buffering was implemented.
+
+ In order to successfully include the Video Card in the project, the functions
+set_mode_graphic, build_frame_buffer and swap_buffers were implemented and used.
+
+ To display graphic elements on the screen, a class Sprite was created, which defines the
+position to draw it, as well as storing the element’s bitmap. Sprites are loaded from XPM files
+and converted to bitmap using the xpm_load function, provided by the LCF. The color
+#FFFFFE was used as a transparency key and skipped during sprite rendering.
+
+ In order to successfully include the displaying of sprites in the project, the functions
+loadSprite, drawSprite, destroySprite and draw_pixel were implemented and used.
+
+## What are the differentiating features of our project?
+
+ Our game introduces several gameplay innovations. One of the key features is the enemy’s
+behavior: the monster will pursue the wombat when it gets to its line of sight. This adds a
+layer of strategy, as players must carefully consider how and when to move, taking advantage
+of obstacles for cover or to break line of sight.
+
+ Another unique mechanic is the interactive obstacle destruction system. While the wombat
+cannot pass through obstacles, players can use the mouse to remove them in real time. This
+gives the player an active role in shaping the game environment by managing keyboard
+movement and mouse-based destruction.
+
+ The game also features progressive difficulty across levels. As players advance through
+the maps, the monster moves faster and obstacles become more frequent, requiring amore
+strategic planning. The inclusion of a countdown timer intensifies the experience, putting
+players under constant time pressure to complete objectives before either the monster catches
+them or the time runs out.
+
+ Wombat Maze also offers creative visual themes and environments. Rather than using a
+single static map, the game takes the player through three unique settings—a forest, outer
+space, and a beach. Each environment has its own visual identity, layout design, and
+gameplay feel, providing a refreshing change of pace and atmosphere as the player
+progresses.
